@@ -1,0 +1,15 @@
+{
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20261019,
+  "case_cluster": "Resample100 case columns; keep all three seeds and both arms in each column together.",
+  "per_seed": "paired case bootstrap95 plus individual-model Wilson95",
+  "fixed_three_seed_average": "paired case-bootstrap95 and97.5 intervals;97.5 for two-suite claim decision",
+  "training_seed_variation": "sample standard deviation of the three same-fold model rates/differences; descriptive only, no population seed CI",
+  "claim_rule": "Record positive conditional mean improvement for a suite only if its97.5 case-cluster interval lower bound is strictly above0; report all seed results and any regressions regardless.",
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_visual_common_confirmation/analysis_plan.json",
+    "original_sha256": "19b52770998101816534bc35293f495f293d76c0de81ea2ba9b51e4c32ef9752",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

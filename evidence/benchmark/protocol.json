@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-10-11T08:23:56.994695+00:00",
+  "steps_each": 1000,
+  "order": [
+    "jax_metal",
+    "torch_eager",
+    "torch_compiled_fused"
+  ],
+  "fixed_inputs": "same official initialization, archived real batch256, float32, four losses and equivalent gradient statistics",
+  "timing": "Existing benchmark.py, update plus per-update synchronization, warm999 excluding first.",
+  "initial_state": {
+    "utc": "2026-10-11T08:23:56.994845+00:00",
+    "power": {
+      "exit_code": 0,
+      "stdout": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=6815843)\t80%; AC attached; not charging present: true",
+      "stderr": ""
+    },
+    "thermal_warnings": {
+      "exit_code": 0,
+      "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+      "stderr": ""
+    }
+  },
+  "controller_sha256": "3f38bc96e60a12edf2d378a8dd69369ec11c9be6408bef7b88121f410541369a",
+  "scope": "Single serial diagnostic under current AC power, not learning or repeated controlled laboratory comparison.",
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_migration/ac_power_comparison_1000/protocol.json",
+    "original_sha256": "7651e46e520f5ed15c9547532903e14c9794f730fb09e5f2cf65fc4caccf2107",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "status": "passed",
+  "scope": "Three fixed visual training seeds and six frozen40k models on common fresh confirmation cases",
+  "groups": {
+    "seed613_student_prefix_standard": {
+      "successes": 56,
+      "episodes": 100,
+      "success_rate": 0.56,
+      "wilson95": [
+        0.4622810465167699,
+        0.6532797336983921
+      ],
+      "environment_steps": 14482,
+      "mean_length": 144.82,
+      "CPU_reload_error": 6.556510925292969e-07,
+      "CPU_actions_audited": 383,
+      "CPU_action_max_abs_error": 1.1324882507324219e-06,
+      "live_xyz_probe_rmse_cm": 3.456409275531769,
+      "live_probe_count": 323,
+      "failed_cube_peak_at_most5cm": 29,
+      "source_summary_sha256": "b616f36ea8137ed6a227a524b29f5f5fc27f620391458d67e8f4783785045372",
+      "replay_sha256": "fe35cc0c794333fff4b5b70e8b27941a7ae7a366b061802dc5e55bd271c5b51f"
+    },
+    "seed613_student_full_standard": {
+      "successes": 80,
+      "episodes": 100,
+      "success_rate": 0.8,
+      "wilson95": [
+        0.7111708344068411,
+        0.8666330666689676
+      ],
+      "environment_steps": 11300,
+      "mean_length": 113.0,
+      "CPU_reload_error": 7.748603820800781e-07,
+      "CPU_actions_audited": 329,
+      "CPU_action_max_abs_error": 1.2516975402832031e-06,
+      "live_xyz_probe_rmse_cm": 1.802540011703968,
+      "live_probe_count": 270,
+      "failed_cube_peak_at_most5cm": 7,
+      "source_summary_sha256": "5f7d579193852c107b2b466489290be461c3c37cb2c617dc1345b685800d9f2f",
+      "replay_sha256": "aaffd365af1f72e2b96b3efea704591220b9014590d307b12297ff50bc83cb6a"
+    },
+    "seed614_student_prefix_standard": {
+      "successes": 87,
+      "episodes": 100,
+      "success_rate": 0.87,
+      "wilson95": [
+        0.7901964855992357,
+        0.9224283257275948
+      ],
+      "environment_steps": 11214,
+      "mean_length": 112.14,
+      "CPU_reload_error": 6.556510925292969e-07,
+      "CPU_actions_audited": 334,
+      "CPU_action_max_abs_error": 1.385807991027832e-06,
+      "live_xyz_probe_rmse_cm": 2.6687419041991234,
+      "live_probe_count": 274,
+      "failed_cube_peak_at_most5cm": 5,
+      "source_summary_sha256": "dc4a7f21f3c02ad55210a8a58e3427b44e8099a2de9efd5be93cafaa15dc6d81",
+      "replay_sha256": "6a3c3ec75f19cb14844aa4a06553b9bbdf4bcd64a54c299a6386a39cbe46429f"
+    },
+    "seed614_student_full_standard": {
+      "successes": 88,
+      "episodes": 100,
+      "success_rate": 0.88,
+      "wilson95": [
+        0.8018790057328857,
+        0.9300059356298052
+      ],
+      "environment_steps": 10024,
+      "mean_length": 100.24,
+      "CPU_reload_error": 4.76837158203125e-07,
+      "CPU_actions_audited": 310,
+      "CPU_action_max_abs_error": 1.5497207641601562e-06,
+      "live_xyz_probe_rmse_cm": 1.739628054201603,
+      "live_probe_count": 251,
+      "failed_cube_peak_at_most5cm": 5,
+      "source_summary_sha256": "7f9412880b3591368da29b7d4578487a297438562c71d44d10d14043310f03e4",
+      "replay_sha256": "1d816bd44eb2e45a61b23e6d93ac19cf98105721cd4315ffcc4fa1c5bceee3e0"
+    },
+    "seed615_student_prefix_standard": {
+      "successes": 78,
+      "episodes": 100,
+      "success_rate": 0.78,
+      "wilson95": [
+        0.6892964648501421,
+        0.8499871761539459
+      ],
+      "environment_steps": 11223,
+      "mean_length": 112.23,
+      "CPU_reload_error": 8.344650268554688e-07,
+      "CPU_actions_audited": 329,
+      "CPU_action_max_abs_error": 9.5367431640625e-07,
+      "live_xyz_probe_rmse_cm": 3.076213039457798,
+      "live_probe_count": 270,
+      "failed_cube_peak_at_most5cm": 11,
+      "source_summary_sha256": "79110afa4c73ec539765c904421c4a2f667ffc71ce2b02f5b1b4c4502ad83a45",
+      "replay_sha256": "42cb7c1590e3a4c83efff958da9f82a24288fd781f5e76cf7a2fb572eba44cf0"
+    },
+    "seed615_student_full_standard": {
+      "successes": 86,
+      "episodes": 100,
+      "success_rate": 0.86,
+      "wilson95": [
+        0.7786281178903616,
+        0.9147365634006086
+      ],
+      "environment_steps": 10249,
+      "mean_length": 102.49,
+      "CPU_reload_error": 1.1324882507324219e-06,
+      "CPU_actions_audited": 316,
+      "CPU_action_max_abs_error": 1.3709068298339844e-06,
+      "live_xyz_probe_rmse_cm": 1.7762823030352592,
+      "live_probe_count": 256,
+      "failed_cube_peak_at_most5cm": 8,
+      "source_summary_sha256": "efb1ada732a63e1f78d715c0c6742db161165420e5438e91005db2623d49664c",
+      "replay_sha256": "1688aeebf9cb8419ac24e36ca99af5c6bc62d8fd8fb47f6f3252b708a99a88f5"
+    },
+    "seed613_student_prefix_shifted": {
+      "successes": 59,
+      "episodes": 100,
+      "success_rate": 0.59,
+      "wilson95": [
+        0.4920143005341078,
+        0.6813268697886348
+      ],
+      "environment_steps": 13836,
+      "mean_length": 138.36,
+      "CPU_reload_error": 6.556510925292969e-07,
+      "CPU_actions_audited": 477,
+      "CPU_action_max_abs_error": 1.6093254089355469e-06,
+      "live_xyz_probe_rmse_cm": 4.569444432854652,
+      "live_probe_count": 313,
+      "failed_cube_peak_at_most5cm": 32,
+      "source_summary_sha256": "eb200d7f9d14a4e4fd76196fe3e90e349d6b9f758110b8755d39a525e9c8b8bd",
+      "replay_sha256": "8712dacac99f1e1fc17d69d4f7ca253209365e7a26c655761688a7869cc0100c"
+    },
+    "seed613_student_full_shifted": {
+      "successes": 72,
+      "episodes": 100,
+      "success_rate": 0.72,
+      "wilson95": [
+        0.6251197129007884,
+        0.7986031478881379
+      ],
+      "environment_steps": 12232,
+      "mean_length": 122.32,
+      "CPU_reload_error": 7.748603820800781e-07,
+      "CPU_actions_audited": 490,
+      "CPU_action_max_abs_error": 1.4901161193847656e-06,
+      "live_xyz_probe_rmse_cm": 2.4808064103126526,
+      "live_probe_count": 290,
+      "failed_cube_peak_at_most5cm": 17,
+      "source_summary_sha256": "d8e78c34f221b3bb8b9ca4cefe067e8731c8b8b6fcc8bb3f1363aa2d0cb7025d",
+      "replay_sha256": "5f810998498d3e6fef4c202539ec7a2e60837d493473f2943db03ee22a234801"
+    },
+    "seed614_student_prefix_shifted": {
+      "successes": 77,
+      "episodes": 100,
+      "success_rate": 0.77,
+      "wilson95": [
+        0.6784561697712622,
+        0.8415673411969654
+      ],
+      "environment_steps": 11735,
+      "mean_length": 117.35,
+      "CPU_reload_error": 6.556510925292969e-07,
+      "CPU_actions_audited": 390,
+      "CPU_action_max_abs_error": 1.2516975402832031e-06,
+      "live_xyz_probe_rmse_cm": 3.2727140933275223,
+      "live_probe_count": 284,
+      "failed_cube_peak_at_most5cm": 10,
+      "source_summary_sha256": "0773da30a245aee562f8fdf8b171cdfa09c584cc411305db910be559feb0f8fb",
+      "replay_sha256": "6afdc39e5c8315798fc992a7b86b1b523fb895b2440586bbb643850994122aa2"
+    },
+    "seed614_student_full_shifted": {
+      "successes": 83,
+      "episodes": 100,
+      "success_rate": 0.83,
+      "wilson95": [
+        0.7445199523239887,
+        0.8910643388594006
+      ],
+      "environment_steps": 10619,
+      "mean_length": 106.19,
+      "CPU_reload_error": 4.76837158203125e-07,
+      "CPU_actions_audited": 357,
+      "CPU_action_max_abs_error": 9.5367431640625e-07,
+      "live_xyz_probe_rmse_cm": 2.0955491811037064,
+      "live_probe_count": 265,
+      "failed_cube_peak_at_most5cm": 7,
+      "source_summary_sha256": "3fc6cafbcbd2fb15210ffd33e27db8b2ff7f59724b41d08ce4b7a23e3fb4c44a",
+      "replay_sha256": "40c044afdf99c697464631ca74a04b7b339ea5e50f33f6ff3635f43d2d8145ae"
+    },
+    "seed615_student_prefix_shifted": {
+      "successes": 65,
+      "episodes": 100,
+      "success_rate": 0.65,
+      "wilson95": [
+        0.5525444329688796,
+        0.7363575175690247
+      ],
+      "environment_steps": 12870,
+      "mean_length": 128.7,
+      "CPU_reload_error": 8.344650268554688e-07,
+      "CPU_actions_audited": 497,
+      "CPU_action_max_abs_error": 2.086162567138672e-06,
+      "live_xyz_probe_rmse_cm": 3.703444078564644,
+      "live_probe_count": 297,
+      "failed_cube_peak_at_most5cm": 20,
+      "source_summary_sha256": "6a42de8a0361a6bc7cb37876e226d162ae1071f0a4bba59a9c3ef356565754a6",
+      "replay_sha256": "5768c4336d501dc8929aea5b7aa2f5173d94981dd091df6b65bfa04572f38afb"
+    },
+    "seed615_student_full_shifted": {
+      "successes": 76,
+      "episodes": 100,
+      "success_rate": 0.76,
+      "wilson95": [
+        0.6676766365018553,
+        0.8330867444305122
+      ],
+      "environment_steps": 12151,
+      "mean_length": 121.51,
+      "CPU_reload_error": 1.1324882507324219e-06,
+      "CPU_actions_audited": 450,
+      "CPU_action_max_abs_error": 1.7583370208740234e-06,
+      "live_xyz_probe_rmse_cm": 3.126061335206032,
+      "live_probe_count": 290,
+      "failed_cube_peak_at_most5cm": 11,
+      "source_summary_sha256": "a8a993e81bf8b26d2bc7227250817d1c2abd3a8e935faaf1b6d14907c432abf8",
+      "replay_sha256": "3b14df5ae08c2cf5b6c1d03b6c17e27ee66f288213f6f43a0565becf64c9039f"
+    }
+  },
+  "paired": {
+    "standard": {
+      "per_seed": {
+        "613": {
+          "difference_pp": 24.0,
+          "bootstrap95_pp": [
+            14.000000000000002,
+            34.0
+          ],
+          "full_only_successes": 28,
+          "prefix_only_successes": 4
+        },
+        "614": {
+          "difference_pp": 1.0,
+          "bootstrap95_pp": [
+            -8.0,
+            9.0
+          ],
+          "full_only_successes": 10,
+          "prefix_only_successes": 9
+        },
+        "615": {
+          "difference_pp": 8.0,
+          "bootstrap95_pp": [
+            0.0,
+            17.0
+          ],
+          "full_only_successes": 14,
+          "prefix_only_successes": 6
+        }
+      },
+      "fixed_three_seed_case_cluster_mean": {
+        "difference_pp": 11.000000000000002,
+        "bootstrap95_pp": [
+          5.333333333333333,
+          16.666666666666664
+        ],
+        "bootstrap97_5_pp": [
+          4.333333333333333,
+          17.333333333333336
+        ],
+        "positive_conditional_mean_confirmed_two_suite_rule": true,
+        "seed_difference_sample_std_pp": 11.789826122551595,
+        "scope": "100 case clusters conditional on three fixed trained seeds; not300 independent outcomes or a population-training-seed interval"
+      },
+      "model_rate_mean_and_seed_sample_std": {
+        "student_full": {
+          "mean_percent": 84.66666666666667,
+          "sample_std_pp": 4.163331998932265,
+          "individual_seed_rates_percent": [
+            80.0,
+            88.0,
+            86.0
+          ]
+        },
+        "student_prefix": {
+          "mean_percent": 73.66666666666667,
+          "sample_std_pp": 15.94783161854091,
+          "individual_seed_rates_percent": [
+            56.00000000000001,
+            87.0,
+            78.0
+          ]
+        }
+      }
+    },
+    "shifted": {
+      "per_seed": {
+        "613": {
+          "difference_pp": 13.0,
+          "bootstrap95_pp": [
+            4.0,
+            22.0
+          ],
+          "full_only_successes": 18,
+          "prefix_only_successes": 5
+        },
+        "614": {
+          "difference_pp": 6.0,
+          "bootstrap95_pp": [
+            -2.0,
+            14.000000000000002
+          ],
+          "full_only_successes": 11,
+          "prefix_only_successes": 5
+        },
+        "615": {
+          "difference_pp": 11.0,
+          "bootstrap95_pp": [
+            2.0,
+            20.0
+          ],
+          "full_only_successes": 17,
+          "prefix_only_successes": 6
+        }
+      },
+      "fixed_three_seed_case_cluster_mean": {
+        "difference_pp": 10.0,
+        "bootstrap95_pp": [
+          4.333333333333333,
+          16.0
+        ],
+        "bootstrap97_5_pp": [
+          3.3333333333333335,
+          16.999999999999996
+        ],
+        "positive_conditional_mean_confirmed_two_suite_rule": true,
+        "seed_difference_sample_std_pp": 3.605551275463989,
+        "scope": "100 case clusters conditional on three fixed trained seeds; not300 independent outcomes or a population-training-seed interval"
+      },
+      "model_rate_mean_and_seed_sample_std": {
+        "student_full": {
+          "mean_percent": 77.0,
+          "sample_std_pp": 5.5677643628300215,
+          "individual_seed_rates_percent": [
+            72.0,
+            83.0,
+            76.0
+          ]
+        },
+        "student_prefix": {
+          "mean_percent": 67.0,
+          "sample_std_pp": 9.16515138991168,
+          "individual_seed_rates_percent": [
+            59.0,
+            77.0,
+            65.0
+          ]
+        }
+      }
+    }
+  },
+  "episodes": 1200,
+  "unique_case_clusters": 200,
+  "environment_steps": 141935,
+  "all_models_initial_state_and_RGB_match": true,
+  "all_noise_reward_success_terminal_fields_audited": true,
+  "frozen_inputs_unchanged": true,
+  "audit_added_environment_steps": 0,
+  "paired_cases_sha256": "51d04611a7ec004cf7fdb06602f4008bd2c4c29e8c13ac0ffead05c354a91c12",
+  "audit_source_sha256": "bb78129aa65047033472c815973a434f8e90f2abef8bae7660529daecbcc4746",
+  "limitations": [
+    "case-cluster intervals condition on these three trained seeds; seed variation is descriptive",
+    "same seed613-collected training data and learned seed0 teacher",
+    "full-window also changes early density and inherits stopping-time-conditioned counts",
+    "shift suite remains within collection range; no language/newtask/realrobot/additionalFQLRL evidence",
+    "only ep0 and fixed image-probe actions rederived; all trajectory noises/rewards/success/end fields audited"
+  ],
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_visual_common_confirmation/evaluation_validation.json",
+    "original_sha256": "770206627b64cf47fb108ed40171026d73cdecd6a556d874e95e4de508d39e26",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

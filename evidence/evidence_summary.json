@@ -1,0 +1,3583 @@
+{
+  "schema": "final_release_independent_evidence_summary_v1",
+  "date_Asia_Shanghai": "2026-10-13",
+  "status": "passed_readonly_evidence_corroboration",
+  "scope": "No new training, environment interaction, model selection or old-file mutation. Recomputed CSV counts/rates and JSON aggregation; independently byte-compared23official files; media existence/hash. Prior numerical/resume/trajectory audits cited, not rerun.",
+  "paper": {
+    "identity": {
+      "source": "related_work/fql/metadata.json",
+      "field": "$",
+      "value": {
+        "title": "Flow Q-Learning",
+        "authors": [
+          "Seohong Park",
+          "Qiyang Li",
+          "Sergey Levine"
+        ],
+        "first_year": 2025,
+        "venue": "ICML 2025; PMLR 267:48104–48127",
+        "arxiv_id": "2502.02538",
+        "official_code_url": "https://github.com/seohongpark/fql",
+        "venue_primary_url": "https://proceedings.mlr.press/v267/park25f.html"
+      }
+    },
+    "task2_score_percent": {
+      "value": {
+        "mean": 97,
+        "standard_deviation": 2
+      },
+      "source": "related_work/fql/source/icml2025.tex",
+      "field": "line1810, last FQL column"
+    },
+    "original_protocol": {
+      "value": {
+        "state_seeds": 8,
+        "state_updates": 1000000,
+        "evaluation_every": 100000,
+        "episodes_per_evaluation": 50,
+        "last_epochs": [
+          800000,
+          900000,
+          1000000
+        ],
+        "pixel_seeds": 4,
+        "pixel_updates": 500000
+      },
+      "source": "related_work/fql/source/icml2025.tex",
+      "field": "lines1191,1565-1572"
+    },
+    "boundary": "Current3-seed state subset100episodes/point and custom supervised visual transfer are not original8-seed whole-paper or original pixel-FQL reproduction."
+  },
+  "task": {
+    "official": {
+      "source": "experiment/fql_torch_visual_feasibility/protocol.json",
+      "field": "task",
+      "value": {
+        "env": "visual-cube-single-singletask-task2-v0",
+        "rgb": "64x64 front_pixels official transparent-arm pixel appearance",
+        "proprio_dims": 19,
+        "actions": 5,
+        "horizon": 200,
+        "control_hz": 20,
+        "success": "official info success: cube center within 4cm of task2 target"
+      }
+    },
+    "state_dims": {
+      "value": 28,
+      "source": "复现/fql/pytorch/visual/common.py",
+      "field": "state_observation shape check"
+    },
+    "state_role": "Visual deployment receivesRGB+19robotproprio+5Gaussianz; cube state is only training label/eval audit.",
+    "action": {
+      "value": "Relative effectorxyz,yaw,gripper opening,bounded[-1,1]; low-levelIK/PD, not5directjointangles.",
+      "source": "REPRODUCTION_DECISION.md",
+      "field": "line104"
+    },
+    "goal": {
+      "value": [
+        0.5,
+        0,
+        0.02
+      ],
+      "source": "REPRODUCTION_DECISION.md",
+      "field": "line104"
+    },
+    "boundary": "Cube-goal distance<=4cm. No extra release/hold, language, multiple cubes,newtask or real robot."
+  },
+  "official_source": {
+    "commit": "e8cd16eb490332924dfa2492097219f181765933",
+    "source": "related_work/fql/code/README.md",
+    "archive": "related_work/_code_archives/fql-e8cd16eb490332924dfa2492097219f181765933.tar.gz",
+    "archive_sha256": "3a65ee1743d6ac1116f6e71186f1956556fce2e8a4ef276d64beb909064e3b9f",
+    "regular_files_independently_byte_compared": 23,
+    "license": "related_work/fql/code/fql/LICENSE"
+  },
+  "original_data": {
+    "source": "experiment/fql_torch_migration/data_check.json",
+    "field": "manifest",
+    "value": {
+      "cube-single-play-v0.npz": {
+        "path": "DataSet/fql/cube-single-play-v0.npz",
+        "sha256": "80f3b6fd27f4f9d9e9eb6f0d07d6951559012f45b1e15ea4046ef8ecd8d3684e",
+        "bytes": 256728298
+      },
+      "cube-single-play-v0-val.npz": {
+        "path": "DataSet/fql/cube-single-play-v0-val.npz",
+        "sha256": "96d07401bdebdc3f0ea6d56ed1333863e0962f441483adc2c43b83105046eb00",
+        "bytes": 25687020
+      },
+      "task": "cube-single-play-singletask-v0",
+      "train_transitions": 1000000,
+      "validation_transitions": 100000,
+      "action_clip_eps": 1e-05,
+      "mask_zero_count": 20810,
+      "terminal_with_mask_one": 969
+    }
+  },
+  "migration": {
+    "parity": [
+      {
+        "source": "experiment/fql_torch_migration/parity/final_cpu_foreach_v2/torch_report.json",
+        "field": "checks",
+        "value": {
+          "fixture_and_reference_integrity": {
+            "passed": true
+          },
+          "requested_device_and_optimizer": {
+            "actual_device": "cpu",
+            "passed": true
+          },
+          "parameter_mapping": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 0.0
+          },
+          "forward": {
+            "passed": true,
+            "leaf_count": 8,
+            "max_absolute_difference": 5.245208740234375e-06
+          },
+          "losses": {
+            "passed": true,
+            "leaf_count": 11,
+            "max_absolute_difference": 1.52587890625e-05
+          },
+          "individual_gradients": {
+            "passed": true
+          },
+          "total_gradient": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 1.430511474609375e-06
+          },
+          "adam_once": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 8.775480091571808e-05
+          },
+          "adam_first_moment": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 1.9371509552001953e-07
+          },
+          "adam_second_moment": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 1.4901161193847656e-08
+          },
+          "target_order_and_single_adam": {
+            "passed": true,
+            "leaf_count": 18,
+            "max_absolute_difference": 0.0
+          },
+          "source_unchanged_during_validation": {
+            "passed": true
+          }
+        }
+      },
+      {
+        "source": "experiment/fql_torch_migration/parity/final_cpu_fused/torch_report.json",
+        "field": "checks",
+        "value": {
+          "fixture_and_reference_integrity": {
+            "passed": true
+          },
+          "requested_device_and_optimizer": {
+            "actual_device": "cpu",
+            "passed": true
+          },
+          "parameter_mapping": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 0.0
+          },
+          "forward": {
+            "passed": true,
+            "leaf_count": 8,
+            "max_absolute_difference": 5.245208740234375e-06
+          },
+          "losses": {
+            "passed": true,
+            "leaf_count": 11,
+            "max_absolute_difference": 1.52587890625e-05
+          },
+          "individual_gradients": {
+            "passed": true
+          },
+          "total_gradient": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 1.430511474609375e-06
+          },
+          "adam_once": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 8.775480091571808e-05
+          },
+          "adam_first_moment": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 1.9371509552001953e-07
+          },
+          "adam_second_moment": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 1.4901161193847656e-08
+          },
+          "target_order_and_single_adam": {
+            "passed": true,
+            "leaf_count": 18,
+            "max_absolute_difference": 0.0
+          },
+          "source_unchanged_during_validation": {
+            "passed": true
+          }
+        }
+      },
+      {
+        "source": "experiment/fql_torch_migration/parity/final_mps_fused/torch_report.json",
+        "field": "checks",
+        "value": {
+          "fixture_and_reference_integrity": {
+            "passed": true
+          },
+          "requested_device_and_optimizer": {
+            "actual_device": "mps:0",
+            "passed": true
+          },
+          "parameter_mapping": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 0.0
+          },
+          "forward": {
+            "passed": true,
+            "leaf_count": 8,
+            "max_absolute_difference": 5.185604095458984e-06
+          },
+          "losses": {
+            "passed": true,
+            "leaf_count": 11,
+            "max_absolute_difference": 1.52587890625e-05
+          },
+          "individual_gradients": {
+            "passed": true
+          },
+          "total_gradient": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 1.430511474609375e-06
+          },
+          "adam_once": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 6.025098264217377e-05
+          },
+          "adam_first_moment": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 2.384185791015625e-07
+          },
+          "adam_second_moment": {
+            "passed": true,
+            "leaf_count": 56,
+            "max_absolute_difference": 1.2442469596862793e-06
+          },
+          "target_order_and_single_adam": {
+            "passed": true,
+            "leaf_count": 18,
+            "max_absolute_difference": 0.0
+          },
+          "source_unchanged_during_validation": {
+            "passed": true
+          }
+        }
+      }
+    ],
+    "resume": [
+      {
+        "source": "experiment/fql_torch_migration/resume_cpu_final/comparison.json",
+        "field": "$",
+        "value": {
+          "passed": true,
+          "protocol": "fresh-process continuous cpu 20 vs cpu 10/save/load/10; 4x512 batch256 float32",
+          "device": "cpu",
+          "torch_cpu_rng_checked": true,
+          "torch_mps_rng_checked": false,
+          "model_adam_rng_sampler_next_batch_exact": true,
+          "update_11_to_20_batch_and_metrics_exact": true,
+          "checked_leaves": {
+            "tensor_leaves": 180,
+            "scalar_leaves": 74
+          },
+          "differences": [],
+          "scope": "Strict short cpu continuation only; does not establish another backend, cross-framework or long-run equivalence."
+        }
+      },
+      {
+        "source": "experiment/fql_torch_migration/resume_mps_compiled_fused/comparison.json",
+        "field": "$",
+        "value": {
+          "passed": true,
+          "protocol": "fresh-process continuous mps 20 vs mps 10/save/load/10; 4x512 batch256 float32",
+          "device": "mps",
+          "torch_cpu_rng_checked": true,
+          "torch_mps_rng_checked": true,
+          "model_adam_rng_sampler_next_batch_exact": true,
+          "update_11_to_20_batch_and_metrics_exact": true,
+          "checked_leaves": {
+            "tensor_leaves": 181,
+            "scalar_leaves": 73
+          },
+          "differences": [],
+          "scope": "Strict short mps continuation only; does not establish another backend, cross-framework or long-run equivalence."
+        }
+      }
+    ],
+    "limit": "Explicitly matched one-update within tolerances and same-device20vs10+10 exact recovery do not prove long-run cross-framework equality."
+  },
+  "benchmark": {
+    "runs": {
+      "jax_metal": {
+        "summary": {
+          "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+          "field": "runs.jax_metal.summary",
+          "value": {
+            "status": "completed",
+            "framework": "jax",
+            "device": "mps",
+            "updates_completed": 1000,
+            "same_initial_official_parameters": true,
+            "fixed_real_batch_repeated": true,
+            "compute_grad_stats": true,
+            "compile": false,
+            "first_update_seconds": 1.0912564170139376,
+            "warm_updates": 999,
+            "warm_update_seconds_mean": 0.015312188534878075,
+            "warm_update_seconds_median": 0.015337125019868836,
+            "warm_updates_per_second": 65.30745084036823,
+            "synchronized_update_seconds_total": 16.388132763357135,
+            "loop_wall_seconds": 19.92885708398535,
+            "invocation_wall_seconds": 23.494716415996663,
+            "memory_before": {
+              "rss_bytes": 606027776,
+              "peak_rss_bytes": 606027776
+            },
+            "memory_after": {
+              "rss_bytes": 964935680,
+              "peak_rss_bytes": 964935680
+            },
+            "all_metrics_and_final_model_finite": true,
+            "scope": "Repeated fixed batch, same initial official weights; speed only, not learning.",
+            "random_sequences_differ_between_frameworks": true
+          }
+        },
+        "whole_device_gpu_driver_proxy": {
+          "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+          "field": "runs.jax_metal.gpu_driver_proxy",
+          "value": {
+            "scope": "Whole-device IORegistry driver utilization snapshots during an approximate training interval.",
+            "sampling_interval_seconds": 0.5,
+            "devices": {
+              "4294968452:AGXAcceleratorG14X": {
+                "samples": 36,
+                "median_percent": 70.0,
+                "p10_percent": 68.5,
+                "p90_percent": 73.0,
+                "max_percent": 73,
+                "min_percent": 31,
+                "distinct_values": 8
+              }
+            },
+            "limitations": [
+              "Shared with GUI and other applications; not per-process utilization or kernel occupancy.",
+              "Driver averaging window unknown; progress is reported only at 1/100/.../1000.",
+              "Sampling can perturb CPU scheduling; used equally for all benchmark workers.",
+              "Do not subtract idle percentages to infer net FQL utilization."
+            ]
+          }
+        },
+        "both_boundaries_AC80": true
+      },
+      "torch_eager": {
+        "summary": {
+          "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+          "field": "runs.torch_eager.summary",
+          "value": {
+            "status": "completed",
+            "framework": "torch",
+            "device": "mps",
+            "updates_completed": 1000,
+            "same_initial_official_parameters": true,
+            "fixed_real_batch_repeated": true,
+            "compute_grad_stats": true,
+            "compile": false,
+            "first_update_seconds": 0.1472850000136532,
+            "warm_updates": 999,
+            "warm_update_seconds_mean": 0.019915708704779087,
+            "warm_update_seconds_median": 0.019963375001680106,
+            "warm_updates_per_second": 50.21162012477288,
+            "synchronized_update_seconds_total": 20.04307799608796,
+            "loop_wall_seconds": 22.958670791995246,
+            "invocation_wall_seconds": 24.2228785000043,
+            "memory_before": {
+              "rss_bytes": 544866304,
+              "peak_rss_bytes": 544866304,
+              "mps_allocated_bytes": 19490816,
+              "mps_driver_allocated_bytes": 42352640,
+              "mps_recommended_max_bytes": 26800603136
+            },
+            "memory_after": {
+              "rss_bytes": 596475904,
+              "peak_rss_bytes": 596475904,
+              "mps_allocated_bytes": 58332928,
+              "mps_driver_allocated_bytes": 145408000,
+              "mps_recommended_max_bytes": 26800603136
+            },
+            "all_metrics_and_final_model_finite": true,
+            "scope": "Repeated fixed batch, same initial official weights; speed only, not learning.",
+            "random_sequences_differ_between_frameworks": true
+          }
+        },
+        "whole_device_gpu_driver_proxy": {
+          "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+          "field": "runs.torch_eager.gpu_driver_proxy",
+          "value": {
+            "scope": "Whole-device IORegistry driver utilization snapshots during an approximate training interval.",
+            "sampling_interval_seconds": 0.5,
+            "devices": {
+              "4294968452:AGXAcceleratorG14X": {
+                "samples": 43,
+                "median_percent": 84,
+                "p10_percent": 83.0,
+                "p90_percent": 85.0,
+                "max_percent": 86,
+                "min_percent": 67,
+                "distinct_values": 8
+              }
+            },
+            "limitations": [
+              "Shared with GUI and other applications; not per-process utilization or kernel occupancy.",
+              "Driver averaging window unknown; progress is reported only at 1/100/.../1000.",
+              "Sampling can perturb CPU scheduling; used equally for all benchmark workers.",
+              "Do not subtract idle percentages to infer net FQL utilization."
+            ]
+          }
+        },
+        "both_boundaries_AC80": true
+      },
+      "torch_compiled_fused": {
+        "summary": {
+          "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+          "field": "runs.torch_compiled_fused.summary",
+          "value": {
+            "status": "completed",
+            "framework": "torch",
+            "device": "mps",
+            "updates_completed": 1000,
+            "same_initial_official_parameters": true,
+            "fixed_real_batch_repeated": true,
+            "compute_grad_stats": true,
+            "compile": true,
+            "first_update_seconds": 1.446148874994833,
+            "warm_updates": 999,
+            "warm_update_seconds_mean": 0.017766885552240687,
+            "warm_update_seconds_median": 0.017743875010637566,
+            "warm_updates_per_second": 56.28448481078239,
+            "synchronized_update_seconds_total": 19.19526754168328,
+            "loop_wall_seconds": 22.22052829101449,
+            "invocation_wall_seconds": 23.62713262499892,
+            "memory_before": {
+              "rss_bytes": 563429376,
+              "peak_rss_bytes": 563429376,
+              "mps_allocated_bytes": 19490816,
+              "mps_driver_allocated_bytes": 42352640,
+              "mps_recommended_max_bytes": 26800603136
+            },
+            "memory_after": {
+              "rss_bytes": 600653824,
+              "peak_rss_bytes": 687620096,
+              "mps_allocated_bytes": 58342656,
+              "mps_driver_allocated_bytes": 86638592,
+              "mps_recommended_max_bytes": 26800603136
+            },
+            "all_metrics_and_final_model_finite": true,
+            "scope": "Repeated fixed batch, same initial official weights; speed only, not learning.",
+            "random_sequences_differ_between_frameworks": true
+          }
+        },
+        "whole_device_gpu_driver_proxy": {
+          "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+          "field": "runs.torch_compiled_fused.gpu_driver_proxy",
+          "value": {
+            "scope": "Whole-device IORegistry driver utilization snapshots during an approximate training interval.",
+            "sampling_interval_seconds": 0.5,
+            "devices": {
+              "4294968452:AGXAcceleratorG14X": {
+                "samples": 38,
+                "median_percent": 87.0,
+                "p10_percent": 85.7,
+                "p90_percent": 89.0,
+                "max_percent": 90,
+                "min_percent": 81,
+                "distinct_values": 7
+              }
+            },
+            "limitations": [
+              "Shared with GUI and other applications; not per-process utilization or kernel occupancy.",
+              "Driver averaging window unknown; progress is reported only at 1/100/.../1000.",
+              "Sampling can perturb CPU scheduling; used equally for all benchmark workers.",
+              "Do not subtract idle percentages to infer net FQL utilization."
+            ]
+          }
+        },
+        "both_boundaries_AC80": true
+      }
+    },
+    "throughput_lower_percent": {
+      "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+      "field": "torch_compiled_throughput_lower_percent",
+      "value": 13.81613569888187
+    },
+    "limits": {
+      "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+      "field": "limits",
+      "value": [
+        "One run per mode, fixed order, existing compilation caches; not a population comparison.",
+        "No locked GPU frequency or controlled temperature; thermal command reports warnings only.",
+        "Global utilization is a driver proxy with background GUI load; no per-process occupancy."
+      ]
+    },
+    "scope": {
+      "source": "experiment/fql_torch_migration/ac_power_comparison_1000/protocol.json",
+      "field": "$",
+      "value": "Same official initial weights, repeated actual batch256,float32,four losses and equivalent gradient statistics,per-update synchronization.999 warm iterations after first update. One ordered run per mode."
+    },
+    "interpretation": "Torch was slower than JAX. End RSS is not unified-memory total or peak GPU memory. MPS tensor/driver/RSS overlap; do not sum. No comparable JAX GPU allocation. Driver proxy includes desktop/background; not per-process occupancy/effective FLOPs. Low-sync practical training has a different timing scope."
+  },
+  "state": {
+    "updates": {
+      "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+      "field": "completed_updates_by_seed",
+      "value": {
+        "0": 1000000,
+        "1": 1000000,
+        "2": 1000000
+      }
+    },
+    "formal_results": [
+      {
+        "seed": 0,
+        "checkpoint_step": 800000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.0.800000.raw",
+          "value": {
+            "successes": 98,
+            "episodes": 100,
+            "success_rate": 0.98,
+            "success_rate_wilson_95_percent_ci": [
+              0.929988209271456,
+              0.9944980324498376
+            ],
+            "mean_return": -73.45,
+            "mean_length": 74.43,
+            "evaluation_environment_steps": 7443
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.0.800000.average5",
+          "value": {
+            "successes": 100,
+            "episodes": 100,
+            "success_rate": 1.0,
+            "success_rate_wilson_95_percent_ci": [
+              0.9630065017930143,
+              1
+            ],
+            "mean_return": -69.34,
+            "mean_length": 70.34,
+            "evaluation_environment_steps": 7034
+          }
+        }
+      },
+      {
+        "seed": 0,
+        "checkpoint_step": 900000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.0.900000.raw",
+          "value": {
+            "successes": 100,
+            "episodes": 100,
+            "success_rate": 1.0,
+            "success_rate_wilson_95_percent_ci": [
+              0.9630065017930143,
+              1
+            ],
+            "mean_return": -71.54,
+            "mean_length": 72.54,
+            "evaluation_environment_steps": 7254
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.0.900000.average5",
+          "value": {
+            "successes": 99,
+            "episodes": 100,
+            "success_rate": 0.99,
+            "success_rate_wilson_95_percent_ci": [
+              0.9455138038212946,
+              0.9982325679358593
+            ],
+            "mean_return": -67.28,
+            "mean_length": 68.27,
+            "evaluation_environment_steps": 6827
+          }
+        }
+      },
+      {
+        "seed": 0,
+        "checkpoint_step": 1000000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.0.1000000.raw",
+          "value": {
+            "successes": 88,
+            "episodes": 100,
+            "success_rate": 0.88,
+            "success_rate_wilson_95_percent_ci": [
+              0.8018790057328857,
+              0.9300059356298052
+            ],
+            "mean_return": -103.74,
+            "mean_length": 104.62,
+            "evaluation_environment_steps": 10462
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.0.1000000.average5",
+          "value": {
+            "successes": 97,
+            "episodes": 100,
+            "success_rate": 0.97,
+            "success_rate_wilson_95_percent_ci": [
+              0.9154806357094724,
+              0.9897454759759611
+            ],
+            "mean_return": -81.14,
+            "mean_length": 82.11,
+            "evaluation_environment_steps": 8211
+          }
+        }
+      },
+      {
+        "seed": 1,
+        "checkpoint_step": 800000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.1.800000.raw",
+          "value": {
+            "successes": 98,
+            "episodes": 100,
+            "success_rate": 0.98,
+            "success_rate_wilson_95_percent_ci": [
+              0.929988209271456,
+              0.9944980324498376
+            ],
+            "mean_return": -75.51,
+            "mean_length": 76.49,
+            "evaluation_environment_steps": 7649
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.1.800000.average5",
+          "value": {
+            "successes": 100,
+            "episodes": 100,
+            "success_rate": 1.0,
+            "success_rate_wilson_95_percent_ci": [
+              0.9630065017930143,
+              1
+            ],
+            "mean_return": -63.08,
+            "mean_length": 64.08,
+            "evaluation_environment_steps": 6408
+          }
+        }
+      },
+      {
+        "seed": 1,
+        "checkpoint_step": 900000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.1.900000.raw",
+          "value": {
+            "successes": 99,
+            "episodes": 100,
+            "success_rate": 0.99,
+            "success_rate_wilson_95_percent_ci": [
+              0.9455138038212946,
+              0.9982325679358593
+            ],
+            "mean_return": -69.71,
+            "mean_length": 70.7,
+            "evaluation_environment_steps": 7070
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.1.900000.average5",
+          "value": {
+            "successes": 100,
+            "episodes": 100,
+            "success_rate": 1.0,
+            "success_rate_wilson_95_percent_ci": [
+              0.9630065017930143,
+              1
+            ],
+            "mean_return": -63.53,
+            "mean_length": 64.53,
+            "evaluation_environment_steps": 6453
+          }
+        }
+      },
+      {
+        "seed": 1,
+        "checkpoint_step": 1000000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.1.1000000.raw",
+          "value": {
+            "successes": 95,
+            "episodes": 100,
+            "success_rate": 0.95,
+            "success_rate_wilson_95_percent_ci": [
+              0.8882495307680808,
+              0.9784563208456319
+            ],
+            "mean_return": -78.49,
+            "mean_length": 79.44,
+            "evaluation_environment_steps": 7944
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.1.1000000.average5",
+          "value": {
+            "successes": 99,
+            "episodes": 100,
+            "success_rate": 0.99,
+            "success_rate_wilson_95_percent_ci": [
+              0.9455138038212946,
+              0.9982325679358593
+            ],
+            "mean_return": -75.67,
+            "mean_length": 76.66,
+            "evaluation_environment_steps": 7666
+          }
+        }
+      },
+      {
+        "seed": 2,
+        "checkpoint_step": 800000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.2.800000.raw",
+          "value": {
+            "successes": 88,
+            "episodes": 100,
+            "success_rate": 0.88,
+            "success_rate_wilson_95_percent_ci": [
+              0.8018790057328857,
+              0.9300059356298052
+            ],
+            "mean_return": -104.3,
+            "mean_length": 105.18,
+            "evaluation_environment_steps": 10518
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.2.800000.average5",
+          "value": {
+            "successes": 100,
+            "episodes": 100,
+            "success_rate": 1.0,
+            "success_rate_wilson_95_percent_ci": [
+              0.9630065017930143,
+              1
+            ],
+            "mean_return": -64.17,
+            "mean_length": 65.17,
+            "evaluation_environment_steps": 6517
+          }
+        }
+      },
+      {
+        "seed": 2,
+        "checkpoint_step": 900000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.2.900000.raw",
+          "value": {
+            "successes": 98,
+            "episodes": 100,
+            "success_rate": 0.98,
+            "success_rate_wilson_95_percent_ci": [
+              0.929988209271456,
+              0.9944980324498376
+            ],
+            "mean_return": -73.37,
+            "mean_length": 74.35,
+            "evaluation_environment_steps": 7435
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.2.900000.average5",
+          "value": {
+            "successes": 99,
+            "episodes": 100,
+            "success_rate": 0.99,
+            "success_rate_wilson_95_percent_ci": [
+              0.9455138038212946,
+              0.9982325679358593
+            ],
+            "mean_return": -67.1,
+            "mean_length": 68.09,
+            "evaluation_environment_steps": 6809
+          }
+        }
+      },
+      {
+        "seed": 2,
+        "checkpoint_step": 1000000,
+        "raw": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.2.1000000.raw",
+          "value": {
+            "successes": 100,
+            "episodes": 100,
+            "success_rate": 1.0,
+            "success_rate_wilson_95_percent_ci": [
+              0.9630065017930143,
+              1
+            ],
+            "mean_return": -70.69,
+            "mean_length": 71.69,
+            "evaluation_environment_steps": 7169
+          }
+        },
+        "average5": {
+          "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+          "field": "formal_evaluations.2.1000000.average5",
+          "value": {
+            "successes": 100,
+            "episodes": 100,
+            "success_rate": 1.0,
+            "success_rate_wilson_95_percent_ci": [
+              0.9630065017930143,
+              1
+            ],
+            "mean_return": -66.02,
+            "mean_length": 67.02,
+            "evaluation_environment_steps": 6702
+          }
+        }
+      }
+    ],
+    "per_seed_last_three_mean": {
+      "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+      "field": "per_seed_last_three_mean",
+      "value": {
+        "0": {
+          "raw": 0.9533333333333333,
+          "average5": 0.9866666666666667,
+          "average5_minus_raw": 0.03333333333333344
+        },
+        "1": {
+          "raw": 0.9733333333333333,
+          "average5": 0.9966666666666667,
+          "average5_minus_raw": 0.023333333333333428
+        },
+        "2": {
+          "raw": 0.9533333333333333,
+          "average5": 0.9966666666666667,
+          "average5_minus_raw": 0.043333333333333446
+        }
+      }
+    },
+    "across_three_seeds": {
+      "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+      "field": "across_three_seeds",
+      "value": {
+        "raw": {
+          "mean": 0.96,
+          "sample_standard_deviation_ddof1": 0.011547005383792525
+        },
+        "average5": {
+          "mean": 0.9933333333333333,
+          "sample_standard_deviation_ddof1": 0.005773502691896263
+        },
+        "average5_minus_raw": {
+          "mean": 0.03333333333333344,
+          "sample_standard_deviation_ddof1": 0.010000000000000009
+        }
+      }
+    },
+    "single1M_mean_percent": {
+      "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+      "field": "formal_evaluations.{0,1,2}.1000000.{raw,average5}.success_rate",
+      "value": {
+        "raw": 94.33333333333334,
+        "average5": 98.66666666666667
+      }
+    },
+    "method": {
+      "source": "experiment/fql_torch_three_seed_average_compact/protocol.json",
+      "field": "method",
+      "value": {
+        "component": "actor_onestep_flow only",
+        "window": 5,
+        "checkpoint_spacing": 10000,
+        "source_rule": "For endpoint E, use E-40000,E-30000,E-20000,E-10000,E; no future or cross-seed weights.",
+        "arithmetic": "Ascending CPU float64 sum/divide by5 then castfloat32; same one-forward clipped student deployment.",
+        "optimizer_rng_critic_teacher_averaged": false,
+        "artifacts_inference_only": true,
+        "window_retuning_allowed": false
+      }
+    },
+    "formal_score": {
+      "source": "experiment/fql_torch_three_seed_average_compact/protocol.json",
+      "field": "formal_score",
+      "value": "Each seed averages success rates at800k,900k,1M; across3 mean and sampleSD(ddof1); all seed deltas retained."
+    },
+    "source_steps_at1M": {
+      "source": "experiment/fql_torch_three_seed_average_compact/protocol.json",
+      "field": "method.source_rule",
+      "value": [
+        960000,
+        970000,
+        980000,
+        990000,
+        1000000
+      ]
+    },
+    "limitations": {
+      "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+      "field": "limitations",
+      "value": [
+        "Three Torch seeds, including development seed0; not the paper eight-seed reproduction.",
+        "Window five is fixed; fresh seeds1/2 separately confirm transfer across training randomness.",
+        "9000-series cases were already used for seed0 confirmation; fixed comparison cases, not globally unseen held-out cases.",
+        "Average last-three checkpoints within each seed before three-seed mean/sampleSD; cases and endpoints are correlated.",
+        "Earlier100k sampled indices replay exactly; future1900k verifies saved NumPy sampler boundaries only, with no per-update trace.",
+        "Logged finite values and saved payloads do not prove every intermediate update is finite or uninterrupted MPS bitwise equivalence.",
+        "Recording cadence changed with user authorization; algorithm, data, hyperparameters and averaging/evaluation rules did not change.",
+        "The earlier controller intentionally exited130 after a completed exit0 child; its credited50k is not the actual validated100k.",
+        "RSS/MPS allocation samples overlap and do not establish GPU utilization or temperature.",
+        "Snapshot averaging is an inference-only deployment adaptation, not an original theoretical method or extra RL loss."
+      ]
+    },
+    "seed0_regression": {
+      "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+      "field": "formal_evaluations.0.{900000,1000000}.raw.successes",
+      "from": 100,
+      "to": 88,
+      "episodes_each": 100,
+      "interpretation": "Same fixed comparison cases. Cause not isolated. Snapshot averaging mitigates endpoint performance; it does not establish a causal training repair."
+    }
+  },
+  "visual": {
+    "initial_visual": {
+      "teacher": {
+        "source": "experiment/fql_torch_visual_feasibility/results.json",
+        "field": "teacher",
+        "value": {
+          "run": "experiment/fql_torch_migration/random_mps1000",
+          "step": 960000,
+          "sha256": "f0ad91c2d08b82258e94d6de46a4446487ac5e215142091a3ec25e32388056af",
+          "seed": 0,
+          "selection": "prior state validation-selected checkpoint",
+          "reload_max_abs_error": 7.152557373046875e-07
+        }
+      },
+      "data": {
+        "source": "experiment/fql_torch_visual_feasibility/results.json",
+        "field": "data",
+        "value": {
+          "manifest_path": "experiment/fql_torch_visual_feasibility/paired_data_v2/manifest.json",
+          "manifest_sha256": "18833f09ff433fe37e2295fbb5a536c8b62908c0f94d0905f71ee9717c5e3715",
+          "train_images": 5000,
+          "val_images": 1000,
+          "train_trajectories": 50,
+          "val_trajectories": 10,
+          "derived_geometry_max_abs_error": 2.980232238769531e-07,
+          "unchanged_original_labels": true,
+          "cube_yaw_discrepant_train_frames": 51,
+          "cube_yaw_discrepant_val_frames": 0,
+          "preparation_render_seconds": 31.25354154201341,
+          "compressed_bytes": 15346468,
+          "limitations": "Derived contact/effector caches and Euler yaw cannot all be reconstructed from qpos/qvel; original labels retained. See data_validation and preserved failed first attempt."
+        }
+      },
+      "training.real_paired_image_supervised_updates": {
+        "source": "experiment/fql_torch_visual_feasibility/results.json",
+        "field": "training.real_paired_image_supervised_updates",
+        "value": 40000
+      },
+      "operational_gate": {
+        "source": "experiment/fql_torch_visual_feasibility/results.json",
+        "field": "operational_gate",
+        "value": {
+          "required": "grounded40/50 and demonstrated image contribution",
+          "observed": "12/50 and demonstrated image contribution",
+          "stable_visual_control_passed": false,
+          "engineering_flow_passed": true,
+          "some_successful_visual_control_observed": true
+        }
+      },
+      "fixed50_results": {
+        "final_teacher": {
+          "source": "experiment/fql_torch_visual_feasibility/results.json",
+          "field": "evaluations.final_teacher",
+          "value": {
+            "episodes": 50,
+            "successes": 48,
+            "success_rate": 0.96,
+            "success_rate_wilson_95_percent_ci": [
+              0.8653990931249297,
+              0.9889611156723802
+            ],
+            "mean_return": -81.46,
+            "mean_length": 82.42,
+            "evaluation_environment_steps": 4121
+          }
+        },
+        "final_direct_student": {
+          "source": "experiment/fql_torch_visual_feasibility/results.json",
+          "field": "evaluations.final_direct_student",
+          "value": {
+            "episodes": 50,
+            "successes": 0,
+            "success_rate": 0.0,
+            "success_rate_wilson_95_percent_ci": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "mean_return": -200.0,
+            "mean_length": 200.0,
+            "evaluation_environment_steps": 10000
+          }
+        },
+        "final_grounded_student": {
+          "source": "experiment/fql_torch_visual_feasibility/results.json",
+          "field": "evaluations.final_grounded_student",
+          "value": {
+            "episodes": 50,
+            "successes": 12,
+            "success_rate": 0.24,
+            "success_rate_wilson_95_percent_ci": [
+              0.1429739139699173,
+              0.3741268375794292
+            ],
+            "mean_return": -174.08,
+            "mean_length": 174.32,
+            "evaluation_environment_steps": 8716
+          }
+        },
+        "final_grounded_zero": {
+          "source": "experiment/fql_torch_visual_feasibility/results.json",
+          "field": "evaluations.final_grounded_zero",
+          "value": {
+            "episodes": 50,
+            "successes": 0,
+            "success_rate": 0.0,
+            "success_rate_wilson_95_percent_ci": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "mean_return": -200.0,
+            "mean_length": 200.0,
+            "evaluation_environment_steps": 10000
+          }
+        }
+      }
+    },
+    "visited_state_independent": {
+      "model_budget": {
+        "source": "experiment/fql_torch_visual_corrections/final_confirmation/results.json",
+        "field": "model_budget",
+        "value": "aggregate/control each grounded20k parent +20k additional supervised updates; oldgrounded20k reference; state teacher960k frozen"
+      },
+      "paired_candidate_control": {
+        "source": "experiment/fql_torch_visual_corrections/final_confirmation/results.json",
+        "field": "paired_candidate_control",
+        "value": {
+          "standard": {
+            "success_difference_pp": 72.0,
+            "paired_case_bootstrap95_pp": [
+              60.0,
+              84.0
+            ],
+            "candidate_only_successes": 36,
+            "control_only_successes": 0,
+            "all_models_initial_state_and_RGB_identical": true
+          },
+          "shifted": {
+            "success_difference_pp": 66.0,
+            "paired_case_bootstrap95_pp": [
+              52.0,
+              78.0
+            ],
+            "candidate_only_successes": 33,
+            "control_only_successes": 0,
+            "all_models_initial_state_and_RGB_identical": true
+          }
+        }
+      },
+      "evaluation_episodes": {
+        "source": "experiment/fql_torch_visual_corrections/final_confirmation/results.json",
+        "field": "evaluation_episodes",
+        "value": 450
+      },
+      "limitations": {
+        "source": "experiment/fql_torch_visual_corrections/final_confirmation/results.json",
+        "field": "limitations",
+        "value": [
+          "One fixed visual training seed; intervals quantify sampled cases, not training-seed variability.",
+          "Teacher has privileged state; oldgrounded is a lower-budget reference.",
+          "Normal student actions audited on episode0 and fixedprobes; teacher/zero on every saved step.",
+          "Fixed probe errors are descriptive because trajectory lengths differ.",
+          "Black input is extremeOOD; no standalone causal claim.",
+          "4cm success does not require releasing the cube or a stability hold.",
+          "Correction intervention combines demonstrations, visited-state supervision, initial coverage and balanced replay.",
+          "Shifted final cases are new seeds inside the correction-collection displacement range, not spatial extrapolation."
+        ]
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_corrections/final_confirmation/results.json",
+        "field": "groups",
+        "value": {
+          "aggregate_standard": {
+            "successes": 49,
+            "episodes": 50,
+            "success_rate": 0.98,
+            "wilson95": [
+              0.8950455641036219,
+              0.9964607407283539
+            ],
+            "mean_length": 78.72,
+            "mean_return": -77.74,
+            "environment_steps": 3936
+          },
+          "control_standard": {
+            "successes": 13,
+            "episodes": 50,
+            "success_rate": 0.26,
+            "wilson95": [
+              0.15871527493552393,
+              0.39553157264848837
+            ],
+            "mean_length": 167.62,
+            "mean_return": -167.36,
+            "environment_steps": 8381
+          },
+          "old_grounded_standard": {
+            "successes": 12,
+            "episodes": 50,
+            "success_rate": 0.24,
+            "wilson95": [
+              0.1429739139699173,
+              0.3741268375794292
+            ],
+            "mean_length": 176.82,
+            "mean_return": -176.58,
+            "environment_steps": 8841
+          },
+          "teacher_standard": {
+            "successes": 47,
+            "episodes": 50,
+            "success_rate": 0.94,
+            "wilson95": [
+              0.8378290831116182,
+              0.979385029651026
+            ],
+            "mean_length": 82.34,
+            "mean_return": -81.4,
+            "environment_steps": 4117
+          },
+          "aggregate_shifted": {
+            "successes": 44,
+            "episodes": 50,
+            "success_rate": 0.88,
+            "wilson95": [
+              0.7619518261679701,
+              0.9438239984906773
+            ],
+            "mean_length": 87.7,
+            "mean_return": -86.82,
+            "environment_steps": 4385
+          },
+          "control_shifted": {
+            "successes": 11,
+            "episodes": 50,
+            "success_rate": 0.22,
+            "wilson95": [
+              0.1275391597021442,
+              0.3524154958125367
+            ],
+            "mean_length": 175.28,
+            "mean_return": -175.06,
+            "environment_steps": 8764
+          },
+          "old_grounded_shifted": {
+            "successes": 10,
+            "episodes": 50,
+            "success_rate": 0.2,
+            "wilson95": [
+              0.1124375001577611,
+              0.3303710593222542
+            ],
+            "mean_length": 179.7,
+            "mean_return": -179.5,
+            "environment_steps": 8985
+          },
+          "teacher_shifted": {
+            "successes": 49,
+            "episodes": 50,
+            "success_rate": 0.98,
+            "wilson95": [
+              0.8950455641036219,
+              0.9964607407283539
+            ],
+            "mean_length": 81.48,
+            "mean_return": -80.5,
+            "environment_steps": 4074
+          },
+          "aggregate_zero_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "mean_length": 200.0,
+            "mean_return": -200.0,
+            "environment_steps": 10000
+          }
+        }
+      }
+    },
+    "matched_prefix_development": {
+      "data": {
+        "source": "experiment/fql_torch_visual_matched/results.json",
+        "field": "data",
+        "value": {
+          "train": {
+            "pairs": 20,
+            "matched_frames_per_behavior": 740,
+            "standard_frames_per_behavior": 347,
+            "shifted_frames_per_behavior": 393,
+            "raw_audit": {
+              "student": {
+                "teacher_raw_label_max_abs_error": 2.384185791015625e-06,
+                "executed_action_max_abs_error": 2.2258609533309937e-06,
+                "raw_samples": 1757,
+                "successes": 4
+              },
+              "teacher": {
+                "teacher_raw_label_max_abs_error": 1.4901161193847656e-06,
+                "executed_action_max_abs_error": 1.4901161193847656e-06,
+                "raw_samples": 747,
+                "successes": 20
+              }
+            },
+            "initial_state_and_rgb_exact_match": true,
+            "matched_time_indices_and_noise_exact_match": true,
+            "late_frames_excluded": {
+              "student": 1017,
+              "teacher": 7
+            },
+            "manifest_sha256": "5a4db5768015563e1fc0e41c043056b5273ad0b68c5932e9a125e62f079abf59",
+            "data_sha256": "2b1dbabd5fcb1fda30fc55254e9748de3ea84bc3d96a4ab4e308433ecb3d8ee9"
+          },
+          "val": {
+            "pairs": 6,
+            "matched_frames_per_behavior": 197,
+            "standard_frames_per_behavior": 99,
+            "shifted_frames_per_behavior": 98,
+            "raw_audit": {
+              "student": {
+                "teacher_raw_label_max_abs_error": 1.3709068298339844e-06,
+                "executed_action_max_abs_error": 5.900859832763672e-06,
+                "raw_samples": 464,
+                "successes": 2
+              },
+              "teacher": {
+                "teacher_raw_label_max_abs_error": 1.3113021850585938e-06,
+                "executed_action_max_abs_error": 1.3113021850585938e-06,
+                "raw_samples": 199,
+                "successes": 6
+              }
+            },
+            "initial_state_and_rgb_exact_match": true,
+            "matched_time_indices_and_noise_exact_match": true,
+            "late_frames_excluded": {
+              "student": 267,
+              "teacher": 2
+            },
+            "manifest_sha256": "c3102566a42ee874dea209508955502203bfbe9771928999c54b0f00a1591d81",
+            "data_sha256": "ea0438f4963699e1703a71f6ccc4192cb1c45dfbcf0ff92881b41660d68df593"
+          }
+        }
+      },
+      "paired_comparisons": {
+        "source": "experiment/fql_torch_visual_matched/results.json",
+        "field": "paired_comparisons",
+        "value": {
+          "standard": {
+            "student_only_minus_teacher_only": {
+              "difference_pp": 10.0,
+              "bootstrap95_pp": [
+                -13.333333333333334,
+                30.0
+              ],
+              "left_only_successes": 7,
+              "right_only_successes": 4
+            }
+          },
+          "shifted": {
+            "student_only_minus_teacher_only": {
+              "difference_pp": 23.333333333333332,
+              "bootstrap95_pp": [
+                0.0,
+                46.666666666666664
+              ],
+              "left_only_successes": 10,
+              "right_only_successes": 3
+            }
+          }
+        }
+      },
+      "budgets": {
+        "source": "experiment/fql_torch_visual_matched/results.json",
+        "field": "budgets",
+        "value": {
+          "additional_supervised_updates": 40000,
+          "additional_updates_per_model": 20000,
+          "model_endpoint": 40000,
+          "FQL_RL_updates_added": 0,
+          "training_environment_steps": 0,
+          "collection_episodes": 52,
+          "collection_environment_steps": 6316,
+          "collection_reset_stabilization_steps_separate": 104,
+          "development_episodes": 120,
+          "development_environment_steps": 16888,
+          "total_new_rollout_environment_steps": 23204
+        }
+      },
+      "limits": {
+        "source": "experiment/fql_torch_visual_matched/results.json",
+        "field": "limits",
+        "value": [
+          "Common window depends on both rollout stopping times and censors late failed-student states.",
+          "One shared visual initialization613 and one collection/training sampling seed; case bootstrap does not measure training-seed variability.",
+          "Same unique frame count is not the same state diversity, and coverage/redundancy remains part of the behavior effect.",
+          "Hybrid RGB+proprio19, no language; no additional task or outside-shift-range claim.",
+          "This is controlled supervised privileged-teacher transfer, not original paper visual-FQL score reproduction."
+        ]
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_matched/results.json",
+        "field": "development_groups",
+        "value": {
+          "teacher_only_standard": {
+            "successes": 15,
+            "episodes": 30,
+            "success_rate": 0.5,
+            "wilson95": [
+              0.33154125640533766,
+              0.6684587435946623
+            ],
+            "environment_steps": 4144,
+            "mean_length": 138.13333333333333
+          },
+          "teacher_only_shifted": {
+            "successes": 13,
+            "episodes": 30,
+            "success_rate": 0.43333333333333335,
+            "wilson95": [
+              0.2737748557646652,
+              0.6080269299918639
+            ],
+            "environment_steps": 4714,
+            "mean_length": 157.13333333333333
+          },
+          "student_only_standard": {
+            "successes": 18,
+            "episodes": 30,
+            "success_rate": 0.6,
+            "wilson95": [
+              0.42320360253322475,
+              0.7540937188319815
+            ],
+            "environment_steps": 4018,
+            "mean_length": 133.93333333333334
+          },
+          "student_only_shifted": {
+            "successes": 20,
+            "episodes": 30,
+            "success_rate": 0.6666666666666666,
+            "wilson95": [
+              0.4878005164454384,
+              0.8076950191632386
+            ],
+            "environment_steps": 4012,
+            "mean_length": 133.73333333333332
+          }
+        }
+      }
+    },
+    "timecoverage_seed613_development": {
+      "data": {
+        "source": "experiment/fql_torch_visual_temporal_coverage/results.json",
+        "field": "data",
+        "value": {
+          "status": "passed",
+          "same20_cases_and740_frames": true,
+          "same_per_case_counts_and_order": true,
+          "teacher_subset_all_fields_exact_copy": true,
+          "student_all_fields_exact_raw_subset": true,
+          "initial_rgb_and_state_unchanged": true,
+          "selection_by_success": false,
+          "prefix_frames_retained": 399,
+          "previously_excluded_late_frames_included": 341,
+          "new_collection_episodes": 0,
+          "new_environment_steps": 0,
+          "data_sha256": "098b0e36bfab479cdf9baf434b62977e061056645069711209fb0b53a500011c",
+          "manifest_sha256": "c2d7b8bb3f68937098339484a7fd7786d50bf9a7b835ddf6fac3f2e7fe2911e9",
+          "processing_source_sha256": "3f67284e1d1a6d59088737b9d4f12c2ed276cf83c6a7b41003e73f8e30663249"
+        }
+      },
+      "paired": {
+        "source": "experiment/fql_torch_visual_temporal_coverage/results.json",
+        "field": "paired",
+        "value": {
+          "standard": {
+            "student_full_minus_student_prefix": {
+              "difference_pp": 16.666666666666664,
+              "bootstrap95_pp": [
+                -3.3333333333333335,
+                36.666666666666664
+              ],
+              "left_only_successes": 7,
+              "right_only_successes": 2
+            },
+            "student_full_minus_teacher_prefix": {
+              "difference_pp": 36.666666666666664,
+              "bootstrap95_pp": [
+                16.666666666666664,
+                56.666666666666664
+              ],
+              "left_only_successes": 12,
+              "right_only_successes": 1
+            }
+          },
+          "shifted": {
+            "student_full_minus_student_prefix": {
+              "difference_pp": 16.666666666666664,
+              "bootstrap95_pp": [
+                -6.666666666666667,
+                40.0
+              ],
+              "left_only_successes": 10,
+              "right_only_successes": 5
+            },
+            "student_full_minus_teacher_prefix": {
+              "difference_pp": 23.333333333333332,
+              "bootstrap95_pp": [
+                -3.3333333333333335,
+                46.666666666666664
+              ],
+              "left_only_successes": 12,
+              "right_only_successes": 5
+            }
+          }
+        }
+      },
+      "late_clipped_action_mse_reduction_vs_prefix": {
+        "source": "experiment/fql_torch_visual_temporal_coverage/results.json",
+        "field": "late_clipped_action_mse_reduction_vs_prefix",
+        "value": 0.47381307436004916
+      },
+      "budget": {
+        "source": "experiment/fql_torch_visual_temporal_coverage/results.json",
+        "field": "budget",
+        "value": {
+          "new_supervised_updates": 20000,
+          "new_FQL_RL_updates": 0,
+          "new_collection_episodes": 0,
+          "training_environment_steps": 0,
+          "new_development_episodes": 180,
+          "new_development_environment_steps": 23618,
+          "fixed_model_endpoint": 40000,
+          "old_reference_models_retrained": false
+        }
+      },
+      "limits": {
+        "source": "experiment/fql_torch_visual_temporal_coverage/results.json",
+        "field": "limits",
+        "value": [
+          "Time indices deliberately differ. Adding later student states also reduces density of early states; this tests the whole-window sampling rule, not only appending late states.",
+          "Ni is determined by the prior paired stopping time; counts stay fixed and all cases remain, but stopping-time conditioning is retained.",
+          "One shared visual initialization613, state teacher seed0 and one training sampling seed.",
+          "Fresh teacher action labels at failed states are learned-policy labels, not oracle recovery actions.",
+          "RGB+proprio19, fixed task/camera/goal and within collected shift bounds; no language/new-task/realrobot claim."
+        ]
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_temporal_coverage/results.json",
+        "field": "groups",
+        "value": {
+          "student_full_standard": {
+            "successes": 23,
+            "episodes": 30,
+            "success_rate": 0.7666666666666667,
+            "wilson95": [
+              0.5907167384187784,
+              0.8820761185551049
+            ],
+            "environment_steps": 3210,
+            "mean_length": 107.0
+          },
+          "student_full_shifted": {
+            "successes": 22,
+            "episodes": 30,
+            "success_rate": 0.7333333333333333,
+            "wilson95": [
+              0.555520383048111,
+              0.8581733668040368
+            ],
+            "environment_steps": 3362,
+            "mean_length": 112.06666666666666
+          },
+          "student_prefix_standard": {
+            "successes": 18,
+            "episodes": 30,
+            "success_rate": 0.6,
+            "wilson95": [
+              0.42320360253322475,
+              0.7540937188319815
+            ],
+            "environment_steps": 3910,
+            "mean_length": 130.33333333333334
+          },
+          "student_prefix_shifted": {
+            "successes": 17,
+            "episodes": 30,
+            "success_rate": 0.5666666666666667,
+            "wilson95": [
+              0.3919730700081361,
+              0.7262251442353347
+            ],
+            "environment_steps": 4163,
+            "mean_length": 138.76666666666668
+          },
+          "teacher_prefix_standard": {
+            "successes": 12,
+            "episodes": 30,
+            "success_rate": 0.4,
+            "wilson95": [
+              0.24590628116801852,
+              0.5767963974667752
+            ],
+            "environment_steps": 4582,
+            "mean_length": 152.73333333333332
+          },
+          "teacher_prefix_shifted": {
+            "successes": 15,
+            "episodes": 30,
+            "success_rate": 0.5,
+            "wilson95": [
+              0.33154125640533766,
+              0.6684587435946623
+            ],
+            "environment_steps": 4391,
+            "mean_length": 146.36666666666667
+          }
+        }
+      }
+    },
+    "seed614_development": {
+      "primary_paired_full_minus_prefix": {
+        "source": "experiment/fql_torch_visual_seed614/results.json",
+        "field": "primary_paired_full_minus_prefix",
+        "value": {
+          "standard": {
+            "student_full_minus_student_prefix": {
+              "difference_pp": 3.3333333333333335,
+              "bootstrap95_pp": [
+                0.0,
+                10.0
+              ],
+              "left_only_successes": 1,
+              "right_only_successes": 0
+            }
+          },
+          "shifted": {
+            "student_full_minus_student_prefix": {
+              "difference_pp": 6.666666666666667,
+              "bootstrap95_pp": [
+                -10.0,
+                23.333333333333332
+              ],
+              "left_only_successes": 4,
+              "right_only_successes": 2
+            }
+          }
+        }
+      },
+      "late_action_mse_reduction_percent": {
+        "source": "experiment/fql_torch_visual_seed614/results.json",
+        "field": "late_action_mse_reduction_percent",
+        "value": 49.61602728913157
+      },
+      "rescued_cases": {
+        "source": "experiment/fql_torch_visual_seed614/results.json",
+        "field": "rescued_cases",
+        "value": 5
+      },
+      "introduced_failures": {
+        "source": "experiment/fql_torch_visual_seed614/results.json",
+        "field": "introduced_failures",
+        "value": 2
+      },
+      "cost": {
+        "source": "experiment/fql_torch_visual_seed614/results.json",
+        "field": "cost",
+        "value": {
+          "new_supervised_updates": 60000,
+          "new_FQL_RL_updates": 0,
+          "training_environment_steps": 0,
+          "new_collection_episodes": 0,
+          "evaluation_episodes": 120,
+          "evaluation_environment_steps": 12971,
+          "training_loop_seconds": 622.418518917053,
+          "training_child_seconds": 628.8259835009812,
+          "evaluation_controller_seconds": 99.20261016703444
+        }
+      },
+      "limits": {
+        "source": "experiment/fql_torch_visual_seed614/results.json",
+        "field": "limits",
+        "value": [
+          "Two visual training initializations conditional on the same teacher and seed613-collected fixed data.",
+          "Seeds613 and614 use different development cases; do not pool their cases as a training-seed estimate.",
+          "Standard gain is only one discordant case; both primary95 intervals include0.",
+          "Uniform full-window sampling also changes early density; per-case counts retain stopping-time conditioning.",
+          "Supervised vision transfer without language, added FQLRL, or other-task/real-robot testing."
+        ]
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_seed614/results.json",
+        "field": "groups",
+        "value": {
+          "student_prefix_standard": {
+            "successes": 24,
+            "episodes": 30,
+            "success_rate": 0.8,
+            "wilson95": [
+              0.6269430358685175,
+              0.9049489282271013
+            ]
+          },
+          "student_prefix_shifted": {
+            "successes": 24,
+            "episodes": 30,
+            "success_rate": 0.8,
+            "wilson95": [
+              0.6269430358685175,
+              0.9049489282271013
+            ]
+          },
+          "student_full_standard": {
+            "successes": 25,
+            "episodes": 30,
+            "success_rate": 0.8333333333333334,
+            "wilson95": [
+              0.6643564949358398,
+              0.9266345762815145
+            ]
+          },
+          "student_full_shifted": {
+            "successes": 26,
+            "episodes": 30,
+            "success_rate": 0.8666666666666667,
+            "wilson95": [
+              0.703186733179637,
+              0.9469034451594526
+            ]
+          }
+        }
+      }
+    },
+    "seed615_development": {
+      "primary_paired_full_minus_prefix": {
+        "source": "experiment/fql_torch_visual_seed615/results.json",
+        "field": "primary_paired_full_minus_prefix",
+        "value": {
+          "standard": {
+            "student_full_minus_student_prefix": {
+              "difference_pp": -10.0,
+              "bootstrap95_pp": [
+                -23.333333333333332,
+                3.3333333333333335
+              ],
+              "left_only_successes": 1,
+              "right_only_successes": 4
+            }
+          },
+          "shifted": {
+            "student_full_minus_student_prefix": {
+              "difference_pp": 13.333333333333334,
+              "bootstrap95_pp": [
+                -6.666666666666667,
+                33.33333333333333
+              ],
+              "left_only_successes": 7,
+              "right_only_successes": 3
+            }
+          }
+        }
+      },
+      "late_action_mse_reduction_percent": {
+        "source": "experiment/fql_torch_visual_seed615/results.json",
+        "field": "late_action_mse_reduction_percent",
+        "value": 47.67468720868146
+      },
+      "rescued_cases": {
+        "source": "experiment/fql_torch_visual_seed615/results.json",
+        "field": "rescued_cases",
+        "value": 8
+      },
+      "introduced_failures": {
+        "source": "experiment/fql_torch_visual_seed615/results.json",
+        "field": "introduced_failures",
+        "value": 7
+      },
+      "cost": {
+        "source": "experiment/fql_torch_visual_seed615/results.json",
+        "field": "cost",
+        "value": {
+          "new_supervised_updates": 60000,
+          "new_FQL_RL_updates": 0,
+          "training_environment_steps": 0,
+          "new_collection_episodes": 0,
+          "evaluation_episodes": 120,
+          "evaluation_environment_steps": 14156,
+          "training_loop_seconds": 610.0546796260169,
+          "training_child_seconds": 616.0980433750665,
+          "evaluation_controller_seconds": 105.74317970802076
+        }
+      },
+      "limits": {
+        "source": "experiment/fql_torch_visual_seed615/results.json",
+        "field": "limits",
+        "value": [
+          "Three visual initializations conditional on fixed seed613-collected data and seed0 teacher.",
+          "Development cases differ by seed stage; no pooled formal training-seed estimate.",
+          "Full-window sampling changes early density and inherits prior stopping-time-conditioned per-case counts.",
+          "Supervised vision transfer without language, additional FQLRL or other-task/real-robot testing."
+        ]
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_seed615/results.json",
+        "field": "groups",
+        "value": {
+          "student_prefix_standard": {
+            "successes": 25,
+            "episodes": 30,
+            "success_rate": 0.8333333333333334,
+            "wilson95": [
+              0.6643564949358398,
+              0.9266345762815145
+            ]
+          },
+          "student_prefix_shifted": {
+            "successes": 17,
+            "episodes": 30,
+            "success_rate": 0.5666666666666667,
+            "wilson95": [
+              0.3919730700081361,
+              0.7262251442353347
+            ]
+          },
+          "student_full_standard": {
+            "successes": 22,
+            "episodes": 30,
+            "success_rate": 0.7333333333333333,
+            "wilson95": [
+              0.555520383048111,
+              0.8581733668040368
+            ]
+          },
+          "student_full_shifted": {
+            "successes": 21,
+            "episodes": 30,
+            "success_rate": 0.7,
+            "wilson95": [
+              0.5212421254128504,
+              0.8333525173175619
+            ]
+          }
+        }
+      }
+    },
+    "timecoverage_common_confirmation": {
+      "paired": {
+        "source": "experiment/fql_torch_visual_common_confirmation/results.json",
+        "field": "paired",
+        "value": {
+          "standard": {
+            "per_seed": {
+              "613": {
+                "difference_pp": 24.0,
+                "bootstrap95_pp": [
+                  14.000000000000002,
+                  34.0
+                ],
+                "full_only_successes": 28,
+                "prefix_only_successes": 4
+              },
+              "614": {
+                "difference_pp": 1.0,
+                "bootstrap95_pp": [
+                  -8.0,
+                  9.0
+                ],
+                "full_only_successes": 10,
+                "prefix_only_successes": 9
+              },
+              "615": {
+                "difference_pp": 8.0,
+                "bootstrap95_pp": [
+                  0.0,
+                  17.0
+                ],
+                "full_only_successes": 14,
+                "prefix_only_successes": 6
+              }
+            },
+            "fixed_three_seed_case_cluster_mean": {
+              "difference_pp": 11.000000000000002,
+              "bootstrap95_pp": [
+                5.333333333333333,
+                16.666666666666664
+              ],
+              "bootstrap97_5_pp": [
+                4.333333333333333,
+                17.333333333333336
+              ],
+              "positive_conditional_mean_confirmed_two_suite_rule": true,
+              "seed_difference_sample_std_pp": 11.789826122551595,
+              "scope": "100 case clusters conditional on three fixed trained seeds; not300 independent outcomes or a population-training-seed interval"
+            },
+            "model_rate_mean_and_seed_sample_std": {
+              "student_full": {
+                "mean_percent": 84.66666666666667,
+                "sample_std_pp": 4.163331998932265,
+                "individual_seed_rates_percent": [
+                  80.0,
+                  88.0,
+                  86.0
+                ]
+              },
+              "student_prefix": {
+                "mean_percent": 73.66666666666667,
+                "sample_std_pp": 15.94783161854091,
+                "individual_seed_rates_percent": [
+                  56.00000000000001,
+                  87.0,
+                  78.0
+                ]
+              }
+            }
+          },
+          "shifted": {
+            "per_seed": {
+              "613": {
+                "difference_pp": 13.0,
+                "bootstrap95_pp": [
+                  4.0,
+                  22.0
+                ],
+                "full_only_successes": 18,
+                "prefix_only_successes": 5
+              },
+              "614": {
+                "difference_pp": 6.0,
+                "bootstrap95_pp": [
+                  -2.0,
+                  14.000000000000002
+                ],
+                "full_only_successes": 11,
+                "prefix_only_successes": 5
+              },
+              "615": {
+                "difference_pp": 11.0,
+                "bootstrap95_pp": [
+                  2.0,
+                  20.0
+                ],
+                "full_only_successes": 17,
+                "prefix_only_successes": 6
+              }
+            },
+            "fixed_three_seed_case_cluster_mean": {
+              "difference_pp": 10.0,
+              "bootstrap95_pp": [
+                4.333333333333333,
+                16.0
+              ],
+              "bootstrap97_5_pp": [
+                3.3333333333333335,
+                16.999999999999996
+              ],
+              "positive_conditional_mean_confirmed_two_suite_rule": true,
+              "seed_difference_sample_std_pp": 3.605551275463989,
+              "scope": "100 case clusters conditional on three fixed trained seeds; not300 independent outcomes or a population-training-seed interval"
+            },
+            "model_rate_mean_and_seed_sample_std": {
+              "student_full": {
+                "mean_percent": 77.0,
+                "sample_std_pp": 5.5677643628300215,
+                "individual_seed_rates_percent": [
+                  72.0,
+                  83.0,
+                  76.0
+                ]
+              },
+              "student_prefix": {
+                "mean_percent": 67.0,
+                "sample_std_pp": 9.16515138991168,
+                "individual_seed_rates_percent": [
+                  59.0,
+                  77.0,
+                  65.0
+                ]
+              }
+            }
+          }
+        }
+      },
+      "cost": {
+        "source": "experiment/fql_torch_visual_common_confirmation/results.json",
+        "field": "cost",
+        "value": {
+          "new_supervised_updates": 0,
+          "new_FQL_RL_updates": 0,
+          "training_environment_steps": 0,
+          "new_training_collection_episodes": 0,
+          "evaluation_episodes": 1200,
+          "unique_initial_case_clusters": 200,
+          "evaluation_environment_steps": 141935,
+          "evaluation_controller_seconds": 561.1576157910167,
+          "max_concurrent_cpu_processes": 2,
+          "first200_speed_gate": {
+            "seconds": 105.37595270801103,
+            "projected1200_seconds": 632.2557162480662
+          }
+        }
+      },
+      "limits": {
+        "source": "experiment/fql_torch_visual_common_confirmation/results.json",
+        "field": "limits",
+        "value": [
+          "Same seed613-collected data and fixed seed0/960k teacher; three trained visual initializations only.",
+          "Full-window changes early/late density and inherits prior stopping-time-conditioned per-case frame counts.",
+          "Case-cluster uncertainty is conditional on these fixed three trained seeds; not population training-seed uncertainty.",
+          "Custom XY-shift test is within collection range; no language, new task, real robot, additional FQLRL or original visual-paper result."
+        ]
+      },
+      "conditional_case_cluster_intervals_not_population_training_seed_intervals": {
+        "source": "experiment/fql_torch_visual_common_confirmation/results.json",
+        "field": "conditional_case_cluster_intervals_not_population_training_seed_intervals",
+        "value": true
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_common_confirmation/results.json",
+        "field": "groups",
+        "value": {
+          "seed613_student_prefix_standard": {
+            "successes": 56,
+            "episodes": 100,
+            "success_rate": 0.56,
+            "wilson95": [
+              0.4622810465167699,
+              0.6532797336983921
+            ]
+          },
+          "seed613_student_full_standard": {
+            "successes": 80,
+            "episodes": 100,
+            "success_rate": 0.8,
+            "wilson95": [
+              0.7111708344068411,
+              0.8666330666689676
+            ]
+          },
+          "seed614_student_prefix_standard": {
+            "successes": 87,
+            "episodes": 100,
+            "success_rate": 0.87,
+            "wilson95": [
+              0.7901964855992357,
+              0.9224283257275948
+            ]
+          },
+          "seed614_student_full_standard": {
+            "successes": 88,
+            "episodes": 100,
+            "success_rate": 0.88,
+            "wilson95": [
+              0.8018790057328857,
+              0.9300059356298052
+            ]
+          },
+          "seed615_student_prefix_standard": {
+            "successes": 78,
+            "episodes": 100,
+            "success_rate": 0.78,
+            "wilson95": [
+              0.6892964648501421,
+              0.8499871761539459
+            ]
+          },
+          "seed615_student_full_standard": {
+            "successes": 86,
+            "episodes": 100,
+            "success_rate": 0.86,
+            "wilson95": [
+              0.7786281178903616,
+              0.9147365634006086
+            ]
+          },
+          "seed613_student_prefix_shifted": {
+            "successes": 59,
+            "episodes": 100,
+            "success_rate": 0.59,
+            "wilson95": [
+              0.4920143005341078,
+              0.6813268697886348
+            ]
+          },
+          "seed613_student_full_shifted": {
+            "successes": 72,
+            "episodes": 100,
+            "success_rate": 0.72,
+            "wilson95": [
+              0.6251197129007884,
+              0.7986031478881379
+            ]
+          },
+          "seed614_student_prefix_shifted": {
+            "successes": 77,
+            "episodes": 100,
+            "success_rate": 0.77,
+            "wilson95": [
+              0.6784561697712622,
+              0.8415673411969654
+            ]
+          },
+          "seed614_student_full_shifted": {
+            "successes": 83,
+            "episodes": 100,
+            "success_rate": 0.83,
+            "wilson95": [
+              0.7445199523239887,
+              0.8910643388594006
+            ]
+          },
+          "seed615_student_prefix_shifted": {
+            "successes": 65,
+            "episodes": 100,
+            "success_rate": 0.65,
+            "wilson95": [
+              0.5525444329688796,
+              0.7363575175690247
+            ]
+          },
+          "seed615_student_full_shifted": {
+            "successes": 76,
+            "episodes": 100,
+            "success_rate": 0.76,
+            "wilson95": [
+              0.6676766365018553,
+              0.8330867444305122
+            ]
+          }
+        }
+      },
+      "independent_trajectory_acceptance": {
+        "source": "experiment/fql_torch_visual_common_confirmation/evaluation_validation.json",
+        "field": "status,groups,boolean integrity fields",
+        "value": {
+          "status": "passed",
+          "episodes": 1200,
+          "CPU_actions_audited": 4662,
+          "CPU_action_max_abs_error": 2.086162567138672e-06,
+          "all_models_initial_state_and_RGB_match": true,
+          "all_noise_reward_success_terminal_fields_audited": true,
+          "frozen_inputs_unchanged": true
+        }
+      }
+    },
+    "brightness_diagnostic": {
+      "primary_gate": {
+        "source": "experiment/fql_torch_visual_brightness_diagnostic/results.json",
+        "field": "primary_gate",
+        "value": {
+          "macro_mean_loss_pp": 80.66666666666667,
+          "paired_stratified_case_cluster95_pp": [
+            75.0,
+            86.0
+          ],
+          "net_lost_seed_case_pairs": 242,
+          "threshold_loss_pp": 10,
+          "threshold_positive95_lower_bound": true,
+          "passed": true,
+          "definition": "standard/shifted equal-weight; three fixed models equal-weight; 300seed-case pairs nested in100case clusters",
+          "scope": "conditional on three fixed trained models; not population training-seed confidence"
+        }
+      },
+      "cost": {
+        "source": "experiment/fql_torch_visual_brightness_diagnostic/results.json",
+        "field": "cost",
+        "value": {
+          "new_training_updates": 0,
+          "new_training_collection_episodes": 0,
+          "evaluation_episodes": 600,
+          "unique_case_clusters": 100,
+          "environment_steps": 93853,
+          "controller_seconds": 420.1541672910098
+        }
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_brightness_diagnostic/results.json",
+        "field": "groups",
+        "value": {
+          "seed613_clean_standard": {
+            "successes": 46,
+            "episodes": 50,
+            "success_rate": 0.92,
+            "wilson95": [
+              0.8116175308165717,
+              0.968450485911407
+            ],
+            "environment_steps": 4845,
+            "mean_length": 96.9
+          },
+          "seed613_dim07_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed614_clean_standard": {
+            "successes": 46,
+            "episodes": 50,
+            "success_rate": 0.92,
+            "wilson95": [
+              0.8116175308165717,
+              0.968450485911407
+            ],
+            "environment_steps": 4547,
+            "mean_length": 90.94
+          },
+          "seed614_dim07_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed615_clean_standard": {
+            "successes": 44,
+            "episodes": 50,
+            "success_rate": 0.88,
+            "wilson95": [
+              0.7619518261679701,
+              0.9438239984906773
+            ],
+            "environment_steps": 5217,
+            "mean_length": 104.34
+          },
+          "seed615_dim07_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed613_clean_shifted": {
+            "successes": 33,
+            "episodes": 50,
+            "success_rate": 0.66,
+            "wilson95": [
+              0.521538260502326,
+              0.7756305077749992
+            ],
+            "environment_steps": 6769,
+            "mean_length": 135.38
+          },
+          "seed613_dim07_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed614_clean_shifted": {
+            "successes": 38,
+            "episodes": 50,
+            "success_rate": 0.76,
+            "wilson95": [
+              0.6258731624205708,
+              0.8570260860300828
+            ],
+            "environment_steps": 6301,
+            "mean_length": 126.02
+          },
+          "seed614_dim07_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed615_clean_shifted": {
+            "successes": 35,
+            "episodes": 50,
+            "success_rate": 0.7,
+            "wilson95": [
+              0.562496495355466,
+              0.8089644649911906
+            ],
+            "environment_steps": 6174,
+            "mean_length": 123.48
+          },
+          "seed615_dim07_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          }
+        }
+      }
+    },
+    "brightness_augmentation": {
+      "paired": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/results.json",
+        "field": "paired",
+        "value": {
+          "standard": {
+            "clean": {
+              "per_seed": {
+                "613": {
+                  "difference_pp": -6.0,
+                  "paired95_pp": [
+                    -18.0,
+                    6.0
+                  ],
+                  "rescued": 4,
+                  "introduced_failures": 7
+                },
+                "614": {
+                  "difference_pp": -16.0,
+                  "paired95_pp": [
+                    -28.000000000000004,
+                    -6.0
+                  ],
+                  "rescued": 0,
+                  "introduced_failures": 8
+                },
+                "615": {
+                  "difference_pp": -10.0,
+                  "paired95_pp": [
+                    -22.0,
+                    2.0
+                  ],
+                  "rescued": 3,
+                  "introduced_failures": 8
+                }
+              },
+              "fixed_three_seed_mean_difference_pp": -10.666666666666666,
+              "paired_case_cluster95_pp": [
+                -18.666666666666664,
+                -3.3333333333333335
+              ],
+              "model_rate_mean_percent": {
+                "control": 89.33333333333331,
+                "augmentation": 78.66666666666667
+              }
+            },
+            "dim07": {
+              "per_seed": {
+                "613": {
+                  "difference_pp": 56.00000000000001,
+                  "paired95_pp": [
+                    42.0,
+                    70.0
+                  ],
+                  "rescued": 28,
+                  "introduced_failures": 0
+                },
+                "614": {
+                  "difference_pp": 80.0,
+                  "paired95_pp": [
+                    68.0,
+                    90.0
+                  ],
+                  "rescued": 40,
+                  "introduced_failures": 0
+                },
+                "615": {
+                  "difference_pp": 74.0,
+                  "paired95_pp": [
+                    62.0,
+                    86.0
+                  ],
+                  "rescued": 37,
+                  "introduced_failures": 0
+                }
+              },
+              "fixed_three_seed_mean_difference_pp": 70.0,
+              "paired_case_cluster95_pp": [
+                59.33333333333333,
+                80.0
+              ],
+              "model_rate_mean_percent": {
+                "control": 0.0,
+                "augmentation": 70.0
+              }
+            },
+            "dim055": {
+              "per_seed": {
+                "613": {
+                  "difference_pp": 42.0,
+                  "paired95_pp": [
+                    28.000000000000004,
+                    56.00000000000001
+                  ],
+                  "rescued": 21,
+                  "introduced_failures": 0
+                },
+                "614": {
+                  "difference_pp": 30.0,
+                  "paired95_pp": [
+                    18.0,
+                    42.0
+                  ],
+                  "rescued": 15,
+                  "introduced_failures": 0
+                },
+                "615": {
+                  "difference_pp": 56.00000000000001,
+                  "paired95_pp": [
+                    42.0,
+                    70.0
+                  ],
+                  "rescued": 28,
+                  "introduced_failures": 0
+                }
+              },
+              "fixed_three_seed_mean_difference_pp": 42.66666666666667,
+              "paired_case_cluster95_pp": [
+                32.0,
+                53.333333333333336
+              ],
+              "model_rate_mean_percent": {
+                "control": 0.0,
+                "augmentation": 42.66666666666667
+              }
+            }
+          },
+          "shifted": {
+            "clean": {
+              "per_seed": {
+                "613": {
+                  "difference_pp": -18.0,
+                  "paired95_pp": [
+                    -32.0,
+                    -4.0
+                  ],
+                  "rescued": 3,
+                  "introduced_failures": 12
+                },
+                "614": {
+                  "difference_pp": -10.0,
+                  "paired95_pp": [
+                    -24.0,
+                    4.0
+                  ],
+                  "rescued": 4,
+                  "introduced_failures": 9
+                },
+                "615": {
+                  "difference_pp": -16.0,
+                  "paired95_pp": [
+                    -30.0,
+                    -2.0
+                  ],
+                  "rescued": 3,
+                  "introduced_failures": 11
+                }
+              },
+              "fixed_three_seed_mean_difference_pp": -14.666666666666664,
+              "paired_case_cluster95_pp": [
+                -23.333333333333332,
+                -5.999999999999999
+              ],
+              "model_rate_mean_percent": {
+                "control": 83.33333333333334,
+                "augmentation": 68.66666666666667
+              }
+            },
+            "dim07": {
+              "per_seed": {
+                "613": {
+                  "difference_pp": 52.0,
+                  "paired95_pp": [
+                    38.0,
+                    66.0
+                  ],
+                  "rescued": 26,
+                  "introduced_failures": 0
+                },
+                "614": {
+                  "difference_pp": 62.0,
+                  "paired95_pp": [
+                    48.0,
+                    76.0
+                  ],
+                  "rescued": 31,
+                  "introduced_failures": 0
+                },
+                "615": {
+                  "difference_pp": 66.0,
+                  "paired95_pp": [
+                    52.0,
+                    78.0
+                  ],
+                  "rescued": 33,
+                  "introduced_failures": 0
+                }
+              },
+              "fixed_three_seed_mean_difference_pp": 59.999999999999986,
+              "paired_case_cluster95_pp": [
+                50.0,
+                69.99999999999999
+              ],
+              "model_rate_mean_percent": {
+                "control": 0.0,
+                "augmentation": 60.00000000000001
+              }
+            },
+            "dim055": {
+              "per_seed": {
+                "613": {
+                  "difference_pp": 30.0,
+                  "paired95_pp": [
+                    18.0,
+                    42.0
+                  ],
+                  "rescued": 15,
+                  "introduced_failures": 0
+                },
+                "614": {
+                  "difference_pp": 16.0,
+                  "paired95_pp": [
+                    6.0,
+                    26.0
+                  ],
+                  "rescued": 8,
+                  "introduced_failures": 0
+                },
+                "615": {
+                  "difference_pp": 32.0,
+                  "paired95_pp": [
+                    20.0,
+                    46.0
+                  ],
+                  "rescued": 16,
+                  "introduced_failures": 0
+                }
+              },
+              "fixed_three_seed_mean_difference_pp": 25.999999999999996,
+              "paired_case_cluster95_pp": [
+                16.666666666666668,
+                36.0
+              ],
+              "model_rate_mean_percent": {
+                "control": 0.0,
+                "augmentation": 26.0
+              }
+            }
+          }
+        }
+      },
+      "macro": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/results.json",
+        "field": "macro",
+        "value": {
+          "clean": {
+            "difference_pp": -12.666666666666666,
+            "paired_stratified_case_cluster95_pp": [
+              -18.666666666666664,
+              -6.666666666666667
+            ],
+            "net_seed_case_successes": -38
+          },
+          "dim07": {
+            "difference_pp": 65.0,
+            "paired_stratified_case_cluster95_pp": [
+              57.66666666666666,
+              72.0
+            ],
+            "net_seed_case_successes": 195
+          },
+          "dim055": {
+            "difference_pp": 34.333333333333336,
+            "paired_stratified_case_cluster95_pp": [
+              27.333333333333336,
+              41.666666666666664
+            ],
+            "net_seed_case_successes": 103
+          }
+        }
+      },
+      "decision": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/results.json",
+        "field": "decision",
+        "value": {
+          "primary_benefit_gate": true,
+          "clean_cost_gate": false,
+          "thresholds_predeclared": true,
+          "no_second_trial_or_model_selection": true,
+          "recommend_augmentation_for_this_scope": false
+        }
+      },
+      "cost": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/results.json",
+        "field": "cost",
+        "value": {
+          "new_supervised_updates": 120000,
+          "new_FQL_RL_updates": 0,
+          "new_training_collection_episodes": 0,
+          "training_controller_seconds": 1258.7774628330371,
+          "sum_training_loop_seconds": 1245.4249161679763,
+          "evaluation_episodes": 1800,
+          "unique_case_clusters": 100,
+          "evaluation_environment_steps": 277324,
+          "evaluation_controller_seconds": 1135.1953321660403,
+          "max_concurrent_cpu_evaluators": 2
+        }
+      },
+      "limits": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/results.json",
+        "field": "limits",
+        "value": [
+          "synthetic policy-image brightness, no actual lighting/camera/newtask/realrobot claim",
+          "fixed learned stateTeacher and seed613-collected data",
+          "case intervals conditional on3fixed trained seeds, not seed population confidence",
+          "no additionalFQLRL or VLA"
+        ]
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/results.json",
+        "field": "groups",
+        "value": {
+          "seed613_control_clean_standard": {
+            "successes": 42,
+            "episodes": 50,
+            "success_rate": 0.84,
+            "wilson95": [
+              0.7148578393696501,
+              0.916625793219666
+            ],
+            "environment_steps": 5043,
+            "mean_length": 100.86
+          },
+          "seed613_augmentation_clean_standard": {
+            "successes": 39,
+            "episodes": 50,
+            "success_rate": 0.78,
+            "wilson95": [
+              0.6475845041874634,
+              0.8724608402978559
+            ],
+            "environment_steps": 6071,
+            "mean_length": 121.42
+          },
+          "seed613_control_dim07_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed613_augmentation_dim07_standard": {
+            "successes": 28,
+            "episodes": 50,
+            "success_rate": 0.56,
+            "wilson95": [
+              0.4230602802165686,
+              0.6883780078874284
+            ],
+            "environment_steps": 7087,
+            "mean_length": 141.74
+          },
+          "seed613_control_dim055_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed613_augmentation_dim055_standard": {
+            "successes": 21,
+            "episodes": 50,
+            "success_rate": 0.42,
+            "wilson95": [
+              0.2937500335471198,
+              0.5576655823142176
+            ],
+            "environment_steps": 7802,
+            "mean_length": 156.04
+          },
+          "seed614_control_clean_standard": {
+            "successes": 50,
+            "episodes": 50,
+            "success_rate": 1.0,
+            "wilson95": [
+              0.9286524008666414,
+              1
+            ],
+            "environment_steps": 4146,
+            "mean_length": 82.92
+          },
+          "seed614_augmentation_clean_standard": {
+            "successes": 42,
+            "episodes": 50,
+            "success_rate": 0.84,
+            "wilson95": [
+              0.7148578393696501,
+              0.916625793219666
+            ],
+            "environment_steps": 5025,
+            "mean_length": 100.5
+          },
+          "seed614_control_dim07_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed614_augmentation_dim07_standard": {
+            "successes": 40,
+            "episodes": 50,
+            "success_rate": 0.8,
+            "wilson95": [
+              0.6696289406777459,
+              0.887562499842239
+            ],
+            "environment_steps": 5441,
+            "mean_length": 108.82
+          },
+          "seed614_control_dim055_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed614_augmentation_dim055_standard": {
+            "successes": 15,
+            "episodes": 50,
+            "success_rate": 0.3,
+            "wilson95": [
+              0.19103553500880954,
+              0.437503504644534
+            ],
+            "environment_steps": 8506,
+            "mean_length": 170.12
+          },
+          "seed615_control_clean_standard": {
+            "successes": 42,
+            "episodes": 50,
+            "success_rate": 0.84,
+            "wilson95": [
+              0.7148578393696501,
+              0.916625793219666
+            ],
+            "environment_steps": 4928,
+            "mean_length": 98.56
+          },
+          "seed615_augmentation_clean_standard": {
+            "successes": 37,
+            "episodes": 50,
+            "success_rate": 0.74,
+            "wilson95": [
+              0.6044684273515117,
+              0.8412847250644762
+            ],
+            "environment_steps": 5867,
+            "mean_length": 117.34
+          },
+          "seed615_control_dim07_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed615_augmentation_dim07_standard": {
+            "successes": 37,
+            "episodes": 50,
+            "success_rate": 0.74,
+            "wilson95": [
+              0.6044684273515117,
+              0.8412847250644762
+            ],
+            "environment_steps": 5951,
+            "mean_length": 119.02
+          },
+          "seed615_control_dim055_standard": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed615_augmentation_dim055_standard": {
+            "successes": 28,
+            "episodes": 50,
+            "success_rate": 0.56,
+            "wilson95": [
+              0.4230602802165686,
+              0.6883780078874284
+            ],
+            "environment_steps": 6938,
+            "mean_length": 138.76
+          },
+          "seed613_control_clean_shifted": {
+            "successes": 38,
+            "episodes": 50,
+            "success_rate": 0.76,
+            "wilson95": [
+              0.6258731624205708,
+              0.8570260860300828
+            ],
+            "environment_steps": 6069,
+            "mean_length": 121.38
+          },
+          "seed613_augmentation_clean_shifted": {
+            "successes": 29,
+            "episodes": 50,
+            "success_rate": 0.58,
+            "wilson95": [
+              0.4423344176857823,
+              0.7062499664528802
+            ],
+            "environment_steps": 7496,
+            "mean_length": 149.92
+          },
+          "seed613_control_dim07_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed613_augmentation_dim07_shifted": {
+            "successes": 26,
+            "episodes": 50,
+            "success_rate": 0.52,
+            "wilson95": [
+              0.38511744890044614,
+              0.6520286471342196
+            ],
+            "environment_steps": 7537,
+            "mean_length": 150.74
+          },
+          "seed613_control_dim055_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed613_augmentation_dim055_shifted": {
+            "successes": 15,
+            "episodes": 50,
+            "success_rate": 0.3,
+            "wilson95": [
+              0.19103553500880954,
+              0.437503504644534
+            ],
+            "environment_steps": 8646,
+            "mean_length": 172.92
+          },
+          "seed614_control_clean_shifted": {
+            "successes": 45,
+            "episodes": 50,
+            "success_rate": 0.9,
+            "wilson95": [
+              0.7863976856252035,
+              0.9565242350681096
+            ],
+            "environment_steps": 5012,
+            "mean_length": 100.24
+          },
+          "seed614_augmentation_clean_shifted": {
+            "successes": 40,
+            "episodes": 50,
+            "success_rate": 0.8,
+            "wilson95": [
+              0.6696289406777459,
+              0.887562499842239
+            ],
+            "environment_steps": 6344,
+            "mean_length": 126.88
+          },
+          "seed614_control_dim07_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed614_augmentation_dim07_shifted": {
+            "successes": 31,
+            "episodes": 50,
+            "success_rate": 0.62,
+            "wilson95": [
+              0.4815044693099298,
+              0.7413721068980641
+            ],
+            "environment_steps": 6728,
+            "mean_length": 134.56
+          },
+          "seed614_control_dim055_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed614_augmentation_dim055_shifted": {
+            "successes": 8,
+            "episodes": 50,
+            "success_rate": 0.16,
+            "wilson95": [
+              0.08337420678033404,
+              0.2851421606303499
+            ],
+            "environment_steps": 9180,
+            "mean_length": 183.6
+          },
+          "seed615_control_clean_shifted": {
+            "successes": 42,
+            "episodes": 50,
+            "success_rate": 0.84,
+            "wilson95": [
+              0.7148578393696501,
+              0.916625793219666
+            ],
+            "environment_steps": 5354,
+            "mean_length": 107.08
+          },
+          "seed615_augmentation_clean_shifted": {
+            "successes": 34,
+            "episodes": 50,
+            "success_rate": 0.68,
+            "wilson95": [
+              0.5418970269185592,
+              0.7924178373934316
+            ],
+            "environment_steps": 6775,
+            "mean_length": 135.5
+          },
+          "seed615_control_dim07_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed615_augmentation_dim07_shifted": {
+            "successes": 33,
+            "episodes": 50,
+            "success_rate": 0.66,
+            "wilson95": [
+              0.521538260502326,
+              0.7756305077749992
+            ],
+            "environment_steps": 6873,
+            "mean_length": 137.46
+          },
+          "seed615_control_dim055_shifted": {
+            "successes": 0,
+            "episodes": 50,
+            "success_rate": 0.0,
+            "wilson95": [
+              6.938893903907228e-18,
+              0.07134759913335872
+            ],
+            "environment_steps": 10000,
+            "mean_length": 200.0
+          },
+          "seed615_augmentation_dim055_shifted": {
+            "successes": 16,
+            "episodes": 50,
+            "success_rate": 0.32,
+            "wilson95": [
+              0.20758216260656845,
+              0.45810297308144077
+            ],
+            "environment_steps": 8505,
+            "mean_length": 170.1
+          }
+        }
+      },
+      "protocol_brightness": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/protocol.json",
+        "field": "brightness",
+        "value": {
+          "augmentation_uniform_factor": [
+            0.7,
+            1.3
+          ],
+          "draw": "per-image MPS rand after same-z action noise, both arms",
+          "train_transform": "round(float_uint8_RGB*factor).clamp(0,255)/255; control leaves RGB unchanged",
+          "evaluation_factors": {
+            "clean": 1.0,
+            "dim07": 0.7,
+            "dim055": 0.55
+          },
+          "range_fixed_before_training": true,
+          "evaluation_quantization": "np.rint float32 multiplied uint8; clipped to0..255"
+        }
+      },
+      "protocol_same_budget": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/protocol.json",
+        "field": "same_budget",
+        "value": {
+          "parameters_Adam_CPU_MPS_RNG_dual_sampler_parent_restored": true,
+          "shared_same_z_noise_and_minibatch_indices": true,
+          "unused_factor_draw_in_control_to_equalize_RNG": true,
+          "loss": "raw same-z action MSE + image-only XYZ MSE, weight1",
+          "batch": "old128 + fullstudent64 + fullstudent64",
+          "lr": 0.0001,
+          "optimizer": "Adam fused",
+          "no_physics_proprio_teacher_label_change": true
+        }
+      },
+      "protocol_decision": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/protocol.json",
+        "field": "decision",
+        "value": "report primary positive95 lowerbound; recommend augmentation only if primary mean>=10pp and lower>0 and clean mean difference>=-5pp with clean95 lower>=-10pp; otherwise keep tradeoff or negative result, no second tuning trial"
+      },
+      "protocol_statistics": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/protocol.json",
+        "field": "statistics",
+        "value": {
+          "resamples": 10000,
+          "seed": 20261021,
+          "cluster": "same100 physical cases, retain six models and three conditions per case; resample50 within each suite, equalweight suites"
+        }
+      },
+      "suite_mean_rates_percent": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/results.json",
+        "field": "groups.seed{613,614,615}_{control,augmentation}_{clean,dim07,dim055}_{standard,shifted}.success_rate",
+        "value": {
+          "clean": {
+            "standard": {
+              "control": 89.33333333333333,
+              "augmentation": 78.66666666666666
+            },
+            "shifted": {
+              "control": 83.33333333333334,
+              "augmentation": 68.66666666666667
+            }
+          },
+          "dim07": {
+            "standard": {
+              "control": 0.0,
+              "augmentation": 70.0
+            },
+            "shifted": {
+              "control": 0.0,
+              "augmentation": 60.0
+            }
+          },
+          "dim055": {
+            "standard": {
+              "control": 0.0,
+              "augmentation": 42.66666666666667
+            },
+            "shifted": {
+              "control": 0.0,
+              "augmentation": 26.0
+            }
+          }
+        }
+      },
+      "independent_trajectory_acceptance": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/evaluation_validation.json",
+        "field": "status,groups,boolean integrity fields",
+        "value": {
+          "status": "passed",
+          "episodes": 1800,
+          "CPU_actions_audited": 11526,
+          "CPU_action_max_abs_error": 6.541609764099121e-06,
+          "all_models_conditions_initial_state_and_rawRGB_match": true,
+          "saved_pixel_transforms_exact": true,
+          "all_noises_rewards_official_success_and_terminal_fields_audited": true,
+          "frozen_inputs_unchanged": true
+        }
+      },
+      "training_acceptance": {
+        "source": "experiment/fql_torch_visual_brightness_augmentation/training_acceptance.json",
+        "field": "status,same-parent/RNG/sampler booleans",
+        "value": {
+          "status": "passed",
+          "new_supervised_updates": 120000,
+          "new_FQL_RL_updates": 0,
+          "same_parent_Adam_initial_validation_and_data": true,
+          "same_CPU_MPS_RNG_and_sampler_at41k60k": true,
+          "six_brightness_factor_probe_batches_equal_within_seed": true,
+          "frozen_inputs_unchanged": true,
+          "audit_training_updates": 0,
+          "audit_environment_steps": 0,
+          "source_sha256": "a080c036765777e74a3942d0c7c0b126eedea111678070b875cf78958ab49c26"
+        }
+      }
+    },
+    "composition_development_ablation": {
+      "data_pools": {
+        "source": "experiment/fql_torch_visual_ablation/results.json",
+        "field": "data_pools",
+        "value": {
+          "old": "experiment/fql_torch_visual_feasibility/paired_data_v2",
+          "corrections": "experiment/fql_torch_visual_corrections/round1/train",
+          "val": "experiment/fql_torch_visual_corrections/round1/val",
+          "teacher_pool": {
+            "samples": 851,
+            "episodes": 20,
+            "standard_frames": 371,
+            "shifted_frames": 480
+          },
+          "student_pool": {
+            "samples": 5131,
+            "episodes": 60,
+            "standard_frames": 2641,
+            "shifted_frames": 2490
+          }
+        }
+      },
+      "new_supervised_updates": {
+        "source": "experiment/fql_torch_visual_ablation/results.json",
+        "field": "new_supervised_updates",
+        "value": 40000
+      },
+      "new_FQL_RL_updates": {
+        "source": "experiment/fql_torch_visual_ablation/results.json",
+        "field": "new_FQL_RL_updates",
+        "value": 0
+      },
+      "new_development_episodes": {
+        "source": "experiment/fql_torch_visual_ablation/results.json",
+        "field": "new_development_episodes",
+        "value": 240
+      },
+      "limits": {
+        "source": "experiment/fql_torch_visual_ablation/results.json",
+        "field": "limits",
+        "value": [
+          "one visual seed/shared initialization",
+          "different pool volumes and frame distributions, not isolated behavior mechanism causality",
+          "newarm/student-only targets still come from frozen teacher",
+          "onlynormal ep0+fixedprobes actions rederived",
+          "new development cases, not additional independent confirmation",
+          "within collected shift range; no language/other-task/realrobot inference",
+          "bootstrapcase variability is not trainingseed variability",
+          "Teacher851/20ep vs student5131/60ep have different coverage/repetition; this is not quantity-controlled mechanism isolation.",
+          "Old-only has100%old; the other3 have50%old+50%new.",
+          "Fresh development scores do not replace previous independent confirmation scores."
+        ]
+      },
+      "groups": {
+        "source": "experiment/fql_torch_visual_ablation/results.json",
+        "field": "development_groups",
+        "value": {
+          "teacher_only_standard": {
+            "successes": 11,
+            "episodes": 30,
+            "success_rate": 0.36666666666666664
+          },
+          "student_only_standard": {
+            "successes": 29,
+            "episodes": 30,
+            "success_rate": 0.9666666666666667
+          },
+          "mixed_standard": {
+            "successes": 30,
+            "episodes": 30,
+            "success_rate": 1.0
+          },
+          "old_only_standard": {
+            "successes": 2,
+            "episodes": 30,
+            "success_rate": 0.06666666666666667
+          },
+          "teacher_only_shifted": {
+            "successes": 6,
+            "episodes": 30,
+            "success_rate": 0.2
+          },
+          "student_only_shifted": {
+            "successes": 28,
+            "episodes": 30,
+            "success_rate": 0.9333333333333333
+          },
+          "mixed_shifted": {
+            "successes": 28,
+            "episodes": 30,
+            "success_rate": 0.9333333333333333
+          },
+          "old_only_shifted": {
+            "successes": 7,
+            "episodes": 30,
+            "success_rate": 0.23333333333333334
+          }
+        }
+      }
+    }
+  },
+  "showcase_assets": [
+    {
+      "path": "experiment/fql_torch_continuation_500000/plots/learning_curve.png",
+      "sha256": "2bb98cc8a59024be3cfd7c82d863196ec764ec0b2782699a0ce2198671d3af29",
+      "kind": "plot",
+      "selection": "Full frozen result table; report respective evaluation protocol."
+    },
+    {
+      "path": "experiment/fql_torch_continuation_500000/plots/losses.png",
+      "sha256": "3d014a2515b6081192fde56ac956b9587fd381c361a239f0d346495b123d0459",
+      "kind": "plot",
+      "selection": "Full frozen result table; report respective evaluation protocol."
+    },
+    {
+      "path": "experiment/fql_torch_continuation_500000/plots/resources.png",
+      "sha256": "13aa4ddbd09e4621b908c0342ac3390c07d321442dc6818ad7355a8070b5dc05",
+      "kind": "plot",
+      "selection": "Full frozen result table; report respective evaluation protocol."
+    },
+    {
+      "path": "experiment/fql_torch_visual_brightness_augmentation/plots/paired_difference.png",
+      "sha256": "79531eff07e5fd725450e0e48522d077990b4eb2dc2a3eff34c8d47f8363e639",
+      "kind": "plot",
+      "selection": "Full frozen result table; report respective evaluation protocol."
+    },
+    {
+      "path": "experiment/fql_torch_visual_brightness_augmentation/plots/success_by_condition.png",
+      "sha256": "fd06bea05155e95873aa54c38fd54821f254e61b5204213f4e836b0f01db5f0d",
+      "kind": "plot",
+      "selection": "Full frozen result table; report respective evaluation protocol."
+    },
+    {
+      "path": "experiment/fql_torch_visual_brightness_augmentation/input_brightness_example.png",
+      "sha256": "df972774fde4e3c09de09f5d3b900c8f1d74d8d6b15bfed147f537d501cd1b4d",
+      "kind": "input_example",
+      "selection": "Synthetic pixel brightness; not physical lighting."
+    },
+    {
+      "path": "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/aggregate_standard/episode_000.mp4",
+      "sha256": "3a7a9f30087a825b9bccb28df595721f0d0284bb157098efdb4cc9f99eaeaada",
+      "kind": "video",
+      "selection": "Predeclared episode0; not replaced based on success. One case cannot summarize success rate.",
+      "episode0": {
+        "env_seed": "56000",
+        "action_seed": "57000",
+        "length": "106",
+        "success": "1",
+        "terminated": "True",
+        "truncated": "False"
+      },
+      "outcome_source": "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/aggregate_standard/episodes.csv",
+      "outcome_field": "row(episode=0)"
+    },
+    {
+      "path": "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/aggregate_shifted/episode_000.mp4",
+      "sha256": "317e6a2b69c2f9093bf578c57c5f734e14cfd9ebc2498114a87b2a1262c9c759",
+      "kind": "video",
+      "selection": "Predeclared episode0; not replaced based on success. One case cannot summarize success rate.",
+      "episode0": {
+        "env_seed": "56050",
+        "action_seed": "57050",
+        "length": "200",
+        "success": "0",
+        "terminated": "False",
+        "truncated": "True"
+      },
+      "outcome_source": "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/aggregate_shifted/episodes.csv",
+      "outcome_field": "row(episode=0)"
+    },
+    {
+      "path": "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_full_standard/episode_000.mp4",
+      "sha256": "5138e2ff2579a134dd93bb71eb1716ea3602c5be15787a04941f518252c4c286",
+      "kind": "video",
+      "selection": "Predeclared episode0; not replaced based on success. One case cannot summarize success rate.",
+      "episode0": {
+        "env_seed": "130000",
+        "action_seed": "131000",
+        "length": "59",
+        "success": "1",
+        "terminated": "True",
+        "truncated": "False"
+      },
+      "outcome_source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_full_standard/episodes.csv",
+      "outcome_field": "row(episode=0)"
+    },
+    {
+      "path": "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_full_standard/episode_000.mp4",
+      "sha256": "86cf1351ea1da54a245b55e6cefb5196e37370673448c603d229f555f174b34a",
+      "kind": "video",
+      "selection": "Predeclared episode0; not replaced based on success. One case cannot summarize success rate.",
+      "episode0": {
+        "env_seed": "130000",
+        "action_seed": "131000",
+        "length": "60",
+        "success": "1",
+        "terminated": "True",
+        "truncated": "False"
+      },
+      "outcome_source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_full_standard/episodes.csv",
+      "outcome_field": "row(episode=0)"
+    },
+    {
+      "path": "experiment/fql_torch_visual_seed615/evaluations/student_full_standard/episode_000.mp4",
+      "sha256": "730c2c29a6cd08684c991c458b1382a8c20e84cd2acbf926a796e52f1eeb6d3d",
+      "kind": "video",
+      "selection": "Predeclared episode0; not replaced based on success. One case cannot summarize success rate.",
+      "episode0": {
+        "env_seed": "126000",
+        "action_seed": "127000",
+        "length": "200",
+        "success": "0",
+        "terminated": "False",
+        "truncated": "True"
+      },
+      "outcome_source": "experiment/fql_torch_visual_seed615/evaluations/student_full_standard/episodes.csv",
+      "outcome_field": "row(episode=0)"
+    },
+    {
+      "path": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim07_standard/episode_000.mp4",
+      "sha256": "c656c639bec2384d666444dc7643c8950adf842c3106b824f682c1a8f0e8bd20",
+      "kind": "video",
+      "selection": "Predeclared episode0; not replaced based on success. One case cannot summarize success rate.",
+      "episode0": {
+        "env_seed": "138000",
+        "action_seed": "139000",
+        "length": "200",
+        "success": "0",
+        "terminated": "False",
+        "truncated": "True"
+      },
+      "outcome_source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim07_standard/episodes.csv",
+      "outcome_field": "row(episode=0)"
+    },
+    {
+      "path": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim07_standard/episode_000.mp4",
+      "sha256": "f53d28f74b2eac604a2bf19623f3fe3be3affae7782c32af916ac77992bb40f2",
+      "kind": "video",
+      "selection": "Predeclared episode0; not replaced based on success. One case cannot summarize success rate.",
+      "episode0": {
+        "env_seed": "138000",
+        "action_seed": "139000",
+        "length": "200",
+        "success": "0",
+        "terminated": "False",
+        "truncated": "True"
+      },
+      "outcome_source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim07_standard/episodes.csv",
+      "outcome_field": "row(episode=0)"
+    },
+    {
+      "path": "experiment/fql_torch_visual_feasibility/qualitative_success_replay/first_success_replay.mp4",
+      "sha256": "f6f017d2b1d94bce079c4737c505be405e6101677f9f57ebd133cfabf2c9a7f0",
+      "kind": "video",
+      "selection": "first success in final50,episode1; selected after eval,qualitative only; original episode0 failure video retained",
+      "note": "Selected after evaluation; qualitative replay only, not extra evaluated success."
+    }
+  ],
+  "reporting_risks": [
+    "Success rate is not classification accuracy.100/100 does not guarantee100percent underlying success.",
+    "99.33percent is last-three-point report mean; single1M average5 mean98.67percent.",
+    "Averaging mitigates the observed regression; unknown root cause was not isolated and user stopped further diagnosis.",
+    "Known averaging/distillation/augmentation methods are task adaptations, not first theoretical inventions.",
+    "Do not rank mixed49/50 against later3-seed models across different cases/data/budgets.",
+    "Do not merge stages into a fair learning curve: models/cases/data/budgets change.",
+    "Case-cluster intervals condition on3fixed trained models; not a population-training-seed interval.",
+    "Keep seed61522/30<25/30 negative development result. Same models later86/100>78/100 used new cases, not a repair.",
+    "Brightness augmentation clean cost fails gate; preserve ordinary model as default.",
+    "Brightness scales pixels, not physical lighting;0.55secondary is outside training support on only one synthetic axis.",
+    "Visual teacher is learned seed0/960k FQLactor_onestep_flow, not originalBCflowteacher or optimum oracle.",
+    "Retain upstream citations/licenses; project author preference does not transfer ownership of upstream code.",
+    "Convert workspace absolute-path commands for published runbook without rewriting raw evidence.",
+    "Refresh top-level claims historically saying only1000/500k/no3seeds; preserve labelled history.",
+    "Original paper already has pixel experiments; custom supervised visual transfer is a different experiment, not authors never did vision.",
+    "Qualitative first-success video is post-evaluation selection; disclose it and retain fixedepisode0 failures.",
+    "Paired-data initial strict reconstruction failed for yaw/caches; v2 retains original labels and checks reconstructible geometry; do not claim perfect simulator-state reconstruction."
+  ],
+  "source_json_sha256": {
+    "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json": "3f8a718531679de7aa3f2a2b4888075237f96e12dbc29b8c498c6fe025793ef5",
+    "experiment/fql_torch_migration/data_check.json": "2add5b4a33c470990fa5b0cb64cd2892fd0f04aa9d15bd37b51a78dddd126364",
+    "experiment/fql_torch_migration/parity/final_cpu_foreach_v2/torch_report.json": "af5acdd369a95331f2fa5e6ac740fe8ab12060d287e7f72b635a6f2dc42497f5",
+    "experiment/fql_torch_migration/parity/final_cpu_fused/torch_report.json": "4720f834dc61df37ceebe4737779e27a63aed0aed32907724b2c0b9198d8575e",
+    "experiment/fql_torch_migration/parity/final_mps_fused/torch_report.json": "714a3edaa52578b5dc110d9131afe463f7fd1bf27eb2b42e5394a451aee38ac6",
+    "experiment/fql_torch_migration/resume_cpu_final/comparison.json": "5dc4fd0be3f9ff0d37c367e880f1953d413d02c1bde3888fda73a5262ab01139",
+    "experiment/fql_torch_migration/resume_mps_compiled_fused/comparison.json": "f67133d2e7cdac0282a75c12b7a2dbe88ed634718d02f0cd919e45b3b4117e1a",
+    "experiment/fql_torch_three_seed_average_compact/protocol.json": "6eb515c6a66d8a45c30848a17443bee1bc3e41cd30aa00a5bb38a4db6db97f19",
+    "experiment/fql_torch_three_seed_average_compact/results.json": "8458542847cc9a73c3981665a5df12bbba7c129a7495662cd2ea53442dce42f5",
+    "experiment/fql_torch_visual_brightness_augmentation/protocol.json": "3a2ca507d3782946a7a2d85ca448101d1e40fcccd1539e2f19ccc51f037b8cd9",
+    "experiment/fql_torch_visual_brightness_augmentation/results.json": "9e58cc28b13d47ed9999c7998bb2accd45bd4a2693912685d411a3a07c652115",
+    "experiment/fql_torch_visual_brightness_diagnostic/results.json": "08fa8902ba9c5693b79b9018ce04c574279a2a59cbe607d986e2e3d31a1439a3",
+    "experiment/fql_torch_visual_common_confirmation/results.json": "edb175a68b682eb2442d79a34a71b0fdcd96c250975150d6ab3913ba7aabfb19",
+    "experiment/fql_torch_visual_corrections/final_confirmation/results.json": "a126b6404c7e7fdbd27debf71238c04e8eecab160ea95288b34e059d897974a9",
+    "experiment/fql_torch_visual_feasibility/protocol.json": "317b2ecd51436225d33489f8b57797d46858d10531e95922bda84836f0c2ec48",
+    "experiment/fql_torch_visual_feasibility/results.json": "8c281ed2e956d5cc85cefe15b4760796c8519b8743cb0275d652533aa3fa7251",
+    "experiment/fql_torch_visual_matched/results.json": "3ab49be75d56cb86a9e21a060825d15dbfed39749a7d7ba3992cf6871cf6bc70",
+    "experiment/fql_torch_visual_seed614/results.json": "3630232b793fdddf079dc009eb7726ed4a72deb9d586d04d6e3488d769a55469",
+    "experiment/fql_torch_visual_seed615/results.json": "d318f13fd3d562c1302a6310748588e7ea1216df1c34cda33690b41e54beb139",
+    "experiment/fql_torch_visual_temporal_coverage/results.json": "c58040420b55b7f9b51cfae1bcfa9ba0794309f51403a0335e9c477fdf848121",
+    "related_work/fql/metadata.json": "7183167d456a673563be0de53bdcc70c04eb788d676300d510efb51c4ac1812c",
+    "experiment/fql_torch_visual_ablation/results.json": "9ea0afc74fff6d0737e9206c35510706afa203187e64b8aa8718f7007f0c8670",
+    "experiment/fql_torch_visual_common_confirmation/evaluation_validation.json": "770206627b64cf47fb108ed40171026d73cdecd6a556d874e95e4de508d39e26",
+    "experiment/fql_torch_visual_brightness_augmentation/evaluation_validation.json": "36c6618e51b669582994b23cb67424891dbe88f7b35b6e70cbb69391f578b137",
+    "experiment/fql_torch_visual_brightness_augmentation/training_acceptance.json": "c5da78b983ff0defd8036dc355e9fcb3f41f9408e9b6ebc96488b47593058fce"
+  },
+  "independent_CSV_checks": {
+    "group_count": 87,
+    "episode_count": 5850,
+    "all_success_counts_and_row_counts_match": true,
+    "by_stage": {
+      "state_formal": {
+        "groups": 18,
+        "episodes": 1800,
+        "all_matched": true,
+        "source_csv_pattern": [
+          "experiment/fql_torch_three_seed_average/formal/seed0_epoch800000/raw/episodes.csv",
+          "experiment/fql_torch_three_seed_average/formal/seed0_epoch800000/average5/episodes.csv",
+          "experiment/fql_torch_policy_average_v2/confirmation/raw900000/episodes.csv",
+          "experiment/fql_torch_three_seed_average/formal/seed0_epoch900000/average5/episodes.csv",
+          "experiment/fql_torch_policy_average_v2/confirmation/raw1000000/episodes.csv",
+          "experiment/fql_torch_policy_average_v2/confirmation/average5/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch800000/raw/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch800000/average5/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch900000/raw/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch900000/average5/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch1000000/raw/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch1000000/average5/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch800000/raw/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch800000/average5/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch900000/raw/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch900000/average5/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch1000000/raw/episodes.csv",
+          "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch1000000/average5/episodes.csv"
+        ],
+        "field": "sum(episodes.csv.success),row_count"
+      },
+      "visited_state_final": {
+        "groups": 9,
+        "episodes": 450,
+        "all_matched": true,
+        "source_csv_pattern": [
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/aggregate_standard/episodes.csv",
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/control_standard/episodes.csv",
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/old_grounded_standard/episodes.csv",
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/teacher_standard/episodes.csv",
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/aggregate_shifted/episodes.csv",
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/control_shifted/episodes.csv",
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/old_grounded_shifted/episodes.csv",
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/teacher_shifted/episodes.csv",
+          "experiment/fql_torch_visual_corrections/final_confirmation/evaluations/aggregate_zero_standard/episodes.csv"
+        ],
+        "field": "sum(episodes.csv.success),row_count"
+      },
+      "timecoverage_common": {
+        "groups": 12,
+        "episodes": 1200,
+        "all_matched": true,
+        "source_csv_pattern": [
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_prefix_standard/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_full_standard/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed614_student_prefix_standard/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed614_student_full_standard/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_prefix_standard/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_full_standard/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_prefix_shifted/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_full_shifted/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed614_student_prefix_shifted/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed614_student_full_shifted/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_prefix_shifted/episodes.csv",
+          "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_full_shifted/episodes.csv"
+        ],
+        "field": "sum(episodes.csv.success),row_count"
+      },
+      "brightness_diagnostic": {
+        "groups": 12,
+        "episodes": 600,
+        "all_matched": true,
+        "source_csv_pattern": [
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed613_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed613_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed614_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed614_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed615_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed615_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed613_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed613_dim07_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed614_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed614_dim07_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed615_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_diagnostic/evaluations/seed615_dim07_shifted/episodes.csv"
+        ],
+        "field": "sum(episodes.csv.success),row_count"
+      },
+      "brightness_augmentation": {
+        "groups": 36,
+        "episodes": 1800,
+        "all_matched": true,
+        "source_csv_pattern": [
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim055_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim055_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_dim055_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_dim055_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_clean_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_dim07_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_dim055_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_dim055_standard/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim07_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim07_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim055_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim055_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_dim07_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_dim07_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_dim055_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_dim055_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_clean_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_dim07_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_dim07_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_dim055_shifted/episodes.csv",
+          "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_dim055_shifted/episodes.csv"
+        ],
+        "field": "sum(episodes.csv.success),row_count"
+      }
+    }
+  }
+}

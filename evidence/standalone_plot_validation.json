@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "plotter": "tools/plot_showcase.py",
+  "temporary_isolated_root": true,
+  "public_only_inputs": [
+    "assets/plot_data.json",
+    "assets/videos/*.mp4",
+    "evidence/showcase_manifest.json"
+  ],
+  "five_PNGs_pixel_identical_to_published_assets": true,
+  "new_training_updates": 0,
+  "new_environment_steps": 0,
+  "scope": "Rendering equivalence, not model evaluation."
+}

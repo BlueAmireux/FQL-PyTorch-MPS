@@ -1,0 +1,290 @@
+{
+  "status": "completed_common_case_confirmation",
+  "visual_training_seeds": [
+    613,
+    614,
+    615
+  ],
+  "fixed_checkpoint_step": 40000,
+  "groups": {
+    "seed613_student_prefix_standard": {
+      "successes": 56,
+      "episodes": 100,
+      "success_rate": 0.56,
+      "wilson95": [
+        0.4622810465167699,
+        0.6532797336983921
+      ]
+    },
+    "seed613_student_full_standard": {
+      "successes": 80,
+      "episodes": 100,
+      "success_rate": 0.8,
+      "wilson95": [
+        0.7111708344068411,
+        0.8666330666689676
+      ]
+    },
+    "seed614_student_prefix_standard": {
+      "successes": 87,
+      "episodes": 100,
+      "success_rate": 0.87,
+      "wilson95": [
+        0.7901964855992357,
+        0.9224283257275948
+      ]
+    },
+    "seed614_student_full_standard": {
+      "successes": 88,
+      "episodes": 100,
+      "success_rate": 0.88,
+      "wilson95": [
+        0.8018790057328857,
+        0.9300059356298052
+      ]
+    },
+    "seed615_student_prefix_standard": {
+      "successes": 78,
+      "episodes": 100,
+      "success_rate": 0.78,
+      "wilson95": [
+        0.6892964648501421,
+        0.8499871761539459
+      ]
+    },
+    "seed615_student_full_standard": {
+      "successes": 86,
+      "episodes": 100,
+      "success_rate": 0.86,
+      "wilson95": [
+        0.7786281178903616,
+        0.9147365634006086
+      ]
+    },
+    "seed613_student_prefix_shifted": {
+      "successes": 59,
+      "episodes": 100,
+      "success_rate": 0.59,
+      "wilson95": [
+        0.4920143005341078,
+        0.6813268697886348
+      ]
+    },
+    "seed613_student_full_shifted": {
+      "successes": 72,
+      "episodes": 100,
+      "success_rate": 0.72,
+      "wilson95": [
+        0.6251197129007884,
+        0.7986031478881379
+      ]
+    },
+    "seed614_student_prefix_shifted": {
+      "successes": 77,
+      "episodes": 100,
+      "success_rate": 0.77,
+      "wilson95": [
+        0.6784561697712622,
+        0.8415673411969654
+      ]
+    },
+    "seed614_student_full_shifted": {
+      "successes": 83,
+      "episodes": 100,
+      "success_rate": 0.83,
+      "wilson95": [
+        0.7445199523239887,
+        0.8910643388594006
+      ]
+    },
+    "seed615_student_prefix_shifted": {
+      "successes": 65,
+      "episodes": 100,
+      "success_rate": 0.65,
+      "wilson95": [
+        0.5525444329688796,
+        0.7363575175690247
+      ]
+    },
+    "seed615_student_full_shifted": {
+      "successes": 76,
+      "episodes": 100,
+      "success_rate": 0.76,
+      "wilson95": [
+        0.6676766365018553,
+        0.8330867444305122
+      ]
+    }
+  },
+  "paired": {
+    "standard": {
+      "per_seed": {
+        "613": {
+          "difference_pp": 24.0,
+          "bootstrap95_pp": [
+            14.000000000000002,
+            34.0
+          ],
+          "full_only_successes": 28,
+          "prefix_only_successes": 4
+        },
+        "614": {
+          "difference_pp": 1.0,
+          "bootstrap95_pp": [
+            -8.0,
+            9.0
+          ],
+          "full_only_successes": 10,
+          "prefix_only_successes": 9
+        },
+        "615": {
+          "difference_pp": 8.0,
+          "bootstrap95_pp": [
+            0.0,
+            17.0
+          ],
+          "full_only_successes": 14,
+          "prefix_only_successes": 6
+        }
+      },
+      "fixed_three_seed_case_cluster_mean": {
+        "difference_pp": 11.000000000000002,
+        "bootstrap95_pp": [
+          5.333333333333333,
+          16.666666666666664
+        ],
+        "bootstrap97_5_pp": [
+          4.333333333333333,
+          17.333333333333336
+        ],
+        "positive_conditional_mean_confirmed_two_suite_rule": true,
+        "seed_difference_sample_std_pp": 11.789826122551595,
+        "scope": "100 case clusters conditional on three fixed trained seeds; not300 independent outcomes or a population-training-seed interval"
+      },
+      "model_rate_mean_and_seed_sample_std": {
+        "student_full": {
+          "mean_percent": 84.66666666666667,
+          "sample_std_pp": 4.163331998932265,
+          "individual_seed_rates_percent": [
+            80.0,
+            88.0,
+            86.0
+          ]
+        },
+        "student_prefix": {
+          "mean_percent": 73.66666666666667,
+          "sample_std_pp": 15.94783161854091,
+          "individual_seed_rates_percent": [
+            56.00000000000001,
+            87.0,
+            78.0
+          ]
+        }
+      }
+    },
+    "shifted": {
+      "per_seed": {
+        "613": {
+          "difference_pp": 13.0,
+          "bootstrap95_pp": [
+            4.0,
+            22.0
+          ],
+          "full_only_successes": 18,
+          "prefix_only_successes": 5
+        },
+        "614": {
+          "difference_pp": 6.0,
+          "bootstrap95_pp": [
+            -2.0,
+            14.000000000000002
+          ],
+          "full_only_successes": 11,
+          "prefix_only_successes": 5
+        },
+        "615": {
+          "difference_pp": 11.0,
+          "bootstrap95_pp": [
+            2.0,
+            20.0
+          ],
+          "full_only_successes": 17,
+          "prefix_only_successes": 6
+        }
+      },
+      "fixed_three_seed_case_cluster_mean": {
+        "difference_pp": 10.0,
+        "bootstrap95_pp": [
+          4.333333333333333,
+          16.0
+        ],
+        "bootstrap97_5_pp": [
+          3.3333333333333335,
+          16.999999999999996
+        ],
+        "positive_conditional_mean_confirmed_two_suite_rule": true,
+        "seed_difference_sample_std_pp": 3.605551275463989,
+        "scope": "100 case clusters conditional on three fixed trained seeds; not300 independent outcomes or a population-training-seed interval"
+      },
+      "model_rate_mean_and_seed_sample_std": {
+        "student_full": {
+          "mean_percent": 77.0,
+          "sample_std_pp": 5.5677643628300215,
+          "individual_seed_rates_percent": [
+            72.0,
+            83.0,
+            76.0
+          ]
+        },
+        "student_prefix": {
+          "mean_percent": 67.0,
+          "sample_std_pp": 9.16515138991168,
+          "individual_seed_rates_percent": [
+            59.0,
+            77.0,
+            65.0
+          ]
+        }
+      }
+    }
+  },
+  "cost": {
+    "new_supervised_updates": 0,
+    "new_FQL_RL_updates": 0,
+    "training_environment_steps": 0,
+    "new_training_collection_episodes": 0,
+    "evaluation_episodes": 1200,
+    "unique_initial_case_clusters": 200,
+    "evaluation_environment_steps": 141935,
+    "evaluation_controller_seconds": 561.1576157910167,
+    "max_concurrent_cpu_processes": 2,
+    "first200_speed_gate": {
+      "seconds": 105.37595270801103,
+      "projected1200_seconds": 632.2557162480662
+    }
+  },
+  "saved_all_raw_episodes_and_fixed_ep0_videos": true,
+  "models_and_sources_unchanged": true,
+  "frozen_inputs": 257,
+  "conditional_case_cluster_intervals_not_population_training_seed_intervals": true,
+  "limits": [
+    "Same seed613-collected data and fixed seed0/960k teacher; three trained visual initializations only.",
+    "Full-window changes early/late density and inherits prior stopping-time-conditioned per-case frame counts.",
+    "Case-cluster uncertainty is conditional on these fixed three trained seeds; not population training-seed uncertainty.",
+    "Custom XY-shift test is within collection range; no language, new task, real robot, additional FQLRL or original visual-paper result."
+  ],
+  "source_records_sha256": {
+    "protocol.json": "f2ce722119720cae546aaa212891eceb0f8cc0a5eb5c03df3d7d10759ef04337",
+    "model_acceptance.json": "a943f4a350ce62845db6d2cd3b9479dfde58d90b853e1136052d4ed5ac970411",
+    "evaluation_validation.json": "770206627b64cf47fb108ed40171026d73cdecd6a556d874e95e4de508d39e26",
+    "paired_cases.csv": "51d04611a7ec004cf7fdb06602f4008bd2c4c29e8c13ac0ffead05c354a91c12",
+    "case_diagnostics.json": "ecf61defdd20aa279350430cf0516d8170eceebfa025777ce1f1fd469eea49ce",
+    "summarize.py": "6811278ff58d3a85877ecc93b18f982055cb86ea5c92c6d54dc527d50e5155d3"
+  },
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_visual_common_confirmation/results.json",
+    "original_sha256": "edb175a68b682eb2442d79a34a71b0fdcd96c250975150d6ab3913ba7aabfb19",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

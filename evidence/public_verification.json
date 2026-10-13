@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "CSV_groups": 66,
+  "episodes": 4800,
+  "state_groups": 18,
+  "temporal_groups": 12,
+  "brightness_groups": 36,
+  "paired_bootstrap_intervals_recomputed": true,
+  "derived_file_sha256_checked": 106,
+  "training_updates": 0,
+  "environment_steps": 0,
+  "scope": "Public episode-table statistics and derived file identities only; does not repeat historical model, noise, pixel, optimizer, or physical-success trajectory audits."
+}

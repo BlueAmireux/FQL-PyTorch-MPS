@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "runs": {
+    "jax_metal": {
+      "exit_code": 0,
+      "updates_exact_1_to_1000": true,
+      "all_csv_numbers_finite": true,
+      "summary_completed": true,
+      "power_boundaries_ac80": true,
+      "gpu_training_samples": 36,
+      "batch_sha256": "8af09190ce3fb9fba91ccab720a972488f72d566de95b594ae032cd339e05909",
+      "initial_fixture_sha256": "279640f1a06018c621d6c441af80df4ca341f82296a3a0b6d1880297fe182afa"
+    },
+    "torch_eager": {
+      "exit_code": 0,
+      "updates_exact_1_to_1000": true,
+      "all_csv_numbers_finite": true,
+      "summary_completed": true,
+      "power_boundaries_ac80": true,
+      "gpu_training_samples": 43,
+      "batch_sha256": "8af09190ce3fb9fba91ccab720a972488f72d566de95b594ae032cd339e05909",
+      "initial_fixture_sha256": "279640f1a06018c621d6c441af80df4ca341f82296a3a0b6d1880297fe182afa"
+    },
+    "torch_compiled_fused": {
+      "exit_code": 0,
+      "updates_exact_1_to_1000": true,
+      "all_csv_numbers_finite": true,
+      "summary_completed": true,
+      "power_boundaries_ac80": true,
+      "gpu_training_samples": 38,
+      "batch_sha256": "8af09190ce3fb9fba91ccab720a972488f72d566de95b594ae032cd339e05909",
+      "initial_fixture_sha256": "279640f1a06018c621d6c441af80df4ca341f82296a3a0b6d1880297fe182afa"
+    }
+  },
+  "preserved_original_inputs": {
+    "README.md": true,
+    "related_work/fql/code/fql/agents/__init__.py": true,
+    "related_work/fql/code/fql/agents/fql.py": true,
+    "related_work/fql/code/fql/agents/ifql.py": true,
+    "related_work/fql/code/fql/agents/iql.py": true,
+    "related_work/fql/code/fql/agents/rebrac.py": true,
+    "related_work/fql/code/fql/agents/sac.py": true,
+    "related_work/fql/code/fql/envs/__init__.py": true,
+    "related_work/fql/code/fql/envs/d4rl_utils.py": true,
+    "related_work/fql/code/fql/envs/env_utils.py": true,
+    "related_work/fql/code/fql/main.py": true,
+    "related_work/fql/code/fql/utils/__init__.py": true,
+    "related_work/fql/code/fql/utils/datasets.py": true,
+    "related_work/fql/code/fql/utils/encoders.py": true,
+    "related_work/fql/code/fql/utils/evaluation.py": true,
+    "related_work/fql/code/fql/utils/flax_utils.py": true,
+    "related_work/fql/code/fql/utils/log_utils.py": true,
+    "related_work/fql/code/fql/utils/networks.py": true,
+    "复现/fql/code/agents/__init__.py": true,
+    "复现/fql/code/agents/fql.py": true,
+    "复现/fql/code/agents/ifql.py": true,
+    "复现/fql/code/agents/iql.py": true,
+    "复现/fql/code/agents/rebrac.py": true,
+    "复现/fql/code/agents/sac.py": true,
+    "复现/fql/code/envs/__init__.py": true,
+    "复现/fql/code/envs/d4rl_utils.py": true,
+    "复现/fql/code/envs/env_utils.py": true,
+    "复现/fql/code/main.py": true,
+    "复现/fql/code/utils/__init__.py": true,
+    "复现/fql/code/utils/datasets.py": true,
+    "复现/fql/code/utils/encoders.py": true,
+    "复现/fql/code/utils/evaluation.py": true,
+    "复现/fql/code/utils/flax_utils.py": true,
+    "复现/fql/code/utils/log_utils.py": true,
+    "复现/fql/code/utils/networks.py": true
+  },
+  "core_matches_existing_training_checkpoint": {
+    "fql_torch/__init__.py": true,
+    "fql_torch/agent.py": true,
+    "fql_torch/checkpoint.py": true,
+    "fql_torch/data.py": true,
+    "fql_torch/networks.py": true,
+    "fql_torch/runtime.py": true
+  },
+  "matched_real_batch_and_initialization": true,
+  "scope": "Three serial fixed-batch speed probes, 3000 diagnostic updates; no addition to the random training policy; GPU metric is a global driver proxy.",
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_migration/ac_power_comparison_1000/validation.json",
+    "original_sha256": "8d30f30694c1e7211633a5a8fc4191f4146a011dd6b37efd9893db2759b7366b",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

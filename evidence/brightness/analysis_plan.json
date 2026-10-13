@@ -1,0 +1,27 @@
+{
+  "primary": "augmentation-control success difference at dim07, equalweight standard/shifted and three fixed seed models; conditional case-cluster CI",
+  "decision": "report primary positive95 lowerbound; recommend augmentation only if primary mean>=10pp and lower>0 and clean mean difference>=-5pp with clean95 lower>=-10pp; otherwise keep tradeoff or negative result, no second tuning trial",
+  "secondary": [
+    "clean performance cost",
+    "dim055 outside training factor support",
+    "per-suite/seed statistics"
+  ],
+  "statistics": {
+    "resamples": 10000,
+    "seed": 20261021,
+    "cluster": "same100 physical cases, retain six models and three conditions per case; resample50 within each suite, equalweight suites"
+  },
+  "selection_after_evaluation": false,
+  "limits": [
+    "synthetic policy-image brightness, no actual lighting/camera/newtask/realrobot claim",
+    "fixed learned stateTeacher and seed613-collected data",
+    "case intervals conditional on3fixed trained seeds, not seed population confidence",
+    "no additionalFQLRL or VLA"
+  ],
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_visual_brightness_augmentation/analysis_plan.json",
+    "original_sha256": "f130286a6e43b09b6f4cf0eb9055dafb4f767b560e7f42efc29b7b6a4784f9b8",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

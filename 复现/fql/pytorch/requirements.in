@@ -1,0 +1,10 @@
+# Independent PyTorch state-FQL runtime; no JAX/Flax dependency.
+torch>=2.8,<3
+numpy==1.26.4
+ogbench==1.1.0
+mujoco==3.2.7
+gymnasium==0.29.1
+psutil==6.1.1
+imageio==2.37.0
+imageio-ffmpeg==0.6.0
+matplotlib>=3.8,<4

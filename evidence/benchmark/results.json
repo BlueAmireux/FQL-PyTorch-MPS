@@ -1,0 +1,187 @@
+{
+  "status": "completed",
+  "all_recorded_boundaries_ac_power": true,
+  "limits": [
+    "One run per mode, fixed order, existing compilation caches; not a population comparison.",
+    "No locked GPU frequency or controlled temperature; thermal command reports warnings only.",
+    "Global utilization is a driver proxy with background GUI load; no per-process occupancy."
+  ],
+  "torch_compiled_over_jax_throughput": 0.8618386430111813,
+  "torch_compiled_throughput_lower_percent": 13.81613569888187,
+  "runs": {
+    "jax_metal": {
+      "summary": {
+        "status": "completed",
+        "framework": "jax",
+        "device": "mps",
+        "updates_completed": 1000,
+        "same_initial_official_parameters": true,
+        "fixed_real_batch_repeated": true,
+        "compute_grad_stats": true,
+        "compile": false,
+        "first_update_seconds": 1.0912564170139376,
+        "warm_updates": 999,
+        "warm_update_seconds_mean": 0.015312188534878075,
+        "warm_update_seconds_median": 0.015337125019868836,
+        "warm_updates_per_second": 65.30745084036823,
+        "synchronized_update_seconds_total": 16.388132763357135,
+        "loop_wall_seconds": 19.92885708398535,
+        "invocation_wall_seconds": 23.494716415996663,
+        "memory_before": {
+          "rss_bytes": 606027776,
+          "peak_rss_bytes": 606027776
+        },
+        "memory_after": {
+          "rss_bytes": 964935680,
+          "peak_rss_bytes": 964935680
+        },
+        "all_metrics_and_final_model_finite": true,
+        "scope": "Repeated fixed batch, same initial official weights; speed only, not learning.",
+        "random_sequences_differ_between_frameworks": true
+      },
+      "gpu_driver_proxy": {
+        "scope": "Whole-device IORegistry driver utilization snapshots during an approximate training interval.",
+        "sampling_interval_seconds": 0.5,
+        "devices": {
+          "4294968452:AGXAcceleratorG14X": {
+            "samples": 36,
+            "median_percent": 70.0,
+            "p10_percent": 68.5,
+            "p90_percent": 73.0,
+            "max_percent": 73,
+            "min_percent": 31,
+            "distinct_values": 8
+          }
+        },
+        "limitations": [
+          "Shared with GUI and other applications; not per-process utilization or kernel occupancy.",
+          "Driver averaging window unknown; progress is reported only at 1/100/.../1000.",
+          "Sampling can perturb CPU scheduling; used equally for all benchmark workers.",
+          "Do not subtract idle percentages to infer net FQL utilization."
+        ]
+      }
+    },
+    "torch_eager": {
+      "summary": {
+        "status": "completed",
+        "framework": "torch",
+        "device": "mps",
+        "updates_completed": 1000,
+        "same_initial_official_parameters": true,
+        "fixed_real_batch_repeated": true,
+        "compute_grad_stats": true,
+        "compile": false,
+        "first_update_seconds": 0.1472850000136532,
+        "warm_updates": 999,
+        "warm_update_seconds_mean": 0.019915708704779087,
+        "warm_update_seconds_median": 0.019963375001680106,
+        "warm_updates_per_second": 50.21162012477288,
+        "synchronized_update_seconds_total": 20.04307799608796,
+        "loop_wall_seconds": 22.958670791995246,
+        "invocation_wall_seconds": 24.2228785000043,
+        "memory_before": {
+          "rss_bytes": 544866304,
+          "peak_rss_bytes": 544866304,
+          "mps_allocated_bytes": 19490816,
+          "mps_driver_allocated_bytes": 42352640,
+          "mps_recommended_max_bytes": 26800603136
+        },
+        "memory_after": {
+          "rss_bytes": 596475904,
+          "peak_rss_bytes": 596475904,
+          "mps_allocated_bytes": 58332928,
+          "mps_driver_allocated_bytes": 145408000,
+          "mps_recommended_max_bytes": 26800603136
+        },
+        "all_metrics_and_final_model_finite": true,
+        "scope": "Repeated fixed batch, same initial official weights; speed only, not learning.",
+        "random_sequences_differ_between_frameworks": true
+      },
+      "gpu_driver_proxy": {
+        "scope": "Whole-device IORegistry driver utilization snapshots during an approximate training interval.",
+        "sampling_interval_seconds": 0.5,
+        "devices": {
+          "4294968452:AGXAcceleratorG14X": {
+            "samples": 43,
+            "median_percent": 84,
+            "p10_percent": 83.0,
+            "p90_percent": 85.0,
+            "max_percent": 86,
+            "min_percent": 67,
+            "distinct_values": 8
+          }
+        },
+        "limitations": [
+          "Shared with GUI and other applications; not per-process utilization or kernel occupancy.",
+          "Driver averaging window unknown; progress is reported only at 1/100/.../1000.",
+          "Sampling can perturb CPU scheduling; used equally for all benchmark workers.",
+          "Do not subtract idle percentages to infer net FQL utilization."
+        ]
+      }
+    },
+    "torch_compiled_fused": {
+      "summary": {
+        "status": "completed",
+        "framework": "torch",
+        "device": "mps",
+        "updates_completed": 1000,
+        "same_initial_official_parameters": true,
+        "fixed_real_batch_repeated": true,
+        "compute_grad_stats": true,
+        "compile": true,
+        "first_update_seconds": 1.446148874994833,
+        "warm_updates": 999,
+        "warm_update_seconds_mean": 0.017766885552240687,
+        "warm_update_seconds_median": 0.017743875010637566,
+        "warm_updates_per_second": 56.28448481078239,
+        "synchronized_update_seconds_total": 19.19526754168328,
+        "loop_wall_seconds": 22.22052829101449,
+        "invocation_wall_seconds": 23.62713262499892,
+        "memory_before": {
+          "rss_bytes": 563429376,
+          "peak_rss_bytes": 563429376,
+          "mps_allocated_bytes": 19490816,
+          "mps_driver_allocated_bytes": 42352640,
+          "mps_recommended_max_bytes": 26800603136
+        },
+        "memory_after": {
+          "rss_bytes": 600653824,
+          "peak_rss_bytes": 687620096,
+          "mps_allocated_bytes": 58342656,
+          "mps_driver_allocated_bytes": 86638592,
+          "mps_recommended_max_bytes": 26800603136
+        },
+        "all_metrics_and_final_model_finite": true,
+        "scope": "Repeated fixed batch, same initial official weights; speed only, not learning.",
+        "random_sequences_differ_between_frameworks": true
+      },
+      "gpu_driver_proxy": {
+        "scope": "Whole-device IORegistry driver utilization snapshots during an approximate training interval.",
+        "sampling_interval_seconds": 0.5,
+        "devices": {
+          "4294968452:AGXAcceleratorG14X": {
+            "samples": 38,
+            "median_percent": 87.0,
+            "p10_percent": 85.7,
+            "p90_percent": 89.0,
+            "max_percent": 90,
+            "min_percent": 81,
+            "distinct_values": 7
+          }
+        },
+        "limitations": [
+          "Shared with GUI and other applications; not per-process utilization or kernel occupancy.",
+          "Driver averaging window unknown; progress is reported only at 1/100/.../1000.",
+          "Sampling can perturb CPU scheduling; used equally for all benchmark workers.",
+          "Do not subtract idle percentages to infer net FQL utilization."
+        ]
+      }
+    }
+  },
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+    "original_sha256": "3f8a718531679de7aa3f2a2b4888075237f96e12dbc29b8c498c6fe025793ef5",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

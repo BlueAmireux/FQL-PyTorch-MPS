@@ -1,0 +1,588 @@
+{
+  "status": "completed",
+  "completed_updates_by_seed": {
+    "0": 1000000,
+    "1": 1000000,
+    "2": 1000000
+  },
+  "training_environment_steps": 0,
+  "per_seed_last_three_mean": {
+    "0": {
+      "raw": 0.9533333333333333,
+      "average5": 0.9866666666666667,
+      "average5_minus_raw": 0.03333333333333344
+    },
+    "1": {
+      "raw": 0.9733333333333333,
+      "average5": 0.9966666666666667,
+      "average5_minus_raw": 0.023333333333333428
+    },
+    "2": {
+      "raw": 0.9533333333333333,
+      "average5": 0.9966666666666667,
+      "average5_minus_raw": 0.043333333333333446
+    }
+  },
+  "across_three_seeds": {
+    "raw": {
+      "mean": 0.96,
+      "sample_standard_deviation_ddof1": 0.011547005383792525
+    },
+    "average5": {
+      "mean": 0.9933333333333333,
+      "sample_standard_deviation_ddof1": 0.005773502691896263
+    },
+    "average5_minus_raw": {
+      "mean": 0.03333333333333344,
+      "sample_standard_deviation_ddof1": 0.010000000000000009
+    }
+  },
+  "limitations": [
+    "Three Torch seeds, including development seed0; not the paper eight-seed reproduction.",
+    "Window five is fixed; fresh seeds1/2 separately confirm transfer across training randomness.",
+    "9000-series cases were already used for seed0 confirmation; fixed comparison cases, not globally unseen held-out cases.",
+    "Average last-three checkpoints within each seed before three-seed mean/sampleSD; cases and endpoints are correlated.",
+    "Earlier100k sampled indices replay exactly; future1900k verifies saved NumPy sampler boundaries only, with no per-update trace.",
+    "Logged finite values and saved payloads do not prove every intermediate update is finite or uninterrupted MPS bitwise equivalence.",
+    "Recording cadence changed with user authorization; algorithm, data, hyperparameters and averaging/evaluation rules did not change.",
+    "The earlier controller intentionally exited130 after a completed exit0 child; its credited50k is not the actual validated100k.",
+    "RSS/MPS allocation samples overlap and do not establish GPU utilization or temperature.",
+    "Snapshot averaging is an inference-only deployment adaptation, not an original theoretical method or extra RL loss."
+  ],
+  "formal_evaluations": {
+    "0": {
+      "800000": {
+        "raw": {
+          "successes": 98,
+          "episodes": 100,
+          "success_rate": 0.98,
+          "success_rate_wilson_95_percent_ci": [
+            0.929988209271456,
+            0.9944980324498376
+          ],
+          "mean_return": -73.45,
+          "mean_length": 74.43,
+          "evaluation_environment_steps": 7443,
+          "max_reload_probe_error": 3.5762786865234375e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed0_epoch800000_raw.csv"
+        },
+        "average5": {
+          "successes": 100,
+          "episodes": 100,
+          "success_rate": 1.0,
+          "success_rate_wilson_95_percent_ci": [
+            0.9630065017930143,
+            1
+          ],
+          "mean_return": -69.34,
+          "mean_length": 70.34,
+          "evaluation_environment_steps": 7034,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed0_epoch800000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 2,
+          "raw_success_candidate_failure": 0,
+          "net_success_count_gain": 2,
+          "success_rate_improvement": 0.02,
+          "paired_case_bootstrap_95_percent_ci": [
+            0.0,
+            0.05
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 0.5,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "ccafa43ebad7b0b8245027805f1015aed5a60733f72ea43be6eb3bf9ec144fba",
+          "marker_sha256": "9d8780c0d88ba565300cba479cea8a4819de5c6b1c8f01167d87e402a13ef72c",
+          "source_epochs": [
+            760000,
+            770000,
+            780000,
+            790000,
+            800000
+          ],
+          "training_seed": 0,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      },
+      "900000": {
+        "raw": {
+          "successes": 100,
+          "episodes": 100,
+          "success_rate": 1.0,
+          "success_rate_wilson_95_percent_ci": [
+            0.9630065017930143,
+            1
+          ],
+          "mean_return": -71.54,
+          "mean_length": 72.54,
+          "evaluation_environment_steps": 7254,
+          "max_reload_probe_error": 5.364418029785156e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed0_epoch900000_raw.csv"
+        },
+        "average5": {
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "success_rate_wilson_95_percent_ci": [
+            0.9455138038212946,
+            0.9982325679358593
+          ],
+          "mean_return": -67.28,
+          "mean_length": 68.27,
+          "evaluation_environment_steps": 6827,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed0_epoch900000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 0,
+          "raw_success_candidate_failure": 1,
+          "net_success_count_gain": -1,
+          "success_rate_improvement": -0.01,
+          "paired_case_bootstrap_95_percent_ci": [
+            -0.03,
+            0.0
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "2504b829b5cebdc19b0875e49ee1f33cb0b30c435b7b36221631ca7dbfff9b4c",
+          "marker_sha256": "19a68bb371249d98282ae431b9fd00373752856e1ea6b966b52e640b3c202d90",
+          "source_epochs": [
+            860000,
+            870000,
+            880000,
+            890000,
+            900000
+          ],
+          "training_seed": 0,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      },
+      "1000000": {
+        "raw": {
+          "successes": 88,
+          "episodes": 100,
+          "success_rate": 0.88,
+          "success_rate_wilson_95_percent_ci": [
+            0.8018790057328857,
+            0.9300059356298052
+          ],
+          "mean_return": -103.74,
+          "mean_length": 104.62,
+          "evaluation_environment_steps": 10462,
+          "max_reload_probe_error": 5.960464477539062e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed0_epoch1000000_raw.csv"
+        },
+        "average5": {
+          "successes": 97,
+          "episodes": 100,
+          "success_rate": 0.97,
+          "success_rate_wilson_95_percent_ci": [
+            0.9154806357094724,
+            0.9897454759759611
+          ],
+          "mean_return": -81.14,
+          "mean_length": 82.11,
+          "evaluation_environment_steps": 8211,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed0_epoch1000000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 10,
+          "raw_success_candidate_failure": 1,
+          "net_success_count_gain": 9,
+          "success_rate_improvement": 0.09,
+          "paired_case_bootstrap_95_percent_ci": [
+            0.03,
+            0.16
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 0.01171875,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "0d51cfc0578e793f723b4f4889db990655163d0377a15cd3ac02e1f7ab62fc08",
+          "marker_sha256": "c0a0e05149f24b0a3085d84c8e436eacd42f45de3f88df6ff8f756be1fa8f1cb",
+          "source_epochs": [
+            960000,
+            970000,
+            980000,
+            990000,
+            1000000
+          ],
+          "training_seed": 0,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      }
+    },
+    "1": {
+      "800000": {
+        "raw": {
+          "successes": 98,
+          "episodes": 100,
+          "success_rate": 0.98,
+          "success_rate_wilson_95_percent_ci": [
+            0.929988209271456,
+            0.9944980324498376
+          ],
+          "mean_return": -75.51,
+          "mean_length": 76.49,
+          "evaluation_environment_steps": 7649,
+          "max_reload_probe_error": 2.086162567138672e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed1_epoch800000_raw.csv"
+        },
+        "average5": {
+          "successes": 100,
+          "episodes": 100,
+          "success_rate": 1.0,
+          "success_rate_wilson_95_percent_ci": [
+            0.9630065017930143,
+            1
+          ],
+          "mean_return": -63.08,
+          "mean_length": 64.08,
+          "evaluation_environment_steps": 6408,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed1_epoch800000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 2,
+          "raw_success_candidate_failure": 0,
+          "net_success_count_gain": 2,
+          "success_rate_improvement": 0.02,
+          "paired_case_bootstrap_95_percent_ci": [
+            0.0,
+            0.05
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 0.5,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "95b805b765ccdbb03ea3c7369c2f59eaf203db63067d4df29e2b8c7a766b8dfd",
+          "marker_sha256": "e398ea43d90fcdb83f24954cd6fabab91bdf0b0fa867d72df39de7e93a807e18",
+          "source_epochs": [
+            760000,
+            770000,
+            780000,
+            790000,
+            800000
+          ],
+          "training_seed": 1,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      },
+      "900000": {
+        "raw": {
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "success_rate_wilson_95_percent_ci": [
+            0.9455138038212946,
+            0.9982325679358593
+          ],
+          "mean_return": -69.71,
+          "mean_length": 70.7,
+          "evaluation_environment_steps": 7070,
+          "max_reload_probe_error": 5.960464477539062e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed1_epoch900000_raw.csv"
+        },
+        "average5": {
+          "successes": 100,
+          "episodes": 100,
+          "success_rate": 1.0,
+          "success_rate_wilson_95_percent_ci": [
+            0.9630065017930143,
+            1
+          ],
+          "mean_return": -63.53,
+          "mean_length": 64.53,
+          "evaluation_environment_steps": 6453,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed1_epoch900000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 1,
+          "raw_success_candidate_failure": 0,
+          "net_success_count_gain": 1,
+          "success_rate_improvement": 0.01,
+          "paired_case_bootstrap_95_percent_ci": [
+            0.0,
+            0.03
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "7edf9391eca1eb75413aaf7a30b5a7ba13137ed63ae42a1a0e89cee09db499fa",
+          "marker_sha256": "870769be064b5b3ab8becb080889d1e163f709e7061722209d3c02c4f1ef9205",
+          "source_epochs": [
+            860000,
+            870000,
+            880000,
+            890000,
+            900000
+          ],
+          "training_seed": 1,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      },
+      "1000000": {
+        "raw": {
+          "successes": 95,
+          "episodes": 100,
+          "success_rate": 0.95,
+          "success_rate_wilson_95_percent_ci": [
+            0.8882495307680808,
+            0.9784563208456319
+          ],
+          "mean_return": -78.49,
+          "mean_length": 79.44,
+          "evaluation_environment_steps": 7944,
+          "max_reload_probe_error": 2.384185791015625e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed1_epoch1000000_raw.csv"
+        },
+        "average5": {
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "success_rate_wilson_95_percent_ci": [
+            0.9455138038212946,
+            0.9982325679358593
+          ],
+          "mean_return": -75.67,
+          "mean_length": 76.66,
+          "evaluation_environment_steps": 7666,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed1_epoch1000000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 5,
+          "raw_success_candidate_failure": 1,
+          "net_success_count_gain": 4,
+          "success_rate_improvement": 0.04,
+          "paired_case_bootstrap_95_percent_ci": [
+            0.0,
+            0.09
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 0.21875,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "5728977ddc1cedf1174272e029be055f72f35b195feaaeae6745917b153c466a",
+          "marker_sha256": "17d4de61061f27da64c4ab17ffcaedd7e65710ca67ba7b20cf3448eeddfbcb6b",
+          "source_epochs": [
+            960000,
+            970000,
+            980000,
+            990000,
+            1000000
+          ],
+          "training_seed": 1,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      }
+    },
+    "2": {
+      "800000": {
+        "raw": {
+          "successes": 88,
+          "episodes": 100,
+          "success_rate": 0.88,
+          "success_rate_wilson_95_percent_ci": [
+            0.8018790057328857,
+            0.9300059356298052
+          ],
+          "mean_return": -104.3,
+          "mean_length": 105.18,
+          "evaluation_environment_steps": 10518,
+          "max_reload_probe_error": 3.5762786865234375e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed2_epoch800000_raw.csv"
+        },
+        "average5": {
+          "successes": 100,
+          "episodes": 100,
+          "success_rate": 1.0,
+          "success_rate_wilson_95_percent_ci": [
+            0.9630065017930143,
+            1
+          ],
+          "mean_return": -64.17,
+          "mean_length": 65.17,
+          "evaluation_environment_steps": 6517,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed2_epoch800000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 12,
+          "raw_success_candidate_failure": 0,
+          "net_success_count_gain": 12,
+          "success_rate_improvement": 0.12,
+          "paired_case_bootstrap_95_percent_ci": [
+            0.06,
+            0.19
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 0.00048828125,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "0bfb04f76d9e5ef3ca5fae275749d28b8dadfe0593403e0051af49345e2fe83d",
+          "marker_sha256": "1a569ae4eb67f66c5019af45bc8fe95a85baae1a2305edd363290ba7e3e1f7bd",
+          "source_epochs": [
+            760000,
+            770000,
+            780000,
+            790000,
+            800000
+          ],
+          "training_seed": 2,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      },
+      "900000": {
+        "raw": {
+          "successes": 98,
+          "episodes": 100,
+          "success_rate": 0.98,
+          "success_rate_wilson_95_percent_ci": [
+            0.929988209271456,
+            0.9944980324498376
+          ],
+          "mean_return": -73.37,
+          "mean_length": 74.35,
+          "evaluation_environment_steps": 7435,
+          "max_reload_probe_error": 5.960464477539062e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed2_epoch900000_raw.csv"
+        },
+        "average5": {
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "success_rate_wilson_95_percent_ci": [
+            0.9455138038212946,
+            0.9982325679358593
+          ],
+          "mean_return": -67.1,
+          "mean_length": 68.09,
+          "evaluation_environment_steps": 6809,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed2_epoch900000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 2,
+          "raw_success_candidate_failure": 1,
+          "net_success_count_gain": 1,
+          "success_rate_improvement": 0.01,
+          "paired_case_bootstrap_95_percent_ci": [
+            -0.02,
+            0.05
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "a947d5510c019dae5f3cca4fd0b4b0cdaf13ec31777a434ab9bbe7a7460e32d8",
+          "marker_sha256": "25f7efd597168a3b28797c670d321c93e4ff2d25b2642c2b2580fdabdcd59ef5",
+          "source_epochs": [
+            860000,
+            870000,
+            880000,
+            890000,
+            900000
+          ],
+          "training_seed": 2,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      },
+      "1000000": {
+        "raw": {
+          "successes": 100,
+          "episodes": 100,
+          "success_rate": 1.0,
+          "success_rate_wilson_95_percent_ci": [
+            0.9630065017930143,
+            1
+          ],
+          "mean_return": -70.69,
+          "mean_length": 71.69,
+          "evaluation_environment_steps": 7169,
+          "max_reload_probe_error": 5.066394805908203e-07,
+          "public_episode_csv": "evidence/state/evaluations/seed2_epoch1000000_raw.csv"
+        },
+        "average5": {
+          "successes": 100,
+          "episodes": 100,
+          "success_rate": 1.0,
+          "success_rate_wilson_95_percent_ci": [
+            0.9630065017930143,
+            1
+          ],
+          "mean_return": -66.02,
+          "mean_length": 67.02,
+          "evaluation_environment_steps": 6702,
+          "max_reload_probe_error": 0.0,
+          "public_episode_csv": "evidence/state/evaluations/seed2_epoch1000000_average5.csv"
+        },
+        "paired": {
+          "raw_failure_candidate_success": 0,
+          "raw_success_candidate_failure": 0,
+          "net_success_count_gain": 0,
+          "success_rate_improvement": 0.0,
+          "paired_case_bootstrap_95_percent_ci": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 8200,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "uncertainty_scope": "Fixed training seed and endpoint; paired case uncertainty, not training-seed uncertainty."
+        },
+        "artifact": {
+          "sha256": "c2a8d8c3fd9647cb3300c95481b7c2f8df25f52eaad174f88500e9d926d0b1ca",
+          "marker_sha256": "76e19a09a491662ecde57d47593ab9a68b641c0d08fb144f56a31e9f4e12a3bd",
+          "source_epochs": [
+            960000,
+            970000,
+            980000,
+            990000,
+            1000000
+          ],
+          "training_seed": 2,
+          "independent_numpy_ascending_float64_mean_all_ten_tensors_bitwise_exact": true,
+          "inference_only_without_optimizer_rng_sampler": true
+        }
+      }
+    }
+  },
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_three_seed_average_compact/results.json",
+    "original_sha256": "8458542847cc9a73c3981665a5df12bbba7c129a7495662cd2ea53442dce42f5",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

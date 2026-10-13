@@ -1,0 +1,356 @@
+{
+  "status": "passed",
+  "date": "2026-10-13",
+  "training_updates_added": 0,
+  "environment_steps_added": 0,
+  "sources": {
+    "experiment/fql_torch_three_seed_average_compact/results.json": {
+      "sha256": "8458542847cc9a73c3981665a5df12bbba7c129a7495662cd2ea53442dce42f5",
+      "fields": [
+        "formal_evaluations.<seed>.<step>.<arm>.successes/episodes",
+        "per_seed_last_three_mean",
+        "across_three_seeds"
+      ]
+    },
+    "experiment/fql_torch_visual_common_confirmation/results.json": {
+      "sha256": "edb175a68b682eb2442d79a34a71b0fdcd96c250975150d6ab3913ba7aabfb19",
+      "fields": [
+        "groups",
+        "paired.<suite>.per_seed",
+        "paired.<suite>.fixed_three_seed_case_cluster_mean"
+      ]
+    },
+    "experiment/fql_torch_visual_brightness_augmentation/results.json": {
+      "sha256": "9e58cc28b13d47ed9999c7998bb2accd45bd4a2693912685d411a3a07c652115",
+      "fields": [
+        "groups",
+        "paired",
+        "macro",
+        "decision"
+      ]
+    },
+    "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json": {
+      "sha256": "3f8a718531679de7aa3f2a2b4888075237f96e12dbc29b8c498c6fe025793ef5",
+      "fields": [
+        "runs.<mode>.summary.warm_updates_per_second",
+        "runs.<mode>.summary.memory_after",
+        "runs.<mode>.gpu_driver_proxy.devices",
+        "limits"
+      ]
+    }
+  },
+  "figures": [
+    {
+      "path": "assets/state_results.png",
+      "sha256": "c246e55997d8d0c4b9dec6908cbcd91993cc276e2cc3f2144e1df7ffad854102",
+      "bytes": 271828,
+      "caption": "Each point uses 100 fixed evaluation episodes; the seed-0 fold was also used during development.\nParameter averaging is inference-only and adds no RL updates. Three seeds do not reproduce the paper's eight-seed protocol."
+    },
+    {
+      "path": "assets/state_results.svg",
+      "sha256": "8876aaa0d85d4aff783b7b6265e7ff1221d455fff59056908b597728e5980c7d",
+      "bytes": 37947,
+      "caption": "Each point uses 100 fixed evaluation episodes; the seed-0 fold was also used during development.\nParameter averaging is inference-only and adds no RL updates. Three seeds do not reproduce the paper's eight-seed protocol."
+    },
+    {
+      "path": "assets/visual_temporal_coverage.png",
+      "sha256": "553db077d7d6ecc1fc7c39050d08cc183bbc4a59bdc61dc7c861af27cded19cd",
+      "bytes": 236250,
+      "caption": "Same 740 student frames from 20 starts; same 40k endpoint. 1,200 episodes on 100 new cases per suite.\nIntervals resample shared case clusters, conditional on these three trained models; they are not training-seed population intervals.\nThe full window also reduces early-frame density, so the causal mechanism is not isolated."
+    },
+    {
+      "path": "assets/visual_temporal_coverage.svg",
+      "sha256": "c67557a5d0a2f21625fd718311a2dd565772cd3ade4a33e3d14021a9d92bf232",
+      "bytes": 38405,
+      "caption": "Same 740 student frames from 20 starts; same 40k endpoint. 1,200 episodes on 100 new cases per suite.\nIntervals resample shared case clusters, conditional on these three trained models; they are not training-seed population intervals.\nThe full window also reduces early-frame density, so the causal mechanism is not isolated."
+    },
+    {
+      "path": "assets/brightness_tradeoff.png",
+      "sha256": "1b03886a2f479730f1b8243ca8e2d390bbb1ee7c08751a09ede12854d432500b",
+      "bytes": 220589,
+      "caption": "Three seeds × two arms, each +20k supervised updates to 60k; 1,800 episodes on 100 shared physical initial cases.\nTop dots are per-seed rates; bottom whiskers are paired 95% case-cluster intervals conditional on the six fixed models.\nSynthetic RGB multiplication only. The clean-cost gate failed; the augmented models do not replace the normal models."
+    },
+    {
+      "path": "assets/brightness_tradeoff.svg",
+      "sha256": "f9f24208d641ad79569ec6bf7b6a9511954c39007c478111fc04553981cbbfed",
+      "bytes": 34526,
+      "caption": "Three seeds × two arms, each +20k supervised updates to 60k; 1,800 episodes on 100 shared physical initial cases.\nTop dots are per-seed rates; bottom whiskers are paired 95% case-cluster intervals conditional on the six fixed models.\nSynthetic RGB multiplication only. The clean-cost gate failed; the augmented models do not replace the normal models."
+    },
+    {
+      "path": "assets/mac_benchmark.png",
+      "sha256": "5348fdcc895d558dfe4b4c58d41af8835eea9b75e585739a4027d3bb92d0ab75",
+      "bytes": 274449,
+      "caption": "1,000 updates per mode; fixed real batch, same initial weights, synchronized metrics. Torch compiled throughput is 13.8% below JAX.\nTorch end MPS tensors / driver allocation: eager 55.6 / 138.7 MiB; compiled 55.6 / 82.6 MiB. JAX GPU allocation was not measured.\nUnified-memory RSS and MPS counters overlap: do not sum them. Proxy snapshots include GUI/background work, not kernel occupancy.\nOne run per mode in a fixed order; no frequency/temperature lock. This fixed-batch memory excludes the full offline training dataset."
+    },
+    {
+      "path": "assets/mac_benchmark.svg",
+      "sha256": "f8f16aab20bc335e6373bb8cfda93e58f2d54498361365583797e8ddc61b1641",
+      "bytes": 31036,
+      "caption": "1,000 updates per mode; fixed real batch, same initial weights, synchronized metrics. Torch compiled throughput is 13.8% below JAX.\nTorch end MPS tensors / driver allocation: eager 55.6 / 138.7 MiB; compiled 55.6 / 82.6 MiB. JAX GPU allocation was not measured.\nUnified-memory RSS and MPS counters overlap: do not sum them. Proxy snapshots include GUI/background work, not kernel occupancy.\nOne run per mode in a fixed order; no frequency/temperature lock. This fixed-batch memory excludes the full offline training dataset."
+    },
+    {
+      "path": "assets/fixed_video_examples.png",
+      "sha256": "4f81fbe4a71b9efde1b418e3dc220ee314d9e861dbdbffd97c79023742ddaebb",
+      "bytes": 282822,
+      "caption": "Midpoint frames from existing predetermined episode-0 videos; outcome labels come from saved episode CSVs.\nStages and evaluation folds differ. These examples illustrate behavior; full evaluation tables determine success rates."
+    },
+    {
+      "path": "assets/fixed_video_examples.svg",
+      "sha256": "450e870d1bb96c832cc0047ad0ae595500f6caecd913b57ed82786828cde532b",
+      "bytes": 167498,
+      "caption": "Midpoint frames from existing predetermined episode-0 videos; outcome labels come from saved episode CSVs.\nStages and evaluation folds differ. These examples illustrate behavior; full evaluation tables determine success rates."
+    },
+    {
+      "path": "assets/input_brightness_example.png",
+      "source": "experiment/fql_torch_visual_brightness_augmentation/input_brightness_example.png",
+      "sha256": "df972774fde4e3c09de09f5d3b900c8f1d74d8d6b15bfed147f537d501cd1b4d",
+      "bytes": 35281,
+      "caption": "Previously saved actual brightness input example; copied without modification."
+    }
+  ],
+  "videos": [
+    {
+      "path": "assets/videos/state_seed0_500k_fixed_ep0.mp4",
+      "source": "experiment/fql_torch_continuation_500000/eval_500000/episode_000.mp4",
+      "sha256": "3d20fa048dd84214cbdcc4c405a93896ae73eeed35f185731347699e687d4a8c",
+      "bytes": 45731,
+      "episode_record": {
+        "episode": "0",
+        "env_seed": "3000",
+        "action_seed": "4000",
+        "return": "-83.0",
+        "length": "84",
+        "success": "1",
+        "ever_success": "1",
+        "terminated": "True",
+        "truncated": "False",
+        "episode_seconds": "0.5421989999886137",
+        "trajectory": "episode_000.npz"
+      },
+      "description": "Historical 500k state policy, fixed episode 0; success. Not the final 1M score fold.",
+      "source_episode_csv_sha256": "ba029ae247f88077314d4c3a345b69203514b82ef9ff13a8962cd1393a4b2d2c",
+      "selection_rule": "Existing predetermined episode 0; selection of stages is for illustration only, not a statistical sample.",
+      "video_metadata": {
+        "frames": 85,
+        "fps": 20.0,
+        "thumbnail_frame": 42
+      }
+    },
+    {
+      "path": "assets/videos/state_seed0_1M_fixed_ep0.mp4",
+      "source": "experiment/fql_torch_continuation_1000000/eval_1000000/episode_000.mp4",
+      "sha256": "38ba087d10052aa395bdd1daae3f7fcb46dfa4b0b2bb9120b5f4815f73d39f24",
+      "bytes": 93547,
+      "episode_record": {
+        "episode": "0",
+        "env_seed": "3000",
+        "action_seed": "4000",
+        "return": "-200.0",
+        "length": "200",
+        "success": "0",
+        "ever_success": "0",
+        "terminated": "False",
+        "truncated": "True",
+        "episode_seconds": "1.2739556250162423",
+        "trajectory": "episode_000.npz"
+      },
+      "description": "Historical 1M raw state policy, fixed episode 0; failure. Not the formal 100-case fold.",
+      "source_episode_csv_sha256": "8b012fd9318563649292f6bbf75c02f837bdb4394a8e5cf365944585ceb8784b",
+      "selection_rule": "Existing predetermined episode 0; selection of stages is for illustration only, not a statistical sample.",
+      "video_metadata": {
+        "frames": 201,
+        "fps": 20.0,
+        "thumbnail_frame": 100
+      }
+    },
+    {
+      "path": "assets/videos/visual_full40k_seed613_standard_ep0.mp4",
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_full_standard/episode_000.mp4",
+      "sha256": "5138e2ff2579a134dd93bb71eb1716ea3602c5be15787a04941f518252c4c286",
+      "bytes": 7479,
+      "episode_record": {
+        "episode": "0",
+        "env_seed": "130000",
+        "action_seed": "131000",
+        "return": "-58.0",
+        "length": "59",
+        "success": "1",
+        "ever_success": "1",
+        "terminated": "True",
+        "truncated": "False",
+        "episode_seconds": "0.5308983329450712"
+      },
+      "description": "Common-confirmation full-window 40k visual model, predetermined episode 0; success.",
+      "source_episode_csv_sha256": "2a3686a1538f55875f35dc768b54d1cdb290fd762cc62810d0e8f4c421ad2f22",
+      "selection_rule": "Existing predetermined episode 0; selection of stages is for illustration only, not a statistical sample.",
+      "video_metadata": {
+        "frames": 60,
+        "fps": 20.0,
+        "thumbnail_frame": 30
+      }
+    },
+    {
+      "path": "assets/videos/visual_full40k_seed613_shifted_ep0.mp4",
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_full_shifted/episode_000.mp4",
+      "sha256": "a1367fa3ac1691d876466b3be8c85481b3bf5f5b466502ab70f4d019855de650",
+      "bytes": 19507,
+      "episode_record": {
+        "episode": "0",
+        "env_seed": "132000",
+        "action_seed": "133000",
+        "return": "-200.0",
+        "length": "200",
+        "success": "0",
+        "ever_success": "0",
+        "terminated": "False",
+        "truncated": "True",
+        "episode_seconds": "1.5545053329551592"
+      },
+      "description": "Same-stage shifted suite, predetermined episode 0; failure.",
+      "source_episode_csv_sha256": "639fc74d8680424dbe6c8997b6de75f07db3b95427b7fb7dfbccc42bf1b5cbe7",
+      "selection_rule": "Existing predetermined episode 0; selection of stages is for illustration only, not a statistical sample.",
+      "video_metadata": {
+        "frames": 201,
+        "fps": 20.0,
+        "thumbnail_frame": 100
+      }
+    },
+    {
+      "path": "assets/videos/brightness_control_clean_seed613_ep0.mp4",
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_clean_standard/episode_000.mp4",
+      "sha256": "94c1262a3841b89eaa7aabd5e3d1fdc2204b0e3f500d1f579ea6e86978c71b8e",
+      "bytes": 17839,
+      "episode_record": {
+        "episode": "0",
+        "env_seed": "138000",
+        "action_seed": "139000",
+        "return": "-200.0",
+        "length": "200",
+        "success": "0",
+        "ever_success": "0",
+        "terminated": "False",
+        "truncated": "True",
+        "episode_seconds": "1.529331874975469"
+      },
+      "description": "Final 60k ordinary continuation, normal RGB, predetermined episode 0; failure.",
+      "source_episode_csv_sha256": "c75c773ceef2af05503946a5b4698c4973024ba6b2c2afdaf61dc7cb6493de30",
+      "selection_rule": "Existing predetermined episode 0; selection of stages is for illustration only, not a statistical sample.",
+      "video_metadata": {
+        "frames": 201,
+        "fps": 20.0,
+        "thumbnail_frame": 100
+      }
+    },
+    {
+      "path": "assets/videos/brightness_augmented_clean_seed613_ep0.mp4",
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_clean_standard/episode_000.mp4",
+      "sha256": "b304a5ccb9520df6e9058d78448588b25ff448baeeea1dda7305431256c7e73a",
+      "bytes": 8323,
+      "episode_record": {
+        "episode": "0",
+        "env_seed": "138000",
+        "action_seed": "139000",
+        "return": "-67.0",
+        "length": "68",
+        "success": "1",
+        "ever_success": "1",
+        "terminated": "True",
+        "truncated": "False",
+        "episode_seconds": "0.609415250015445"
+      },
+      "description": "Final 60k augmentation, same normal-RGB physical case, predetermined episode 0; success.",
+      "source_episode_csv_sha256": "ce3684e0d8173dae553b970d8603dbe321f7378e6bdb3cbc172df6a9f38e9bca",
+      "selection_rule": "Existing predetermined episode 0; selection of stages is for illustration only, not a statistical sample.",
+      "video_metadata": {
+        "frames": 69,
+        "fps": 20.0,
+        "thumbnail_frame": 34
+      }
+    },
+    {
+      "path": "assets/videos/brightness_control_dim07_seed613_ep0.mp4",
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim07_standard/episode_000.mp4",
+      "sha256": "c656c639bec2384d666444dc7643c8950adf842c3106b824f682c1a8f0e8bd20",
+      "bytes": 11066,
+      "episode_record": {
+        "episode": "0",
+        "env_seed": "138000",
+        "action_seed": "139000",
+        "return": "-200.0",
+        "length": "200",
+        "success": "0",
+        "ever_success": "0",
+        "terminated": "False",
+        "truncated": "True",
+        "episode_seconds": "1.5125468749902211"
+      },
+      "description": "Final 60k ordinary continuation, dim RGB, predetermined episode 0; failure.",
+      "source_episode_csv_sha256": "382693bb57c27504b8789da6a88c968831fcf2f2232bfc139964eab3ba5118f2",
+      "selection_rule": "Existing predetermined episode 0; selection of stages is for illustration only, not a statistical sample.",
+      "video_metadata": {
+        "frames": 201,
+        "fps": 20.0,
+        "thumbnail_frame": 100
+      }
+    },
+    {
+      "path": "assets/videos/brightness_augmented_dim07_seed613_ep0.mp4",
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim07_standard/episode_000.mp4",
+      "sha256": "f53d28f74b2eac604a2bf19623f3fe3be3affae7782c32af916ac77992bb40f2",
+      "bytes": 15465,
+      "episode_record": {
+        "episode": "0",
+        "env_seed": "138000",
+        "action_seed": "139000",
+        "return": "-200.0",
+        "length": "200",
+        "success": "0",
+        "ever_success": "0",
+        "terminated": "False",
+        "truncated": "True",
+        "episode_seconds": "1.5184660839731805"
+      },
+      "description": "Final 60k augmentation, same dim-RGB physical case, predetermined episode 0; failure. Never swapped for a successful episode.",
+      "source_episode_csv_sha256": "65bc0ead13078f054de5a7fb74041b75f4916bc5990d02990ffc5775288020a1",
+      "selection_rule": "Existing predetermined episode 0; selection of stages is for illustration only, not a statistical sample.",
+      "video_metadata": {
+        "frames": 201,
+        "fps": 20.0,
+        "thumbnail_frame": 100
+      }
+    }
+  ],
+  "compact_data": {
+    "path": "assets/plot_data.json",
+    "sha256": "2207eb65a71de62a084049a1fd752a6071fc5bb06d7d23fa8e32a0d0f9618f1f"
+  },
+  "plot_script": {
+    "path": "tools/plot_showcase.py",
+    "sha256": "0e829733cfbfae4ec7a58cf6798b01e7171930ba423531508fd0085a6c91df60"
+  },
+  "scope": "Published compact figures and byte-identical video copies from existing audited experiments. Historical sources are provenance references, not paths shipped in this release. Public numerical checks do not repeat original model/trajectory audits.",
+  "validation": {
+    "source_sha256_unchanged": true,
+    "all_outputs_sha256_checked": true,
+    "numeric_aggregation_checks_passed": true,
+    "all_five_generated_PNGs_visually_inspected": true,
+    "SVG_matches_same_rendered_figure": true,
+    "failure_videos_not_replaced": true,
+    "no_training_or_evaluation_performed": true
+  },
+  "derived_sanitized_summary": true,
+  "public_source_summary_paths": {
+    "state": "evidence/state/results.json",
+    "temporal": "evidence/visual_temporal/results.json",
+    "brightness": "evidence/brightness/results.json",
+    "benchmark": "evidence/benchmark/results.json"
+  },
+  "public_validation": {
+    "standalone_compact_plot_data_and_videos_only": true,
+    "five_regenerated_PNGs_pixel_identical": true,
+    "statistics_recomputed_from66_groups4800_episode_rows": true,
+    "conditional_case_cluster_intervals_recomputed": true,
+    "no_local_absolute_paths_in_assets_evidence_tools": true,
+    "no_training_or_environment_evaluation": true
+  }
+}

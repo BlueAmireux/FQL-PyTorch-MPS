@@ -1,0 +1,212 @@
+{
+  "recorded_at": "2026-10-12T16:12:41.001632+08:00",
+  "scope": "Three Torch training seeds, fixed same-chain raw versus average5 deployment; not paper eight-seed reproduction.",
+  "training_seeds": [
+    0,
+    1,
+    2
+  ],
+  "development_seed": 0,
+  "new_confirmation_training_seeds": [
+    1,
+    2
+  ],
+  "updates_per_seed": 1000000,
+  "new_training_updates": 2000000,
+  "fresh_runs": {
+    "1": "experiment/fql_torch_three_seed_average/seed1_run",
+    "2": "experiment/fql_torch_three_seed_average/seed2_run"
+  },
+  "original_seed0_run": "experiment/fql_torch_migration/random_mps1000",
+  "training_algorithm_changed": false,
+  "new_training_losses": false,
+  "training": {
+    "device": "mps",
+    "compile": true,
+    "optimizer_impl": "fused",
+    "cpu_threads": 4,
+    "data_placement": "device",
+    "segment_updates": 50000,
+    "log_every": 1000,
+    "checkpoint_every": "50000 except three averaging-window segments10000",
+    "trace_all_sampled_indices": false,
+    "progress_evaluation_every": 100000,
+    "progress_episodes": 50,
+    "progress_env_seed_base": 3000,
+    "progress_action_seed_base": 4000,
+    "state_cpu_guard": "Every100k plus seed2 first50k fresh initialization"
+  },
+  "method": {
+    "component": "actor_onestep_flow only",
+    "window": 5,
+    "checkpoint_spacing": 10000,
+    "source_rule": "For endpoint E, use E-40000,E-30000,E-20000,E-10000,E; no future or cross-seed weights.",
+    "arithmetic": "Ascending CPU float64 sum/divide by5 then castfloat32; same one-forward clipped student deployment.",
+    "optimizer_rng_critic_teacher_averaged": false,
+    "artifacts_inference_only": true,
+    "window_retuning_allowed": false
+  },
+  "formal_plan": [
+    {
+      "seed": 0,
+      "epoch": 800000,
+      "run_dir": "experiment/fql_torch_migration/random_mps1000",
+      "raw_dir": "experiment/fql_torch_three_seed_average/formal/seed0_epoch800000/raw",
+      "average_dir": "experiment/fql_torch_three_seed_average/formal/seed0_epoch800000/average5",
+      "policy_dir": "experiment/fql_torch_three_seed_average/policies/seed0_epoch800000",
+      "reuse_raw": true,
+      "reuse_average": true,
+      "reuse_policy": true
+    },
+    {
+      "seed": 0,
+      "epoch": 900000,
+      "run_dir": "experiment/fql_torch_migration/random_mps1000",
+      "raw_dir": "experiment/fql_torch_policy_average_v2/confirmation/raw900000",
+      "average_dir": "experiment/fql_torch_three_seed_average/formal/seed0_epoch900000/average5",
+      "policy_dir": "experiment/fql_torch_three_seed_average/policies/seed0_epoch900000",
+      "reuse_raw": true,
+      "reuse_average": true,
+      "reuse_policy": true
+    },
+    {
+      "seed": 0,
+      "epoch": 1000000,
+      "run_dir": "experiment/fql_torch_migration/random_mps1000",
+      "raw_dir": "experiment/fql_torch_policy_average_v2/confirmation/raw1000000",
+      "average_dir": "experiment/fql_torch_policy_average_v2/confirmation/average5",
+      "policy_dir": "experiment/fql_torch_policy_average_v2/build/average5",
+      "reuse_raw": true,
+      "reuse_average": true,
+      "reuse_policy": true
+    },
+    {
+      "seed": 1,
+      "epoch": 800000,
+      "run_dir": "experiment/fql_torch_three_seed_average/seed1_run",
+      "raw_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch800000/raw",
+      "average_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch800000/average5",
+      "policy_dir": "experiment/fql_torch_three_seed_average_compact/policies/seed1_epoch800000",
+      "reuse_raw": false,
+      "reuse_average": false,
+      "reuse_policy": false
+    },
+    {
+      "seed": 1,
+      "epoch": 900000,
+      "run_dir": "experiment/fql_torch_three_seed_average/seed1_run",
+      "raw_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch900000/raw",
+      "average_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch900000/average5",
+      "policy_dir": "experiment/fql_torch_three_seed_average_compact/policies/seed1_epoch900000",
+      "reuse_raw": false,
+      "reuse_average": false,
+      "reuse_policy": false
+    },
+    {
+      "seed": 1,
+      "epoch": 1000000,
+      "run_dir": "experiment/fql_torch_three_seed_average/seed1_run",
+      "raw_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch1000000/raw",
+      "average_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch1000000/average5",
+      "policy_dir": "experiment/fql_torch_three_seed_average_compact/policies/seed1_epoch1000000",
+      "reuse_raw": false,
+      "reuse_average": false,
+      "reuse_policy": false
+    },
+    {
+      "seed": 2,
+      "epoch": 800000,
+      "run_dir": "experiment/fql_torch_three_seed_average/seed2_run",
+      "raw_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch800000/raw",
+      "average_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch800000/average5",
+      "policy_dir": "experiment/fql_torch_three_seed_average_compact/policies/seed2_epoch800000",
+      "reuse_raw": false,
+      "reuse_average": false,
+      "reuse_policy": false
+    },
+    {
+      "seed": 2,
+      "epoch": 900000,
+      "run_dir": "experiment/fql_torch_three_seed_average/seed2_run",
+      "raw_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch900000/raw",
+      "average_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch900000/average5",
+      "policy_dir": "experiment/fql_torch_three_seed_average_compact/policies/seed2_epoch900000",
+      "reuse_raw": false,
+      "reuse_average": false,
+      "reuse_policy": false
+    },
+    {
+      "seed": 2,
+      "epoch": 1000000,
+      "run_dir": "experiment/fql_torch_three_seed_average/seed2_run",
+      "raw_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch1000000/raw",
+      "average_dir": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch1000000/average5",
+      "policy_dir": "experiment/fql_torch_three_seed_average_compact/policies/seed2_epoch1000000",
+      "reuse_raw": false,
+      "reuse_average": false,
+      "reuse_policy": false
+    }
+  ],
+  "formal_episodes_per_policy": 100,
+  "formal_env_seed_base": 9000,
+  "formal_action_seed_base": 10000,
+  "formal_case_status": "Fixed comparison cases already used for seed0 independent confirmation; new training seeds1/2 unseen at design.",
+  "formal_score": "Each seed averages success rates at800k,900k,1M; across3 mean and sampleSD(ddof1); all seed deltas retained.",
+  "confirmation_score": "New seed1/2 paired final-three deltas separately reported; zero=no change, negative=counterevidence.",
+  "independent_unit": "training seed, not900 or1800 pooled episode trials; descriptive sample size3 includesdevelopmentseed0.",
+  "cost_accounting": {
+    "formal_evaluation_episodes": 1800,
+    "formal_reused_episodes": 300,
+    "formal_new_episodes": 1500,
+    "progress_new_episodes": 1000,
+    "new_total_evaluation_episodes": 2500,
+    "training_environment_steps": 0,
+    "formal_reused_episodes_this_revision": 600,
+    "formal_new_episodes_this_revision": 1200,
+    "earlier_revision_new_formal_episodes": 300,
+    "new_total_evaluation_episodes_this_revision": 2200,
+    "current_whole_stage_new_episodes": 2500,
+    "previous_single_seed_confirmation_reused_episodes": 300
+  },
+  "guards": {
+    "train_worker_seconds": 1800,
+    "other_worker_seconds": 300,
+    "recorded_rss_bytes": 12884901888,
+    "recorded_mps_driver_bytes": 21474836480,
+    "failure_policy": "Stop and preserve; no automatic retry or tuning."
+  },
+  "markdown_policy": "No Markdown changes this stage; keep documentation pending for consolidated update.",
+  "historical_segment_boundary": "Seed0 has historical early segmentation/cadence; seeds1/2 use50ksegments throughout. Short strict-resume evidence does not prove million-update bitwise equivalence.",
+  "estimated_new_training_wall_minutes_from_previous_measurement": 200.9990078222667,
+  "estimated_new_checkpoint_bytes_upper_bound": 9166695158,
+  "limitations": [
+    "Student parameter averaging is an existing deployment-method adaptation, not a new FQL training objective.",
+    "Three seeds cannot replace the original eight-seed paper protocol.",
+    "No new benchmark, continuous temperature, or GPU utilization measurement."
+  ],
+  "record_revision": "User explicitly requested retaining only meaningful analysis/display evidence.",
+  "inherited_protocol_path": "experiment/fql_torch_three_seed_average/protocol.json",
+  "starting_seed1_checkpoint_epoch": 100000,
+  "new_training_updates_this_revision": 1900000,
+  "earlier_valid_training_updates": 100000,
+  "controller_boundary_note": "V1 controller was intentionally SIGINT-stopped after second train child exit0, before crediting its50k; v1 execution credits50k, summaries/checkpoint/independentguard prove100k.",
+  "no_algorithm_or_hyperparameter_change": true,
+  "batch_trace_scope": "Only earlier100k has per-update index SHA; future1.9M verifies saved sampler boundary states, not per-update traces.",
+  "expected_checkpoint_counts": {
+    "1": 41,
+    "2": 33
+  },
+  "retained_data": [
+    "Frozen config/core/data identity",
+    "Resumable50k checkpoints and15 endpoint averaging snapshots per chain",
+    "Every1000-update loss/resource trend",
+    "Per-episode evaluation outcomes and auditable trajectories",
+    "Failures, checkpoint reload/fresh initialization checks and final paired statistics"
+  ],
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_three_seed_average_compact/protocol.json",
+    "original_sha256": "6eb515c6a66d8a45c30848a17443bee1bc3e41cd30aa00a5bb38a4db6db97f19",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "status": "passed",
+  "models": [
+    {
+      "seed": 613,
+      "arm": "control",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed613_control",
+      "step": 60000,
+      "sha256": "94f5766eb4f617dd03a4206eec7a20f07f8fc7887938960a7cf6b59ade5bacd8"
+    },
+    {
+      "seed": 613,
+      "arm": "augmentation",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed613_augmentation",
+      "step": 60000,
+      "sha256": "cdb356cc6cafb10086d2e57bc9bdbcafd510a61013962b3d12499aa1a2da24d5"
+    },
+    {
+      "seed": 614,
+      "arm": "control",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed614_control",
+      "step": 60000,
+      "sha256": "03db47c06efefcd4793b5d2d0bbc498566a63b10f1e7ec56fd80bb4ac2678edd"
+    },
+    {
+      "seed": 614,
+      "arm": "augmentation",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed614_augmentation",
+      "step": 60000,
+      "sha256": "104c7d3e7caaede5f6f37778572174b692d82020c0fab90505f9383311f9d9c0"
+    },
+    {
+      "seed": 615,
+      "arm": "control",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed615_control",
+      "step": 60000,
+      "sha256": "f2dc164045626b780404134c49dafd198ff6e362c84351804dad835c3fc603b9"
+    },
+    {
+      "seed": 615,
+      "arm": "augmentation",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed615_augmentation",
+      "step": 60000,
+      "sha256": "9c5fcb1799560894af9ee312a78361e0bd71168a22475ddeff30fe54a77f26ca"
+    }
+  ],
+  "branches": {
+    "seed613_control": {
+      "seed": 613,
+      "arm": "control",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed613_control",
+      "step": 60000,
+      "sha256": "94f5766eb4f617dd03a4206eec7a20f07f8fc7887938960a7cf6b59ade5bacd8",
+      "CPU_reload_errors": {
+        "41000": 4.76837158203125e-07,
+        "60000": 4.805624485015869e-07
+      },
+      "CPU_heldout_recomputation": {
+        "old": {
+          "raw_mse": 0.0010040485067293048,
+          "xyz_euclidean_rmse_cm": 1.6191388368606567
+        },
+        "new": {
+          "raw_mse": 0.0011490845354273915,
+          "xyz_euclidean_rmse_cm": 1.3912878036499023
+        }
+      },
+      "first1000": {
+        "training_seconds": 9.921095917001367,
+        "updates_per_second": 100.7953161995281,
+        "includes": "first-step/record checks; excludes checkpoint write",
+        "projected20k_seconds": 198.42191834002733
+      },
+      "training_seconds": 202.15678216703236,
+      "memory": {
+        "rss_bytes": 669679616,
+        "peak_rss_bytes": 734969856,
+        "mps_allocated_bytes": 152530688,
+        "mps_driver_allocated_bytes": 1124810752,
+        "mps_recommended_max_bytes": 26800603136
+      },
+      "12_saved_checkpoints_finite_and_Adam_steps_correct": true,
+      "continued_parent_sampler_boundaries_match": true
+    },
+    "seed613_augmentation": {
+      "seed": 613,
+      "arm": "augmentation",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed613_augmentation",
+      "step": 60000,
+      "sha256": "cdb356cc6cafb10086d2e57bc9bdbcafd510a61013962b3d12499aa1a2da24d5",
+      "CPU_reload_errors": {
+        "41000": 5.364418029785156e-07,
+        "60000": 1.0728836059570312e-06
+      },
+      "CPU_heldout_recomputation": {
+        "old": {
+          "raw_mse": 0.0014253280824050307,
+          "xyz_euclidean_rmse_cm": 1.708383321762085
+        },
+        "new": {
+          "raw_mse": 0.0015714701730757952,
+          "xyz_euclidean_rmse_cm": 1.540034294128418
+        }
+      },
+      "first1000": {
+        "training_seconds": 10.60030716698384,
+        "updates_per_second": 94.33688894550545,
+        "includes": "first-step/record checks; excludes checkpoint write",
+        "projected20k_seconds": 212.00614333967678
+      },
+      "training_seconds": 213.0587758749607,
+      "memory": {
+        "rss_bytes": 698007552,
+        "peak_rss_bytes": 750223360,
+        "mps_allocated_bytes": 152530688,
+        "mps_driver_allocated_bytes": 1124810752,
+        "mps_recommended_max_bytes": 26800603136
+      },
+      "12_saved_checkpoints_finite_and_Adam_steps_correct": true,
+      "continued_parent_sampler_boundaries_match": true
+    },
+    "seed614_control": {
+      "seed": 614,
+      "arm": "control",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed614_control",
+      "step": 60000,
+      "sha256": "03db47c06efefcd4793b5d2d0bbc498566a63b10f1e7ec56fd80bb4ac2678edd",
+      "CPU_reload_errors": {
+        "41000": 5.364418029785156e-07,
+        "60000": 6.556510925292969e-07
+      },
+      "CPU_heldout_recomputation": {
+        "old": {
+          "raw_mse": 0.0006790537154302001,
+          "xyz_euclidean_rmse_cm": 1.310426115989685
+        },
+        "new": {
+          "raw_mse": 0.0008609452052041888,
+          "xyz_euclidean_rmse_cm": 1.1737613677978516
+        }
+      },
+      "first1000": {
+        "training_seconds": 10.285229458997492,
+        "updates_per_second": 97.22680509817918,
+        "includes": "first-step/record checks; excludes checkpoint write",
+        "projected20k_seconds": 205.70458917994983
+      },
+      "training_seconds": 203.0142310419469,
+      "memory": {
+        "rss_bytes": 653885440,
+        "peak_rss_bytes": 736198656,
+        "mps_allocated_bytes": 152530688,
+        "mps_driver_allocated_bytes": 1124810752,
+        "mps_recommended_max_bytes": 26800603136
+      },
+      "12_saved_checkpoints_finite_and_Adam_steps_correct": true,
+      "continued_parent_sampler_boundaries_match": true
+    },
+    "seed614_augmentation": {
+      "seed": 614,
+      "arm": "augmentation",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed614_augmentation",
+      "step": 60000,
+      "sha256": "104c7d3e7caaede5f6f37778572174b692d82020c0fab90505f9383311f9d9c0",
+      "CPU_reload_errors": {
+        "41000": 8.344650268554688e-07,
+        "60000": 5.960464477539062e-07
+      },
+      "CPU_heldout_recomputation": {
+        "old": {
+          "raw_mse": 0.0009715192718431354,
+          "xyz_euclidean_rmse_cm": 1.4309536218643188
+        },
+        "new": {
+          "raw_mse": 0.0012298936489969492,
+          "xyz_euclidean_rmse_cm": 1.3776098489761353
+        }
+      },
+      "first1000": {
+        "training_seconds": 10.901200167019852,
+        "updates_per_second": 91.73301881249448,
+        "includes": "first-step/record checks; excludes checkpoint write",
+        "projected20k_seconds": 218.02400334039703
+      },
+      "training_seconds": 210.5490789579926,
+      "memory": {
+        "rss_bytes": 699760640,
+        "peak_rss_bytes": 759758848,
+        "mps_allocated_bytes": 152530688,
+        "mps_driver_allocated_bytes": 1116422144,
+        "mps_recommended_max_bytes": 26800603136
+      },
+      "12_saved_checkpoints_finite_and_Adam_steps_correct": true,
+      "continued_parent_sampler_boundaries_match": true
+    },
+    "seed615_control": {
+      "seed": 615,
+      "arm": "control",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed615_control",
+      "step": 60000,
+      "sha256": "f2dc164045626b780404134c49dafd198ff6e362c84351804dad835c3fc603b9",
+      "CPU_reload_errors": {
+        "41000": 4.842877388000488e-07,
+        "60000": 5.364418029785156e-07
+      },
+      "CPU_heldout_recomputation": {
+        "old": {
+          "raw_mse": 0.0007731341174803674,
+          "xyz_euclidean_rmse_cm": 1.4024978876113892
+        },
+        "new": {
+          "raw_mse": 0.0010826062643900514,
+          "xyz_euclidean_rmse_cm": 1.3690223693847656
+        }
+      },
+      "first1000": {
+        "training_seconds": 10.150529916980304,
+        "updates_per_second": 98.5170240547886,
+        "includes": "first-step/record checks; excludes checkpoint write",
+        "projected20k_seconds": 203.01059833960608
+      },
+      "training_seconds": 203.8904310420039,
+      "memory": {
+        "rss_bytes": 672546816,
+        "peak_rss_bytes": 736641024,
+        "mps_allocated_bytes": 152530688,
+        "mps_driver_allocated_bytes": 1124810752,
+        "mps_recommended_max_bytes": 26800603136
+      },
+      "12_saved_checkpoints_finite_and_Adam_steps_correct": true,
+      "continued_parent_sampler_boundaries_match": true
+    },
+    "seed615_augmentation": {
+      "seed": 615,
+      "arm": "augmentation",
+      "run": "experiment/fql_torch_visual_brightness_augmentation/seed615_augmentation",
+      "step": 60000,
+      "sha256": "9c5fcb1799560894af9ee312a78361e0bd71168a22475ddeff30fe54a77f26ca",
+      "CPU_reload_errors": {
+        "41000": 8.940696716308594e-07,
+        "60000": 7.152557373046875e-07
+      },
+      "CPU_heldout_recomputation": {
+        "old": {
+          "raw_mse": 0.0012862300500273705,
+          "xyz_euclidean_rmse_cm": 1.612015724182129
+        },
+        "new": {
+          "raw_mse": 0.0014463491970673203,
+          "xyz_euclidean_rmse_cm": 1.5460186004638672
+        }
+      },
+      "first1000": {
+        "training_seconds": 11.000295167032164,
+        "updates_per_second": 90.90665157758636,
+        "includes": "first-step/record checks; excludes checkpoint write",
+        "projected20k_seconds": 220.00590334064327
+      },
+      "training_seconds": 212.75561708403984,
+      "memory": {
+        "rss_bytes": 650936320,
+        "peak_rss_bytes": 734986240,
+        "mps_allocated_bytes": 152530688,
+        "mps_driver_allocated_bytes": 1124810752,
+        "mps_recommended_max_bytes": 26800603136
+      },
+      "12_saved_checkpoints_finite_and_Adam_steps_correct": true,
+      "continued_parent_sampler_boundaries_match": true
+    }
+  },
+  "new_supervised_updates": 120000,
+  "new_FQL_RL_updates": 0,
+  "same_parent_Adam_initial_validation_and_data": true,
+  "same_CPU_MPS_RNG_and_sampler_at41k60k": true,
+  "six_brightness_factor_probe_batches_equal_within_seed": true,
+  "frozen_inputs_unchanged": true,
+  "audit_training_updates": 0,
+  "audit_environment_steps": 0,
+  "source_sha256": "a080c036765777e74a3942d0c7c0b126eedea111678070b875cf78958ab49c26",
+  "limits": [
+    "checks saved states, record points,6 factor probes and CPU validation; not every update intermediate"
+  ],
+  "_provenance": {
+    "historical_source": "experiment/fql_torch_visual_brightness_augmentation/training_acceptance.json",
+    "original_sha256": "c5da78b983ff0defd8036dc355e9fcb3f41f9408e9b6ebc96488b47593058fce",
+    "derived_sanitized_summary": true,
+    "transformation": "Retained selected analytical fields; converted local project paths to historical relative references. Original file unchanged."
+  }
+}

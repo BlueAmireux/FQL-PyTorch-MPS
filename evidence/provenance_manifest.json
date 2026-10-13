@@ -1,0 +1,1076 @@
+{
+  "derived_sanitized_summaries": true,
+  "historical_originals_unchanged": true,
+  "records": [
+    {
+      "source": "experiment/fql_torch_three_seed_average/formal/seed0_epoch800000/raw/episodes.csv",
+      "original_sha256": "3b33dd655e458b0ae1aa9775e7fe5693268b39f26e7ec07cbe25559112f2b7b8",
+      "derived_path": "evidence/state/evaluations/seed0_epoch800000_raw.csv",
+      "derived_sha256": "057f7991d18b3f41c5d3c47c569ddb8b7f4d1fa82c1fe1e1e0798de2f028dac5",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average/formal/seed0_epoch800000/average5/episodes.csv",
+      "original_sha256": "596181cab7e289af9fcedc8461643cb70435e768a44f12e0baa5f192657632ae",
+      "derived_path": "evidence/state/evaluations/seed0_epoch800000_average5.csv",
+      "derived_sha256": "733622ff48dcc868998417b7e1add2c5d618c55dd1ea94cc81b641ebe99d7808",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_policy_average_v2/confirmation/raw900000/episodes.csv",
+      "original_sha256": "cdb73ee06b98c64ee84018e2eb8a66df0e62c663284f082274813e37272a3e89",
+      "derived_path": "evidence/state/evaluations/seed0_epoch900000_raw.csv",
+      "derived_sha256": "4f70684601e48bd38a7263eb72e71178a666fe84cb32872c4c8136d562de9cca",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average/formal/seed0_epoch900000/average5/episodes.csv",
+      "original_sha256": "9e12d42b0f2e1c928cfa6be4dfb77db880f90726acdd9f44c87912892e629f0c",
+      "derived_path": "evidence/state/evaluations/seed0_epoch900000_average5.csv",
+      "derived_sha256": "bb7ec0caae791bd3bae45e62d4e68b14f141d94dae800045fe0f79aba2129762",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_policy_average_v2/confirmation/raw1000000/episodes.csv",
+      "original_sha256": "561efc1a9685c97ec4aad8ffa6ad2e38a5ebea65147ad8ef058e13a73d81c69d",
+      "derived_path": "evidence/state/evaluations/seed0_epoch1000000_raw.csv",
+      "derived_sha256": "4cd0272a6b09a2e359483ff349d4255edb06610388d993d48508be7b03b21f1f",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_policy_average_v2/confirmation/average5/episodes.csv",
+      "original_sha256": "30a1402db136c55f4bac3fc0369fa4e19592623fede059c490fd8f0cc4b61ec7",
+      "derived_path": "evidence/state/evaluations/seed0_epoch1000000_average5.csv",
+      "derived_sha256": "31af3a6f3a1054f54b53edca8bdd1a7cf42ef6463f8214fa693479951cdea7b9",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch800000/raw/episodes.csv",
+      "original_sha256": "efed16b74d61f0ecb9f955c49eb1ad4e3cb624518139ae14691e3e62055651f0",
+      "derived_path": "evidence/state/evaluations/seed1_epoch800000_raw.csv",
+      "derived_sha256": "f98a2ba6fdc891ae14072528a12b1415da497e301451eb85ed5e3fa095689a60",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch800000/average5/episodes.csv",
+      "original_sha256": "396c337a771f917420d4d964a938b08df3c159b446c23f630dc802b63f6a56a7",
+      "derived_path": "evidence/state/evaluations/seed1_epoch800000_average5.csv",
+      "derived_sha256": "9ea0a773d2b708ae310a9fde6a056ea6935adc202106952a52fc6197b6dcaa38",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch900000/raw/episodes.csv",
+      "original_sha256": "bb20f11dd28baaaf9b5a4a2a87fd40f1738d9604c9e641b59ed3c059ae83c4e2",
+      "derived_path": "evidence/state/evaluations/seed1_epoch900000_raw.csv",
+      "derived_sha256": "3c27c8f01cdd4290dc5d7a5ed53e295145164a43767480865bc08a79210f42b5",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch900000/average5/episodes.csv",
+      "original_sha256": "3f526420d127715776862b8d7fa61c3d3ceca9df7282cd949fafcc0c0d5dcc2a",
+      "derived_path": "evidence/state/evaluations/seed1_epoch900000_average5.csv",
+      "derived_sha256": "a4137111d0ce884e6e2bec3b2ce6274af5c339e6731d45a39172e57b7e63a7ca",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch1000000/raw/episodes.csv",
+      "original_sha256": "93e29ad302445db55a4b9f62b53f62e93234bc630c47e842369353bbbd9015b9",
+      "derived_path": "evidence/state/evaluations/seed1_epoch1000000_raw.csv",
+      "derived_sha256": "1685826badd2b2bdc9a4be47ce4de764554bb14f604b034428b81e3eedbb4786",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed1_epoch1000000/average5/episodes.csv",
+      "original_sha256": "e8ddbc35fd47595159c27a1bcf25237570ffc5c3a013e31e240ca30749710209",
+      "derived_path": "evidence/state/evaluations/seed1_epoch1000000_average5.csv",
+      "derived_sha256": "eaa095eb3eb6ba7878f3a2001d8a46304ba7c5be19d5a06dd984cb2ee5b88057",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch800000/raw/episodes.csv",
+      "original_sha256": "20edbed3d2824165e9d5a702c9592e9648920aba8f9605af8baa7e134485b851",
+      "derived_path": "evidence/state/evaluations/seed2_epoch800000_raw.csv",
+      "derived_sha256": "49b77e015e808a0ef6a95efcef2e327a3957f644e25a4ec60e6f0e0029181c65",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch800000/average5/episodes.csv",
+      "original_sha256": "9886dbd18776f2c1d0f9a6c3b4647d49208cf2d82a946a29e9b9ced9be59098b",
+      "derived_path": "evidence/state/evaluations/seed2_epoch800000_average5.csv",
+      "derived_sha256": "89cb87f50bb818dcbd13940ea62ccb4cc44d38a8d97819d17da73dca6a78b6ca",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch900000/raw/episodes.csv",
+      "original_sha256": "dfb61f98d5e47231188af60786031360b00d3b1c13be034563b6645dc701b1f0",
+      "derived_path": "evidence/state/evaluations/seed2_epoch900000_raw.csv",
+      "derived_sha256": "8d0d8a95c5b81843e4931f6ecdc07ef72bc5ab0a39c4a1f30fa317241f11371a",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch900000/average5/episodes.csv",
+      "original_sha256": "d39df498e9de3d35c39b39d7a9c2ea5aebb4659b6b6dffe92d26efebdfff88cd",
+      "derived_path": "evidence/state/evaluations/seed2_epoch900000_average5.csv",
+      "derived_sha256": "59237e9b5c0fdcf4d4c05c350758bef489e2907b688a7603da72f8afbd67fa96",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch1000000/raw/episodes.csv",
+      "original_sha256": "78dfecb4cbe810540948b950b7d40648cb5218f4cd744dbcebbbc5f1922333cd",
+      "derived_path": "evidence/state/evaluations/seed2_epoch1000000_raw.csv",
+      "derived_sha256": "c0c5e8cc65f73f46440944136ae1125468bac9843e1299533aa84c834068bcf2",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/formal/seed2_epoch1000000/average5/episodes.csv",
+      "original_sha256": "d066fee9bb450e1e9e715db74fdadb1780d577b627447b25ce4e6806e3985e35",
+      "derived_path": "evidence/state/evaluations/seed2_epoch1000000_average5.csv",
+      "derived_sha256": "a082f01839bd1ba6bca78d2bb34ac1881e3ee9129c068d3f7919847c6adbf7e7",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/results.json",
+      "original_sha256": "8458542847cc9a73c3981665a5df12bbba7c129a7495662cd2ea53442dce42f5",
+      "derived_path": "evidence/state/results.json",
+      "derived_sha256": "0797026b3ff4febc8425efd81a9d8ba9da2e5c1b583017eee6d42ef8926ae90b",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "completed_updates_by_seed",
+        "training_environment_steps",
+        "per_seed_last_three_mean",
+        "across_three_seeds",
+        "limitations",
+        "formal_evaluations",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/protocol.json",
+      "original_sha256": "6eb515c6a66d8a45c30848a17443bee1bc3e41cd30aa00a5bb38a4db6db97f19",
+      "derived_path": "evidence/state/protocol.json",
+      "derived_sha256": "8a37b52a0a4240297ab6e12943eafda2158364d4a767b7c733cfad96bd57e74e",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "recorded_at",
+        "scope",
+        "training_seeds",
+        "development_seed",
+        "new_confirmation_training_seeds",
+        "updates_per_seed",
+        "new_training_updates",
+        "fresh_runs",
+        "original_seed0_run",
+        "training_algorithm_changed",
+        "new_training_losses",
+        "training",
+        "method",
+        "formal_plan",
+        "formal_episodes_per_policy",
+        "formal_env_seed_base",
+        "formal_action_seed_base",
+        "formal_case_status",
+        "formal_score",
+        "confirmation_score",
+        "independent_unit",
+        "cost_accounting",
+        "guards",
+        "markdown_policy",
+        "historical_segment_boundary",
+        "estimated_new_training_wall_minutes_from_previous_measurement",
+        "estimated_new_checkpoint_bytes_upper_bound",
+        "limitations",
+        "record_revision",
+        "inherited_protocol_path",
+        "starting_seed1_checkpoint_epoch",
+        "new_training_updates_this_revision",
+        "earlier_valid_training_updates",
+        "controller_boundary_note",
+        "no_algorithm_or_hyperparameter_change",
+        "batch_trace_scope",
+        "expected_checkpoint_counts",
+        "retained_data",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_three_seed_average_compact/validation.json",
+      "original_sha256": "bdf3efc7cd1b9ff906beb92a26d32872872b6dd52c74fdf97dfc13fc99ebab91",
+      "derived_path": "evidence/state/historical_validation.json",
+      "derived_sha256": "eb4b80204d2a7ee35d031e6a963ad22498f3268e0cb76ca5539f41b06aecca97",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "validator_device",
+        "environment_created",
+        "optimizer_updates",
+        "validator_sha256",
+        "official_dataset_identity",
+        "normal_exit_serial_workers_this_revision",
+        "full_finite_checkpoint_payloads",
+        "finite_saved_tensor_count",
+        "all_logged_points_finite",
+        "compact_new_logged_points_finite",
+        "earlier_actual_index_sha_exact_replay_count",
+        "future_sampler_boundary_only_updates",
+        "source_and_deployment_averages_independently_validated",
+        "trajectories_validated",
+        "same_true_resets_and_common_action_noise_prefixes",
+        "scope_limitations",
+        "validation_wall_seconds",
+        "unchanged_inputs_count",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/results.json",
+      "original_sha256": "edb175a68b682eb2442d79a34a71b0fdcd96c250975150d6ab3913ba7aabfb19",
+      "derived_path": "evidence/visual_temporal/results.json",
+      "derived_sha256": "0cd8da7f125f735917d12c25f731b2cb9929e76f7d34ede3116c780b51cb5ecb",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "visual_training_seeds",
+        "fixed_checkpoint_step",
+        "groups",
+        "paired",
+        "cost",
+        "saved_all_raw_episodes_and_fixed_ep0_videos",
+        "models_and_sources_unchanged",
+        "frozen_inputs",
+        "conditional_case_cluster_intervals_not_population_training_seed_intervals",
+        "limits",
+        "source_records_sha256",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/protocol.json",
+      "original_sha256": "f2ce722119720cae546aaa212891eceb0f8cc0a5eb5c03df3d7d10759ef04337",
+      "derived_path": "evidence/visual_temporal/protocol.json",
+      "derived_sha256": "bc44de35a461899bc185aebc096b92f4d0cc53f051a13ec422db3048b3d1724a",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "created_at_utc",
+        "question",
+        "models",
+        "cases",
+        "total_episodes",
+        "max_concurrent_cpu_processes",
+        "cpu_threads_per_process",
+        "training_updates",
+        "new_collection_episodes",
+        "primary",
+        "statistics",
+        "fixed_checkpoint_and_no_selection",
+        "previous_final_cases_reused",
+        "same_env_and_action_seeds_all_models",
+        "checkpoint_or_hyperparameter_changes_after_confirmation",
+        "first_pair_speed_gate",
+        "limits",
+        "frozen_existing_inputs",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/analysis_plan.json",
+      "original_sha256": "19b52770998101816534bc35293f495f293d76c0de81ea2ba9b51e4c32ef9752",
+      "derived_path": "evidence/visual_temporal/analysis_plan.json",
+      "derived_sha256": "6345c3f9995dd77d905348e660952fe28fb2cf7c16868473d9d4f9868fe6dc99",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "bootstrap_resamples",
+        "bootstrap_seed",
+        "case_cluster",
+        "per_seed",
+        "fixed_three_seed_average",
+        "training_seed_variation",
+        "claim_rule",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluation_validation.json",
+      "original_sha256": "770206627b64cf47fb108ed40171026d73cdecd6a556d874e95e4de508d39e26",
+      "derived_path": "evidence/visual_temporal/evaluation_validation.json",
+      "derived_sha256": "33233d2287412ef1d0583c5501d89f27edc53ee5b8e6a0dd6e0c475d0c0d70e0",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "scope",
+        "groups",
+        "paired",
+        "episodes",
+        "unique_case_clusters",
+        "environment_steps",
+        "all_models_initial_state_and_RGB_match",
+        "all_noise_reward_success_terminal_fields_audited",
+        "frozen_inputs_unchanged",
+        "audit_added_environment_steps",
+        "paired_cases_sha256",
+        "audit_source_sha256",
+        "limitations",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/paired_cases.csv",
+      "original_sha256": "51d04611a7ec004cf7fdb06602f4008bd2c4c29e8c13ac0ffead05c354a91c12",
+      "derived_path": "evidence/visual_temporal/paired_cases.csv",
+      "derived_sha256": "51d04611a7ec004cf7fdb06602f4008bd2c4c29e8c13ac0ffead05c354a91c12",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 200
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_full_shifted/episodes.csv",
+      "original_sha256": "639fc74d8680424dbe6c8997b6de75f07db3b95427b7fb7dfbccc42bf1b5cbe7",
+      "derived_path": "evidence/visual_temporal/evaluations/seed613_student_full_shifted.csv",
+      "derived_sha256": "03f4612b6508f636e5d0960fb4e31e97e072f58b51d5c1ef41bdaf92d606ab45",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_full_standard/episodes.csv",
+      "original_sha256": "2a3686a1538f55875f35dc768b54d1cdb290fd762cc62810d0e8f4c421ad2f22",
+      "derived_path": "evidence/visual_temporal/evaluations/seed613_student_full_standard.csv",
+      "derived_sha256": "f39bb6334ff494b2e7617242b164003b118ebbea21cbaa69a27e69fb12e1aa8e",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_prefix_shifted/episodes.csv",
+      "original_sha256": "1e3148eb1dbc02a4bccc973e7d6cdfb76dd7446549a146fe0e10d13107f4b1fa",
+      "derived_path": "evidence/visual_temporal/evaluations/seed613_student_prefix_shifted.csv",
+      "derived_sha256": "c79295483dcffbfea664ac83d52c786341e2754c687030a7155386867f69894f",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed613_student_prefix_standard/episodes.csv",
+      "original_sha256": "0768ab1f7ee052fbd97c39cf02150a38cc69bbd0cadb178901a17f2bb2c1a3e4",
+      "derived_path": "evidence/visual_temporal/evaluations/seed613_student_prefix_standard.csv",
+      "derived_sha256": "aa07a15c18db6e077545fb83d064d91184783971a7d8522be9fa7fd4fcee3e46",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed614_student_full_shifted/episodes.csv",
+      "original_sha256": "56db6652657a7da6d100b49c5e2f1deb3624ee40330bc01761351655410f122d",
+      "derived_path": "evidence/visual_temporal/evaluations/seed614_student_full_shifted.csv",
+      "derived_sha256": "52ec885fcfb91c74cefe6c35f7acf60f9a6a95cc48a810bde896d537a5d42879",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed614_student_full_standard/episodes.csv",
+      "original_sha256": "ccae1f75935d73ed87bbbb0bdd8b69e07e80279645bcb48e006415cf079a22f6",
+      "derived_path": "evidence/visual_temporal/evaluations/seed614_student_full_standard.csv",
+      "derived_sha256": "8c059bb266e0ced5ad8f4ebca23f95a2b8fc23f99d43fffbcf88337e25f210c8",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed614_student_prefix_shifted/episodes.csv",
+      "original_sha256": "b65956602c6fa494aa2e4e15371511807372bfff704c021112af9a36e633b6dc",
+      "derived_path": "evidence/visual_temporal/evaluations/seed614_student_prefix_shifted.csv",
+      "derived_sha256": "e72ee3e3a4c2bed8a8fc9af74d2af5f544d3978e5a8a26f6d724a112d7eb415d",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed614_student_prefix_standard/episodes.csv",
+      "original_sha256": "54eb69acf34bace39006eaf5cdaa021b856beae790543615cf76a33d6bc095aa",
+      "derived_path": "evidence/visual_temporal/evaluations/seed614_student_prefix_standard.csv",
+      "derived_sha256": "b38abe0dce1b336b1a75e242e22e5bcce0846d94086017bbe29ee839ec683880",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_full_shifted/episodes.csv",
+      "original_sha256": "5d8f3c335b626b595591722bbefbd86701f5f54425aec5f675480f3eb6dee3d5",
+      "derived_path": "evidence/visual_temporal/evaluations/seed615_student_full_shifted.csv",
+      "derived_sha256": "79c6e216ede0491fde2de994b397a4173d52a1cc9a1960196a0a55dccb5f3088",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_full_standard/episodes.csv",
+      "original_sha256": "b4aaa79baac7a7423a2260f58c28369a3a213ee0de82fc0fad4698918359ae21",
+      "derived_path": "evidence/visual_temporal/evaluations/seed615_student_full_standard.csv",
+      "derived_sha256": "a390f318f9956693c76f5c4946a59c23ffabb2d056322f14cd7af6c9f8cde356",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_prefix_shifted/episodes.csv",
+      "original_sha256": "9690be043f3c8653a6537a18f15fabcdca0f53ad57506d8c5ae68b9e7f9af218",
+      "derived_path": "evidence/visual_temporal/evaluations/seed615_student_prefix_shifted.csv",
+      "derived_sha256": "21dac50f191789372e1342de2a869660d9241ba3c3550264b45dc6b6ba290dab",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_common_confirmation/evaluations/seed615_student_prefix_standard/episodes.csv",
+      "original_sha256": "4cc18b0b8c781580af15841f7abbf269d3d989e1eff36b8a91be42aafc4eb28d",
+      "derived_path": "evidence/visual_temporal/evaluations/seed615_student_prefix_standard.csv",
+      "derived_sha256": "bef56d39d93515bd83050afe97bf5f85110332cc90e0c517ad19ef9b5cf3794b",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/results.json",
+      "original_sha256": "9e58cc28b13d47ed9999c7998bb2accd45bd4a2693912685d411a3a07c652115",
+      "derived_path": "evidence/brightness/results.json",
+      "derived_sha256": "67ac3784b2a421ae7f6c821542596f9f3f49cee2b997d1804c97d927eabc187b",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "training_seeds",
+        "fixed_parent_step",
+        "fixed_end_step",
+        "groups",
+        "paired",
+        "macro",
+        "decision",
+        "cost",
+        "shared_initial_image_pose_RMSE_cm",
+        "limits",
+        "frozen_inputs",
+        "all_raw_episodes_and_fixed_ep0_videos_retained",
+        "fixed_models_case_intervals_not_seed_population_confidence",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/protocol.json",
+      "original_sha256": "3a2ca507d3782946a7a2d85ca448101d1e40fcccd1539e2f19ccc51f037b8cd9",
+      "derived_path": "evidence/brightness/protocol.json",
+      "derived_sha256": "c20afa926abbbdb504170461f158917c85b7d9b2e653ef429a97c17a4090376e",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "created_at_utc",
+        "diagnosis_gate",
+        "diagnosis_result_sha256",
+        "training_seeds",
+        "models",
+        "arms",
+        "parent_step",
+        "additional_steps_per_arm",
+        "fixed_end_step",
+        "total_new_supervised_updates",
+        "new_FQL_RL_updates",
+        "new_data_collection",
+        "data",
+        "brightness",
+        "same_budget",
+        "save_steps",
+        "training_speed_gate",
+        "evaluation",
+        "primary",
+        "decision",
+        "secondary",
+        "statistics",
+        "selection_after_evaluation",
+        "accepted_scope",
+        "limits",
+        "frozen_existing_inputs",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/analysis_plan.json",
+      "original_sha256": "f130286a6e43b09b6f4cf0eb9055dafb4f767b560e7f42efc29b7b6a4784f9b8",
+      "derived_path": "evidence/brightness/analysis_plan.json",
+      "derived_sha256": "a949e101dc2dc4a3c4f2cf26be505523b0d1a885d01d091fe24af8e557361529",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "primary",
+        "decision",
+        "secondary",
+        "statistics",
+        "selection_after_evaluation",
+        "limits",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluation_validation.json",
+      "original_sha256": "36c6618e51b669582994b23cb67424891dbe88f7b35b6e70cbb69391f578b137",
+      "derived_path": "evidence/brightness/evaluation_validation.json",
+      "derived_sha256": "8f9dda5c78126d22e93ec9e6fe0f7e3c955f1b722cf8492dbb946c44628c75e4",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "groups",
+        "paired",
+        "macro",
+        "decision",
+        "episodes",
+        "unique_case_clusters",
+        "environment_steps",
+        "all_models_conditions_initial_state_and_rawRGB_match",
+        "saved_pixel_transforms_exact",
+        "all_noises_rewards_official_success_and_terminal_fields_audited",
+        "frozen_inputs_unchanged",
+        "audit_training_updates",
+        "audit_environment_steps",
+        "paired_cases_sha256",
+        "audit_source_sha256",
+        "limits",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/paired_cases.csv",
+      "original_sha256": "662b720148e2243ce42c9a6a1e33902e5be4bc647dad7cf9f62136ba80c11c28",
+      "derived_path": "evidence/brightness/paired_cases.csv",
+      "derived_sha256": "662b720148e2243ce42c9a6a1e33902e5be4bc647dad7cf9f62136ba80c11c28",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 100
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_clean_shifted/episodes.csv",
+      "original_sha256": "3b957835969859900e9e33afe05db0e920b35148e85ea9fa9b2df11604d59f8f",
+      "derived_path": "evidence/brightness/evaluations/seed613_augmentation_clean_shifted.csv",
+      "derived_sha256": "95a9ffd464fc7672bc3843449711b40248b233d2c8549fd92bcef9c28a6c7097",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_clean_standard/episodes.csv",
+      "original_sha256": "ce3684e0d8173dae553b970d8603dbe321f7378e6bdb3cbc172df6a9f38e9bca",
+      "derived_path": "evidence/brightness/evaluations/seed613_augmentation_clean_standard.csv",
+      "derived_sha256": "b4c5e0573e918ccafd673bea84b8e21c6a545d685dd1874c8da66ae5c2504a9b",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim055_shifted/episodes.csv",
+      "original_sha256": "ad0bdadd68397fb37aa0fa5ee3ec6fc945fa7acb9e14baff0bf40b0e4eedec45",
+      "derived_path": "evidence/brightness/evaluations/seed613_augmentation_dim055_shifted.csv",
+      "derived_sha256": "1d64d0d14ae992be532fe7501de6e681896394fbaa3248f969b1ac1f5f390486",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim055_standard/episodes.csv",
+      "original_sha256": "59dd9360496779f934a0ae91a37490977fa08966d27add7ddf0bdcef9383f43f",
+      "derived_path": "evidence/brightness/evaluations/seed613_augmentation_dim055_standard.csv",
+      "derived_sha256": "cfac191cd12658f871ce14ceecd40e5537041247506cacda0a2419952d10c057",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim07_shifted/episodes.csv",
+      "original_sha256": "c9f22bc227f573960b10e35dfb1c6b36fd3295c0d9ad11b130904f0d72ee3e55",
+      "derived_path": "evidence/brightness/evaluations/seed613_augmentation_dim07_shifted.csv",
+      "derived_sha256": "00edaf7ad0777e7cb9c3cf7a0239e2c5cfe13d9a61044d53ec493cedbb2b6ad0",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_augmentation_dim07_standard/episodes.csv",
+      "original_sha256": "65bc0ead13078f054de5a7fb74041b75f4916bc5990d02990ffc5775288020a1",
+      "derived_path": "evidence/brightness/evaluations/seed613_augmentation_dim07_standard.csv",
+      "derived_sha256": "51aee7a88fb754e9038886ed69f7fb5b956f282d643646aae63dd3858429085d",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_clean_shifted/episodes.csv",
+      "original_sha256": "89c4a0c78ed49e3b00442d5564acb66dee34afea6f13e93a77b70f17f9a99f67",
+      "derived_path": "evidence/brightness/evaluations/seed613_control_clean_shifted.csv",
+      "derived_sha256": "cc6c5326539943f8445bfd374b54717c41503ebd371aae1c5747fc1568584acf",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_clean_standard/episodes.csv",
+      "original_sha256": "c75c773ceef2af05503946a5b4698c4973024ba6b2c2afdaf61dc7cb6493de30",
+      "derived_path": "evidence/brightness/evaluations/seed613_control_clean_standard.csv",
+      "derived_sha256": "b2d91305756af8e9696b61481a9c8b9e4c902dce9d84854ff85634f9c843ec93",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim055_shifted/episodes.csv",
+      "original_sha256": "f9e47241ba1bfcb22508254f8a2a34da714334aac7275f4afc1bc0809491b0ab",
+      "derived_path": "evidence/brightness/evaluations/seed613_control_dim055_shifted.csv",
+      "derived_sha256": "84d2487180cf16cfc6f9aacf82409acefca13853b87f26338e146ba6b98e93b3",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim055_standard/episodes.csv",
+      "original_sha256": "204d92a81b5d1c54be0978bec3822b3b85f15a14a938ea950cf6edbbf4d78c61",
+      "derived_path": "evidence/brightness/evaluations/seed613_control_dim055_standard.csv",
+      "derived_sha256": "abdc71ae96d7979a11dc19eac7561c81622837318b422dfa480fe2f500b9fd14",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim07_shifted/episodes.csv",
+      "original_sha256": "d894f48eb4463f36f9f4cbd7f3426eaf32d9cab5dd46feeb455689cd4075fbea",
+      "derived_path": "evidence/brightness/evaluations/seed613_control_dim07_shifted.csv",
+      "derived_sha256": "84d2487180cf16cfc6f9aacf82409acefca13853b87f26338e146ba6b98e93b3",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed613_control_dim07_standard/episodes.csv",
+      "original_sha256": "382693bb57c27504b8789da6a88c968831fcf2f2232bfc139964eab3ba5118f2",
+      "derived_path": "evidence/brightness/evaluations/seed613_control_dim07_standard.csv",
+      "derived_sha256": "abdc71ae96d7979a11dc19eac7561c81622837318b422dfa480fe2f500b9fd14",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_clean_shifted/episodes.csv",
+      "original_sha256": "1602c2ff31e289c18112cb6801a80c9a7954a296692bdca318d9249f45a0b367",
+      "derived_path": "evidence/brightness/evaluations/seed614_augmentation_clean_shifted.csv",
+      "derived_sha256": "b1880864ffc9504e0e87cfb88a137225a7e2904cde67e17028bc9c5bcec164c6",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_clean_standard/episodes.csv",
+      "original_sha256": "d8ee23d642164369c76c14d3e984567a6df49a7da1dfc0d82df96d8a72fc73d0",
+      "derived_path": "evidence/brightness/evaluations/seed614_augmentation_clean_standard.csv",
+      "derived_sha256": "ff8b5ce73f0e4eac8e3023df00e2c29e3b11282941ad35cbbeb141a619f9b3ce",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_dim055_shifted/episodes.csv",
+      "original_sha256": "10cf0d2a38efead3cde4b34d23a93aa0e7695fa5041855c30a08e6bf815c1326",
+      "derived_path": "evidence/brightness/evaluations/seed614_augmentation_dim055_shifted.csv",
+      "derived_sha256": "8784a6c672e77adee6602997628fdc44ce42b34f12153e5f440fba8711bf92d1",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_dim055_standard/episodes.csv",
+      "original_sha256": "d09c77b037dcc6d3ce69476107b95fcc19c3f1666921b58bbbaa5334a78b7bf4",
+      "derived_path": "evidence/brightness/evaluations/seed614_augmentation_dim055_standard.csv",
+      "derived_sha256": "052aaf8e8609534c85a312bf283836c19f685864089d848fb731f56cd9656c4e",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_dim07_shifted/episodes.csv",
+      "original_sha256": "ec9b5a60ffcc8b4de02bbea4b77ba1af5779ae87d4db2f313ee142fb9e59b523",
+      "derived_path": "evidence/brightness/evaluations/seed614_augmentation_dim07_shifted.csv",
+      "derived_sha256": "24bb4dc5fc4f1ce6e8151b29778e9e59e793222683d2ce09ddb8a690952a2d14",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_augmentation_dim07_standard/episodes.csv",
+      "original_sha256": "1539528afbaa9a6534837af3c20ed96134ac2cf3d17e24c05eb87ec17c1db51c",
+      "derived_path": "evidence/brightness/evaluations/seed614_augmentation_dim07_standard.csv",
+      "derived_sha256": "fdb8c4c18619a2e170d37350556bb404da6cdaa196b0d6a2e642932bac854a30",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_clean_shifted/episodes.csv",
+      "original_sha256": "099209c5301b879ac9922301d7633acee642bada9b27c71572da1bef0316a63a",
+      "derived_path": "evidence/brightness/evaluations/seed614_control_clean_shifted.csv",
+      "derived_sha256": "2e850d8241ddd0775ae1ba19fa2526ae3f781710f0e483087dd9e4843fcf246c",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_clean_standard/episodes.csv",
+      "original_sha256": "7ba7b6b536c7f3de94f97c4d234a609f0184b1ae00d2fbaedd0c7f80182daeaa",
+      "derived_path": "evidence/brightness/evaluations/seed614_control_clean_standard.csv",
+      "derived_sha256": "84b3c118bbb9c608e660608f3ec2ce218ca4c9cd3e343c51c5d4685d11575082",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_dim055_shifted/episodes.csv",
+      "original_sha256": "da5740f1c0b03315acc9fae9dafd99e05c5432f2bda07b089cd096014e575f57",
+      "derived_path": "evidence/brightness/evaluations/seed614_control_dim055_shifted.csv",
+      "derived_sha256": "84d2487180cf16cfc6f9aacf82409acefca13853b87f26338e146ba6b98e93b3",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_dim055_standard/episodes.csv",
+      "original_sha256": "dd39ca0d4533f1d371e726f598e4e167c0ba5577caa2b6a70d2ac506e9dd2219",
+      "derived_path": "evidence/brightness/evaluations/seed614_control_dim055_standard.csv",
+      "derived_sha256": "abdc71ae96d7979a11dc19eac7561c81622837318b422dfa480fe2f500b9fd14",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_dim07_shifted/episodes.csv",
+      "original_sha256": "753241a088a4b13a86c5881094ab3443ed7fe5f0df98f9a4a86e3e374cfc5e1e",
+      "derived_path": "evidence/brightness/evaluations/seed614_control_dim07_shifted.csv",
+      "derived_sha256": "84d2487180cf16cfc6f9aacf82409acefca13853b87f26338e146ba6b98e93b3",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed614_control_dim07_standard/episodes.csv",
+      "original_sha256": "9a79d3abf0923b43345fe567a45a2ee6ef38e82764d5f09133ceeaac069749eb",
+      "derived_path": "evidence/brightness/evaluations/seed614_control_dim07_standard.csv",
+      "derived_sha256": "abdc71ae96d7979a11dc19eac7561c81622837318b422dfa480fe2f500b9fd14",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_clean_shifted/episodes.csv",
+      "original_sha256": "8e89869244f40e52b971c83a3372b211479231dd9b233088f4f45621a0f3427f",
+      "derived_path": "evidence/brightness/evaluations/seed615_augmentation_clean_shifted.csv",
+      "derived_sha256": "2e9e2cd6b344c10bfb7563f94a4468e945ff83c22ed34dd0aee5fccf5cb3d769",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_clean_standard/episodes.csv",
+      "original_sha256": "d7b8788218a4687da7b06c45f6728b4b0125ad094ba52c3a1aed16aee194a1f3",
+      "derived_path": "evidence/brightness/evaluations/seed615_augmentation_clean_standard.csv",
+      "derived_sha256": "16c14d1473b13dd0ca0d11a02e2ceb2bb7220cdeab29751496a71c8a8551b02c",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_dim055_shifted/episodes.csv",
+      "original_sha256": "2e5dd71474e2eea9ac1c0e74ddedfd0b588376f2508f31419b12f978d29c4ffa",
+      "derived_path": "evidence/brightness/evaluations/seed615_augmentation_dim055_shifted.csv",
+      "derived_sha256": "ad96455d2d6bc36ae2c0017753f4126bd2c5d60940397c0ecf3cec0c540bd052",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_dim055_standard/episodes.csv",
+      "original_sha256": "313807236eefb245d3e73919e2fb2e498881c54caf83c10a8bfb4c72bbd7f639",
+      "derived_path": "evidence/brightness/evaluations/seed615_augmentation_dim055_standard.csv",
+      "derived_sha256": "31acb9b7a30dd764dd34fcd2d045e2bb40b57bbda917becba463b9b9ab61613a",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_dim07_shifted/episodes.csv",
+      "original_sha256": "71432dec8fe6160ea2c3e9e9924af9b74867c9fe3ad0617046cba7624e2fba72",
+      "derived_path": "evidence/brightness/evaluations/seed615_augmentation_dim07_shifted.csv",
+      "derived_sha256": "5756c2a84ef82f5f76e6f7a016153318c03742982606b0babbb878d031a6922b",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_augmentation_dim07_standard/episodes.csv",
+      "original_sha256": "aa713bb0a76af7eab6224fba26b4d9416b7eb1814bc6c6ff84568557d415af03",
+      "derived_path": "evidence/brightness/evaluations/seed615_augmentation_dim07_standard.csv",
+      "derived_sha256": "f65f1405383837224cde9ca25ec131df3eb5e7bbbd32a9f2c0cee0501e87afca",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_clean_shifted/episodes.csv",
+      "original_sha256": "1e85fa43087f8dc247615eb326311005b430b3ae6492e5a55e9959fd0e6745a7",
+      "derived_path": "evidence/brightness/evaluations/seed615_control_clean_shifted.csv",
+      "derived_sha256": "2a37860cb5a75e510c9a2bdbeef755b455ec0bd8ec246ac6be9e82bcb5bacb92",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_clean_standard/episodes.csv",
+      "original_sha256": "a35abb8339a5508dc71bbc259034a06678be95db23f1b49b33d5e7098b6120bd",
+      "derived_path": "evidence/brightness/evaluations/seed615_control_clean_standard.csv",
+      "derived_sha256": "6c8b379f05b1e9f2547a7cc02cde87cf3419cc790cfcdffe3537651150f355f2",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_dim055_shifted/episodes.csv",
+      "original_sha256": "fe2387e093afa1ae4e65757d188cdf9582c176fc8ba215bc8284de1cf6ca21d2",
+      "derived_path": "evidence/brightness/evaluations/seed615_control_dim055_shifted.csv",
+      "derived_sha256": "84d2487180cf16cfc6f9aacf82409acefca13853b87f26338e146ba6b98e93b3",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_dim055_standard/episodes.csv",
+      "original_sha256": "7bd035590d270d829e760d940c8c0986f297ab1974c68c13f658ff397f879cb4",
+      "derived_path": "evidence/brightness/evaluations/seed615_control_dim055_standard.csv",
+      "derived_sha256": "abdc71ae96d7979a11dc19eac7561c81622837318b422dfa480fe2f500b9fd14",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_dim07_shifted/episodes.csv",
+      "original_sha256": "64572339cc5e3a4130632271b0a7e5651eab70067602907c87fe91bf59f42cb1",
+      "derived_path": "evidence/brightness/evaluations/seed615_control_dim07_shifted.csv",
+      "derived_sha256": "84d2487180cf16cfc6f9aacf82409acefca13853b87f26338e146ba6b98e93b3",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/evaluations/seed615_control_dim07_standard/episodes.csv",
+      "original_sha256": "d55ee7bcc7604059da05f34e264e8e3c187ae7ea908fa21140249e3d1bd5bba3",
+      "derived_path": "evidence/brightness/evaluations/seed615_control_dim07_standard.csv",
+      "derived_sha256": "abdc71ae96d7979a11dc19eac7561c81622837318b422dfa480fe2f500b9fd14",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 50
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/training_acceptance.json",
+      "original_sha256": "c5da78b983ff0defd8036dc355e9fcb3f41f9408e9b6ebc96488b47593058fce",
+      "derived_path": "evidence/brightness/historical_training_acceptance.json",
+      "derived_sha256": "9db280c722fb45244479ca6c2decd5f43ca338d71e6e6df01b0c2c642a134637",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "models",
+        "branches",
+        "new_supervised_updates",
+        "new_FQL_RL_updates",
+        "same_parent_Adam_initial_validation_and_data",
+        "same_CPU_MPS_RNG_and_sampler_at41k60k",
+        "six_brightness_factor_probe_batches_equal_within_seed",
+        "frozen_inputs_unchanged",
+        "audit_training_updates",
+        "audit_environment_steps",
+        "source_sha256",
+        "limits",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_visual_brightness_augmentation/summary_table.csv",
+      "original_sha256": "f51cda726898ade3f457b0cc238ee86b6d27f75a22c4b4a5a4af60232b57082d",
+      "derived_path": "evidence/brightness/summary_table.csv",
+      "derived_sha256": "f51cda726898ade3f457b0cc238ee86b6d27f75a22c4b4a5a4af60232b57082d",
+      "transformation": "Retained episode outcomes, seeds, return, length, termination; omitted wall-time and unshipped trajectory path.",
+      "rows": 18
+    },
+    {
+      "source": "experiment/fql_torch_migration/ac_power_comparison_1000/comparison.json",
+      "original_sha256": "3f8a718531679de7aa3f2a2b4888075237f96e12dbc29b8c498c6fe025793ef5",
+      "derived_path": "evidence/benchmark/results.json",
+      "derived_sha256": "f797e5bbf5d77943eb0c8b533ecbc7a6faa29d11ede7e9d3f021a731bd2f4238",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "all_recorded_boundaries_ac_power",
+        "limits",
+        "torch_compiled_over_jax_throughput",
+        "torch_compiled_throughput_lower_percent",
+        "runs",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_migration/ac_power_comparison_1000/protocol.json",
+      "original_sha256": "7651e46e520f5ed15c9547532903e14c9794f730fb09e5f2cf65fc4caccf2107",
+      "derived_path": "evidence/benchmark/protocol.json",
+      "derived_sha256": "ed28a8577aae1f78835dcfb0326981138d1e0427a483d206abcb35d08037f13e",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "created_utc",
+        "steps_each",
+        "order",
+        "fixed_inputs",
+        "timing",
+        "initial_state",
+        "controller_sha256",
+        "scope",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_torch_migration/ac_power_comparison_1000/validation.json",
+      "original_sha256": "8d30f30694c1e7211633a5a8fc4191f4146a011dd6b37efd9893db2759b7366b",
+      "derived_path": "evidence/benchmark/historical_validation.json",
+      "derived_sha256": "5ffb9b35ce9d3f984fd1f9289ceb830e86f4ff0a29b155fcfbfd43d732f51108",
+      "transformation": "derived sanitized JSON summary",
+      "retained_top_level_fields": [
+        "status",
+        "runs",
+        "preserved_original_inputs",
+        "core_matches_existing_training_checkpoint",
+        "matched_real_batch_and_initialization",
+        "scope",
+        "_provenance"
+      ]
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/visual_temporal_coverage.svg",
+      "original_sha256": "c67557a5d0a2f21625fd718311a2dd565772cd3ade4a33e3d14021a9d92bf232",
+      "derived_path": "assets/visual_temporal_coverage.svg",
+      "derived_sha256": "c67557a5d0a2f21625fd718311a2dd565772cd3ade4a33e3d14021a9d92bf232",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/fixed_video_examples.png",
+      "original_sha256": "4f81fbe4a71b9efde1b418e3dc220ee314d9e861dbdbffd97c79023742ddaebb",
+      "derived_path": "assets/fixed_video_examples.png",
+      "derived_sha256": "4f81fbe4a71b9efde1b418e3dc220ee314d9e861dbdbffd97c79023742ddaebb",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/brightness_tradeoff.svg",
+      "original_sha256": "f9f24208d641ad79569ec6bf7b6a9511954c39007c478111fc04553981cbbfed",
+      "derived_path": "assets/brightness_tradeoff.svg",
+      "derived_sha256": "f9f24208d641ad79569ec6bf7b6a9511954c39007c478111fc04553981cbbfed",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/input_brightness_example.png",
+      "original_sha256": "df972774fde4e3c09de09f5d3b900c8f1d74d8d6b15bfed147f537d501cd1b4d",
+      "derived_path": "assets/input_brightness_example.png",
+      "derived_sha256": "df972774fde4e3c09de09f5d3b900c8f1d74d8d6b15bfed147f537d501cd1b4d",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/brightness_tradeoff.png",
+      "original_sha256": "1b03886a2f479730f1b8243ca8e2d390bbb1ee7c08751a09ede12854d432500b",
+      "derived_path": "assets/brightness_tradeoff.png",
+      "derived_sha256": "1b03886a2f479730f1b8243ca8e2d390bbb1ee7c08751a09ede12854d432500b",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/fixed_video_examples.svg",
+      "original_sha256": "450e870d1bb96c832cc0047ad0ae595500f6caecd913b57ed82786828cde532b",
+      "derived_path": "assets/fixed_video_examples.svg",
+      "derived_sha256": "450e870d1bb96c832cc0047ad0ae595500f6caecd913b57ed82786828cde532b",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/visual_temporal_coverage.png",
+      "original_sha256": "553db077d7d6ecc1fc7c39050d08cc183bbc4a59bdc61dc7c861af27cded19cd",
+      "derived_path": "assets/visual_temporal_coverage.png",
+      "derived_sha256": "553db077d7d6ecc1fc7c39050d08cc183bbc4a59bdc61dc7c861af27cded19cd",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/plot_data.json",
+      "original_sha256": "2207eb65a71de62a084049a1fd752a6071fc5bb06d7d23fa8e32a0d0f9618f1f",
+      "derived_path": "assets/plot_data.json",
+      "derived_sha256": "2207eb65a71de62a084049a1fd752a6071fc5bb06d7d23fa8e32a0d0f9618f1f",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/state_results.png",
+      "original_sha256": "c246e55997d8d0c4b9dec6908cbcd91993cc276e2cc3f2144e1df7ffad854102",
+      "derived_path": "assets/state_results.png",
+      "derived_sha256": "c246e55997d8d0c4b9dec6908cbcd91993cc276e2cc3f2144e1df7ffad854102",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/mac_benchmark.png",
+      "original_sha256": "5348fdcc895d558dfe4b4c58d41af8835eea9b75e585739a4027d3bb92d0ab75",
+      "derived_path": "assets/mac_benchmark.png",
+      "derived_sha256": "5348fdcc895d558dfe4b4c58d41af8835eea9b75e585739a4027d3bb92d0ab75",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/mac_benchmark.svg",
+      "original_sha256": "f8f16aab20bc335e6373bb8cfda93e58f2d54498361365583797e8ddc61b1641",
+      "derived_path": "assets/mac_benchmark.svg",
+      "derived_sha256": "f8f16aab20bc335e6373bb8cfda93e58f2d54498361365583797e8ddc61b1641",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/state_results.svg",
+      "original_sha256": "8876aaa0d85d4aff783b7b6265e7ff1221d455fff59056908b597728e5980c7d",
+      "derived_path": "assets/state_results.svg",
+      "derived_sha256": "8876aaa0d85d4aff783b7b6265e7ff1221d455fff59056908b597728e5980c7d",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/videos/brightness_augmented_dim07_seed613_ep0.mp4",
+      "original_sha256": "f53d28f74b2eac604a2bf19623f3fe3be3affae7782c32af916ac77992bb40f2",
+      "derived_path": "assets/videos/brightness_augmented_dim07_seed613_ep0.mp4",
+      "derived_sha256": "f53d28f74b2eac604a2bf19623f3fe3be3affae7782c32af916ac77992bb40f2",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/videos/brightness_control_clean_seed613_ep0.mp4",
+      "original_sha256": "94c1262a3841b89eaa7aabd5e3d1fdc2204b0e3f500d1f579ea6e86978c71b8e",
+      "derived_path": "assets/videos/brightness_control_clean_seed613_ep0.mp4",
+      "derived_sha256": "94c1262a3841b89eaa7aabd5e3d1fdc2204b0e3f500d1f579ea6e86978c71b8e",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/videos/visual_full40k_seed613_standard_ep0.mp4",
+      "original_sha256": "5138e2ff2579a134dd93bb71eb1716ea3602c5be15787a04941f518252c4c286",
+      "derived_path": "assets/videos/visual_full40k_seed613_standard_ep0.mp4",
+      "derived_sha256": "5138e2ff2579a134dd93bb71eb1716ea3602c5be15787a04941f518252c4c286",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/videos/state_seed0_500k_fixed_ep0.mp4",
+      "original_sha256": "3d20fa048dd84214cbdcc4c405a93896ae73eeed35f185731347699e687d4a8c",
+      "derived_path": "assets/videos/state_seed0_500k_fixed_ep0.mp4",
+      "derived_sha256": "3d20fa048dd84214cbdcc4c405a93896ae73eeed35f185731347699e687d4a8c",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/videos/state_seed0_1M_fixed_ep0.mp4",
+      "original_sha256": "38ba087d10052aa395bdd1daae3f7fcb46dfa4b0b2bb9120b5f4815f73d39f24",
+      "derived_path": "assets/videos/state_seed0_1M_fixed_ep0.mp4",
+      "derived_sha256": "38ba087d10052aa395bdd1daae3f7fcb46dfa4b0b2bb9120b5f4815f73d39f24",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/videos/visual_full40k_seed613_shifted_ep0.mp4",
+      "original_sha256": "a1367fa3ac1691d876466b3be8c85481b3bf5f5b466502ab70f4d019855de650",
+      "derived_path": "assets/videos/visual_full40k_seed613_shifted_ep0.mp4",
+      "derived_sha256": "a1367fa3ac1691d876466b3be8c85481b3bf5f5b466502ab70f4d019855de650",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/videos/brightness_control_dim07_seed613_ep0.mp4",
+      "original_sha256": "c656c639bec2384d666444dc7643c8950adf842c3106b824f682c1a8f0e8bd20",
+      "derived_path": "assets/videos/brightness_control_dim07_seed613_ep0.mp4",
+      "derived_sha256": "c656c639bec2384d666444dc7643c8950adf842c3106b824f682c1a8f0e8bd20",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/videos/brightness_augmented_clean_seed613_ep0.mp4",
+      "original_sha256": "b304a5ccb9520df6e9058d78448588b25ff448baeeea1dda7305431256c7e73a",
+      "derived_path": "assets/videos/brightness_augmented_clean_seed613_ep0.mp4",
+      "derived_sha256": "b304a5ccb9520df6e9058d78448588b25ff448baeeea1dda7305431256c7e73a",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "source": "experiment/fql_final_release_20261013/assets/plot_showcase.py",
+      "original_sha256": "0eed5fba01edab925026516bf47545c8af9bda4d26ddbe26688a9043afe2af32",
+      "derived_path": "tools/plot_showcase.py",
+      "derived_sha256": "0e829733cfbfae4ec7a58cf6798b01e7171930ba423531508fd0085a6c91df60",
+      "transformation": "Standalone public plotter reads compact public plot_data and copied fixed videos; historical source-file dependencies removed."
+    },
+    {
+      "source": null,
+      "original_sha256": null,
+      "derived_path": "tools/verify_results.py",
+      "derived_sha256": "c282905e2996cb98a52c09800221061692b41c124ea852eae3d7bdf58b1ed8ad",
+      "transformation": "New public statistical verification tool; performs zero training or simulation."
+    }
+  ],
+  "limits": "Model, optimizer, raw image/trajectory, and hardware audits are historical retained evidence. This public subset permits checking reported statistics from per-episode CSVs, not replaying full original audits."
+}

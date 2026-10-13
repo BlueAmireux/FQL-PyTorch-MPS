@@ -1,0 +1,395 @@
+{
+  "schema": "fql-portable-inference-v1",
+  "inference_only": true,
+  "resumable": false,
+  "scope": "Nine fixed final inference exports; no new training or evaluation.",
+  "models": {
+    "state_seed0_average5": {
+      "file": "state_seed0_average5.pt",
+      "kind": "state_average5",
+      "architecture": {
+        "observation_dim": 28,
+        "action_dim": 5,
+        "hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ],
+        "layer_norm": false
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_policy_average_v2/build/average5/student_policy.pt",
+        "sha256": "0d51cfc0578e793f723b4f4889db990655163d0377a15cd3ac02e1f7ab62fc08",
+        "marker_sha256": "c0a0e05149f24b0a3085d84c8e436eacd42f45de3f88df6ff8f756be1fa8f1cb",
+        "schema": "inference_only_student_average_v1",
+        "training_seed": 0,
+        "completed_updates": 1000000,
+        "source_epochs": [
+          960000,
+          970000,
+          980000,
+          990000,
+          1000000
+        ],
+        "source_sha256": {
+          "复现/fql/pytorch/fql_torch/__init__.py": "f2a9ec9a853c074f61819183606852ac32944ad5aadbc80d709bad213bfba608",
+          "复现/fql/pytorch/fql_torch/agent.py": "e72352b0682578fc96204513b79892054ab7424124ffb2ed4e92810c5ea460e5",
+          "复现/fql/pytorch/fql_torch/checkpoint.py": "e8cb8fea6b48ad73ca7798ad419791b93ffeea214ee7cfb93049a6de76208c51",
+          "复现/fql/pytorch/fql_torch/data.py": "d70901a968c149fc2f7fcc58f8b68fe9cf93255010c0fd64696a4b695c7b31e6",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55",
+          "复现/fql/pytorch/fql_torch/runtime.py": "50e695a92a7dc30ce09a1adcbf0f0bbc293ab142db33c8146c2aaa64ac93df81"
+        }
+      },
+      "sha256": "ec0d092c29a47120e047297d24824e7c6871aaa00f78e134a86fb48cdf800194",
+      "bytes": 3237948,
+      "export_cpu_probe_error": 0.0
+    },
+    "state_seed1_average5": {
+      "file": "state_seed1_average5.pt",
+      "kind": "state_average5",
+      "architecture": {
+        "observation_dim": 28,
+        "action_dim": 5,
+        "hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ],
+        "layer_norm": false
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_three_seed_average_compact/policies/seed1_epoch1000000/student_policy.pt",
+        "sha256": "5728977ddc1cedf1174272e029be055f72f35b195feaaeae6745917b153c466a",
+        "marker_sha256": "17d4de61061f27da64c4ab17ffcaedd7e65710ca67ba7b20cf3448eeddfbcb6b",
+        "schema": "inference_only_student_average_v2",
+        "training_seed": 1,
+        "completed_updates": 1000000,
+        "source_epochs": [
+          960000,
+          970000,
+          980000,
+          990000,
+          1000000
+        ],
+        "source_sha256": {
+          "复现/fql/pytorch/fql_torch/__init__.py": "f2a9ec9a853c074f61819183606852ac32944ad5aadbc80d709bad213bfba608",
+          "复现/fql/pytorch/fql_torch/agent.py": "e72352b0682578fc96204513b79892054ab7424124ffb2ed4e92810c5ea460e5",
+          "复现/fql/pytorch/fql_torch/checkpoint.py": "e8cb8fea6b48ad73ca7798ad419791b93ffeea214ee7cfb93049a6de76208c51",
+          "复现/fql/pytorch/fql_torch/data.py": "d70901a968c149fc2f7fcc58f8b68fe9cf93255010c0fd64696a4b695c7b31e6",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55",
+          "复现/fql/pytorch/fql_torch/runtime.py": "50e695a92a7dc30ce09a1adcbf0f0bbc293ab142db33c8146c2aaa64ac93df81"
+        }
+      },
+      "sha256": "bda4cfd017fd50b265a79ae5a80620a3b57fea6781db72a981d10633296af827",
+      "bytes": 3238012,
+      "export_cpu_probe_error": 0.0
+    },
+    "state_seed2_average5": {
+      "file": "state_seed2_average5.pt",
+      "kind": "state_average5",
+      "architecture": {
+        "observation_dim": 28,
+        "action_dim": 5,
+        "hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ],
+        "layer_norm": false
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_three_seed_average_compact/policies/seed2_epoch1000000/student_policy.pt",
+        "sha256": "c2a8d8c3fd9647cb3300c95481b7c2f8df25f52eaad174f88500e9d926d0b1ca",
+        "marker_sha256": "76e19a09a491662ecde57d47593ab9a68b641c0d08fb144f56a31e9f4e12a3bd",
+        "schema": "inference_only_student_average_v2",
+        "training_seed": 2,
+        "completed_updates": 1000000,
+        "source_epochs": [
+          960000,
+          970000,
+          980000,
+          990000,
+          1000000
+        ],
+        "source_sha256": {
+          "复现/fql/pytorch/fql_torch/__init__.py": "f2a9ec9a853c074f61819183606852ac32944ad5aadbc80d709bad213bfba608",
+          "复现/fql/pytorch/fql_torch/agent.py": "e72352b0682578fc96204513b79892054ab7424124ffb2ed4e92810c5ea460e5",
+          "复现/fql/pytorch/fql_torch/checkpoint.py": "e8cb8fea6b48ad73ca7798ad419791b93ffeea214ee7cfb93049a6de76208c51",
+          "复现/fql/pytorch/fql_torch/data.py": "d70901a968c149fc2f7fcc58f8b68fe9cf93255010c0fd64696a4b695c7b31e6",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55",
+          "复现/fql/pytorch/fql_torch/runtime.py": "50e695a92a7dc30ce09a1adcbf0f0bbc293ab142db33c8146c2aaa64ac93df81"
+        }
+      },
+      "sha256": "6282a63c1f339015b13f17fca59391091468d9830b3c76298504016175394d95",
+      "bytes": 3238012,
+      "export_cpu_probe_error": 0.0
+    },
+    "visual_seed613_control": {
+      "file": "visual_seed613_control.pt",
+      "kind": "visual_student",
+      "architecture": {
+        "rgb_shape": [
+          3,
+          64,
+          64
+        ],
+        "rgb_dtype": "uint8",
+        "proprio_dim": 19,
+        "noise_dim": 5,
+        "latent_dim": 9,
+        "action_dim": 5,
+        "actor_hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ]
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_visual_brightness_augmentation/seed613_control/checkpoint_60000.pt",
+        "sha256": "94f5766eb4f617dd03a4206eec7a20f07f8fc7887938960a7cf6b59ade5bacd8",
+        "marker_sha256": "94ac1fec6cf8056aac1f38ae7bd8c7233824ab15b78a32f46f93578a41ce47b9",
+        "schema": "visual-distillation-v1",
+        "training_seed": 613,
+        "completed_updates": 60000,
+        "source_epochs": null,
+        "source_sha256": {
+          "复现/fql/pytorch/visual/student.py": "f239e39021fbbd5a29f3745c2215a4828fd9ce0775b577c01388b61a54f3ff3e",
+          "复现/fql/pytorch/visual/common.py": "a8bc68d7bd2297221b6b784dc3f5dfa5323557051aa5655cc6278a93bdef0966",
+          "复现/fql/pytorch/visual/train.py": "6fe8154c41d1050ee62a05649d64c40344731ffae50b7ed0d08d8fd61b00d94d",
+          "复现/fql/pytorch/visual/train_grounded.py": "666692bfc5fbb2b4b8575b2ebc6bccbf7ae02aea01d4effc477a2521147eee21",
+          "复现/fql/pytorch/visual/train_temporal_coverage.py": "159155d705f0a890e702e23f845d57846951bd7a77ffb8a8109139b858d597e6",
+          "复现/fql/pytorch/visual/collect_corrections.py": "e7a4eb4378aca92d580971c4d83164efddcf6b82c1a4edb52360b12cad1489b8",
+          "复现/fql/pytorch/visual/train_brightness_augmentation.py": "a2bbc7ba6a4c0bdb9b0e16af949d116d6879007567c182cf3fddd5dc7bc34b7d",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55"
+        }
+      },
+      "sha256": "86d2b7c672f5a9d5b04fbe0d5dcb64d302147b46c0eae84441ecb25f2838866f",
+      "bytes": 4044955,
+      "export_cpu_probe_error": 4.805624485015869e-07
+    },
+    "visual_seed613_augmentation": {
+      "file": "visual_seed613_augmentation.pt",
+      "kind": "visual_student",
+      "architecture": {
+        "rgb_shape": [
+          3,
+          64,
+          64
+        ],
+        "rgb_dtype": "uint8",
+        "proprio_dim": 19,
+        "noise_dim": 5,
+        "latent_dim": 9,
+        "action_dim": 5,
+        "actor_hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ]
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_visual_brightness_augmentation/seed613_augmentation/checkpoint_60000.pt",
+        "sha256": "cdb356cc6cafb10086d2e57bc9bdbcafd510a61013962b3d12499aa1a2da24d5",
+        "marker_sha256": "7e62f7d1ce31b18da48a36e0644f71f1f2ba8711d5372d4f0cce77c62da54e93",
+        "schema": "visual-distillation-v1",
+        "training_seed": 613,
+        "completed_updates": 60000,
+        "source_epochs": null,
+        "source_sha256": {
+          "复现/fql/pytorch/visual/student.py": "f239e39021fbbd5a29f3745c2215a4828fd9ce0775b577c01388b61a54f3ff3e",
+          "复现/fql/pytorch/visual/common.py": "a8bc68d7bd2297221b6b784dc3f5dfa5323557051aa5655cc6278a93bdef0966",
+          "复现/fql/pytorch/visual/train.py": "6fe8154c41d1050ee62a05649d64c40344731ffae50b7ed0d08d8fd61b00d94d",
+          "复现/fql/pytorch/visual/train_grounded.py": "666692bfc5fbb2b4b8575b2ebc6bccbf7ae02aea01d4effc477a2521147eee21",
+          "复现/fql/pytorch/visual/train_temporal_coverage.py": "159155d705f0a890e702e23f845d57846951bd7a77ffb8a8109139b858d597e6",
+          "复现/fql/pytorch/visual/collect_corrections.py": "e7a4eb4378aca92d580971c4d83164efddcf6b82c1a4edb52360b12cad1489b8",
+          "复现/fql/pytorch/visual/train_brightness_augmentation.py": "a2bbc7ba6a4c0bdb9b0e16af949d116d6879007567c182cf3fddd5dc7bc34b7d",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55"
+        }
+      },
+      "sha256": "d7f77fdf496bca9a9876e148da8d201ac6ccde82b9dbf30211e4d90a8fb539dc",
+      "bytes": 4044955,
+      "export_cpu_probe_error": 1.0728836059570312e-06
+    },
+    "visual_seed614_control": {
+      "file": "visual_seed614_control.pt",
+      "kind": "visual_student",
+      "architecture": {
+        "rgb_shape": [
+          3,
+          64,
+          64
+        ],
+        "rgb_dtype": "uint8",
+        "proprio_dim": 19,
+        "noise_dim": 5,
+        "latent_dim": 9,
+        "action_dim": 5,
+        "actor_hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ]
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_visual_brightness_augmentation/seed614_control/checkpoint_60000.pt",
+        "sha256": "03db47c06efefcd4793b5d2d0bbc498566a63b10f1e7ec56fd80bb4ac2678edd",
+        "marker_sha256": "6bcb9f1e39e33b724900b2f99cf019fd767d28b69a76b34e9216b8b02fffdc05",
+        "schema": "visual-distillation-v1",
+        "training_seed": 614,
+        "completed_updates": 60000,
+        "source_epochs": null,
+        "source_sha256": {
+          "复现/fql/pytorch/visual/student.py": "f239e39021fbbd5a29f3745c2215a4828fd9ce0775b577c01388b61a54f3ff3e",
+          "复现/fql/pytorch/visual/common.py": "a8bc68d7bd2297221b6b784dc3f5dfa5323557051aa5655cc6278a93bdef0966",
+          "复现/fql/pytorch/visual/train.py": "6fe8154c41d1050ee62a05649d64c40344731ffae50b7ed0d08d8fd61b00d94d",
+          "复现/fql/pytorch/visual/train_grounded_replication.py": "f927b94c11aaa752467ca45b337b629940efe3e76e01811bd3a870d7eb8e18c0",
+          "复现/fql/pytorch/visual/train_replay_replication.py": "1c8a92e694ecf2dc6686825454a6d6c843c541aa56739ad94cd8be4dc76e5e96",
+          "复现/fql/pytorch/visual/collect_corrections.py": "e7a4eb4378aca92d580971c4d83164efddcf6b82c1a4edb52360b12cad1489b8",
+          "复现/fql/pytorch/visual/train_brightness_augmentation.py": "a2bbc7ba6a4c0bdb9b0e16af949d116d6879007567c182cf3fddd5dc7bc34b7d",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55"
+        }
+      },
+      "sha256": "73059617029a50efb74a0c9500de81418090661978aeafceefb28cea38edc6c1",
+      "bytes": 4044955,
+      "export_cpu_probe_error": 6.556510925292969e-07
+    },
+    "visual_seed614_augmentation": {
+      "file": "visual_seed614_augmentation.pt",
+      "kind": "visual_student",
+      "architecture": {
+        "rgb_shape": [
+          3,
+          64,
+          64
+        ],
+        "rgb_dtype": "uint8",
+        "proprio_dim": 19,
+        "noise_dim": 5,
+        "latent_dim": 9,
+        "action_dim": 5,
+        "actor_hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ]
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_visual_brightness_augmentation/seed614_augmentation/checkpoint_60000.pt",
+        "sha256": "104c7d3e7caaede5f6f37778572174b692d82020c0fab90505f9383311f9d9c0",
+        "marker_sha256": "8e6dc2bb94f52fdbd488b34d55ed6e4956bfeab8018d2bcf2b98646c8aedfe49",
+        "schema": "visual-distillation-v1",
+        "training_seed": 614,
+        "completed_updates": 60000,
+        "source_epochs": null,
+        "source_sha256": {
+          "复现/fql/pytorch/visual/student.py": "f239e39021fbbd5a29f3745c2215a4828fd9ce0775b577c01388b61a54f3ff3e",
+          "复现/fql/pytorch/visual/common.py": "a8bc68d7bd2297221b6b784dc3f5dfa5323557051aa5655cc6278a93bdef0966",
+          "复现/fql/pytorch/visual/train.py": "6fe8154c41d1050ee62a05649d64c40344731ffae50b7ed0d08d8fd61b00d94d",
+          "复现/fql/pytorch/visual/train_grounded_replication.py": "f927b94c11aaa752467ca45b337b629940efe3e76e01811bd3a870d7eb8e18c0",
+          "复现/fql/pytorch/visual/train_replay_replication.py": "1c8a92e694ecf2dc6686825454a6d6c843c541aa56739ad94cd8be4dc76e5e96",
+          "复现/fql/pytorch/visual/collect_corrections.py": "e7a4eb4378aca92d580971c4d83164efddcf6b82c1a4edb52360b12cad1489b8",
+          "复现/fql/pytorch/visual/train_brightness_augmentation.py": "a2bbc7ba6a4c0bdb9b0e16af949d116d6879007567c182cf3fddd5dc7bc34b7d",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55"
+        }
+      },
+      "sha256": "2115109279457d61f357cd6b509bc357b3f2cb152ae9d98a37261f1ac8192f5a",
+      "bytes": 4044955,
+      "export_cpu_probe_error": 5.960464477539062e-07
+    },
+    "visual_seed615_control": {
+      "file": "visual_seed615_control.pt",
+      "kind": "visual_student",
+      "architecture": {
+        "rgb_shape": [
+          3,
+          64,
+          64
+        ],
+        "rgb_dtype": "uint8",
+        "proprio_dim": 19,
+        "noise_dim": 5,
+        "latent_dim": 9,
+        "action_dim": 5,
+        "actor_hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ]
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_visual_brightness_augmentation/seed615_control/checkpoint_60000.pt",
+        "sha256": "f2dc164045626b780404134c49dafd198ff6e362c84351804dad835c3fc603b9",
+        "marker_sha256": "f8cf500811d34e6529f237a9ab3fc4c54d3f44e0f5205bfc9a896168649833a4",
+        "schema": "visual-distillation-v1",
+        "training_seed": 615,
+        "completed_updates": 60000,
+        "source_epochs": null,
+        "source_sha256": {
+          "复现/fql/pytorch/visual/student.py": "f239e39021fbbd5a29f3745c2215a4828fd9ce0775b577c01388b61a54f3ff3e",
+          "复现/fql/pytorch/visual/common.py": "a8bc68d7bd2297221b6b784dc3f5dfa5323557051aa5655cc6278a93bdef0966",
+          "复现/fql/pytorch/visual/train.py": "6fe8154c41d1050ee62a05649d64c40344731ffae50b7ed0d08d8fd61b00d94d",
+          "复现/fql/pytorch/visual/train_grounded_seeded.py": "f62a4f8068d0c8286ee8315e5c6d6f073d9b2d097705c0ce768310d5354b8cf3",
+          "复现/fql/pytorch/visual/train_replay_seeded.py": "093b30bcb4230eb650eef2471ac48f0031c62e9f269b1d5bfa4c1888fd87c01d",
+          "复现/fql/pytorch/visual/collect_corrections.py": "e7a4eb4378aca92d580971c4d83164efddcf6b82c1a4edb52360b12cad1489b8",
+          "复现/fql/pytorch/visual/train_brightness_augmentation.py": "a2bbc7ba6a4c0bdb9b0e16af949d116d6879007567c182cf3fddd5dc7bc34b7d",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55"
+        }
+      },
+      "sha256": "09f88490f15c568fb6b371d7c6885c2787896637c39b119ec774c09081049b8d",
+      "bytes": 4044955,
+      "export_cpu_probe_error": 5.364418029785156e-07
+    },
+    "visual_seed615_augmentation": {
+      "file": "visual_seed615_augmentation.pt",
+      "kind": "visual_student",
+      "architecture": {
+        "rgb_shape": [
+          3,
+          64,
+          64
+        ],
+        "rgb_dtype": "uint8",
+        "proprio_dim": 19,
+        "noise_dim": 5,
+        "latent_dim": 9,
+        "action_dim": 5,
+        "actor_hidden_dims": [
+          512,
+          512,
+          512,
+          512
+        ]
+      },
+      "source": {
+        "relative_path": "experiment/fql_torch_visual_brightness_augmentation/seed615_augmentation/checkpoint_60000.pt",
+        "sha256": "9c5fcb1799560894af9ee312a78361e0bd71168a22475ddeff30fe54a77f26ca",
+        "marker_sha256": "f485cc089c6a70cc3e27fbe7346b985fcc67b2936c9aca63fe43adce3ebb3f20",
+        "schema": "visual-distillation-v1",
+        "training_seed": 615,
+        "completed_updates": 60000,
+        "source_epochs": null,
+        "source_sha256": {
+          "复现/fql/pytorch/visual/student.py": "f239e39021fbbd5a29f3745c2215a4828fd9ce0775b577c01388b61a54f3ff3e",
+          "复现/fql/pytorch/visual/common.py": "a8bc68d7bd2297221b6b784dc3f5dfa5323557051aa5655cc6278a93bdef0966",
+          "复现/fql/pytorch/visual/train.py": "6fe8154c41d1050ee62a05649d64c40344731ffae50b7ed0d08d8fd61b00d94d",
+          "复现/fql/pytorch/visual/train_grounded_seeded.py": "f62a4f8068d0c8286ee8315e5c6d6f073d9b2d097705c0ce768310d5354b8cf3",
+          "复现/fql/pytorch/visual/train_replay_seeded.py": "093b30bcb4230eb650eef2471ac48f0031c62e9f269b1d5bfa4c1888fd87c01d",
+          "复现/fql/pytorch/visual/collect_corrections.py": "e7a4eb4378aca92d580971c4d83164efddcf6b82c1a4edb52360b12cad1489b8",
+          "复现/fql/pytorch/visual/train_brightness_augmentation.py": "a2bbc7ba6a4c0bdb9b0e16af949d116d6879007567c182cf3fddd5dc7bc34b7d",
+          "复现/fql/pytorch/fql_torch/networks.py": "e1cb4a464b0c9e996089d44579e9205bda81551d31257aeb59fbae76b2874a55"
+        }
+      },
+      "sha256": "ff4b61604a56603d20fbdc41679e7d98e8933174b4a605d50f97bf0f84a16a32",
+      "bytes": 4044955,
+      "export_cpu_probe_error": 7.152557373046875e-07
+    }
+  }
+}
